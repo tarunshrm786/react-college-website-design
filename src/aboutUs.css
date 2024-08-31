@@ -1,0 +1,179 @@
+/* .about-us {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.full-width-text {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.full-width-text h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.full-width-text p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #333;
+    text-align: justify;
+}
+
+.vision-mission {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px; 
+}
+
+.vision-column,
+.mission-column {
+    flex: 1;
+    padding: 20px;
+}
+
+.vision-column h2,
+.mission-column h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.vision-column p,
+.mission-column p {
+    font-size: 16px;
+} */
+
+/* Basic Reset and Typography */
+.about-us {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.full-width-text {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.full-width-text h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.full-width-text p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #333;
+    text-align: justify;
+}
+
+/* Vision and Mission Section */
+.vision-mission {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px; /* Optional: Add margin to separate sections */
+}
+
+.vision-column,
+.mission-column {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding does not affect width */
+}
+
+.vision-column h2,
+.mission-column h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.vision-column p,
+.mission-column p {
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .full-width-text h3 {
+        font-size: 18px;
+    }
+
+    .full-width-text p {
+        font-size: 16px;
+    }
+
+    .vision-mission {
+        flex-direction: column; /* Stack columns vertically on medium screens */
+    }
+
+    .vision-column,
+    .mission-column {
+        margin-bottom: 20px; /* Space between stacked columns */
+    }
+
+    .vision-column h2,
+    .mission-column h2 {
+        font-size: 22px;
+    }
+
+    .vision-column p,
+    .mission-column p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .full-width-text h3 {
+        font-size: 16px;
+    }
+
+    .full-width-text p {
+        font-size: 14px;
+    }
+
+    .vision-mission {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .vision-column,
+    .mission-column {
+        padding: 10px; /* Reduce padding inside columns */
+    }
+
+    .vision-column h2,
+    .mission-column h2 {
+        font-size: 20px;
+    }
+
+    .vision-column p,
+    .mission-column p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .full-width-text h3 {
+        font-size: 14px;
+    }
+
+    .full-width-text p {
+        font-size: 12px;
+    }
+
+    .vision-column h2,
+    .mission-column h2 {
+        font-size: 18px;
+    }
+
+    .vision-column p,
+    .mission-column p {
+        font-size: 10px;
+    }
+}

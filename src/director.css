@@ -1,0 +1,157 @@
+/* .director {
+    padding: 20px;
+}
+
+.director-message {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+.message-text {
+    flex: 2; 
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.message-text h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.message-text p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+.director-photo {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.director-photo img {
+    width: 100%;
+    max-width: 300px; 
+    height: auto;
+    border-radius: 8px; 
+} */
+
+/* Base Styles */
+.director {
+    padding: 20px;
+    /* background-color: orange; */
+}
+
+.director-message {
+    display: flex;
+    align-items: flex-start; /* Align items at the top of the row */
+    justify-content: space-between;
+    gap: 20px; /* Add space between text and photo */
+}
+
+.message-text {
+    flex: 2; /* Allows the text to take up more space */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px; /* Optional: Rounded corners for a softer look */
+}
+
+.message-text h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.message-text p {
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.8; /* Adjusts the line spacing */
+    margin-bottom: 15px; /* Adds space below each paragraph */
+    margin-top: 15px;
+}
+
+
+.director-photo {
+    flex: 1; /* Allows the photo to take up less space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.director-photo img {
+    width: 100%; /* Adjust width to fit the container */
+    max-width: 300px; /* Set a maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners for the image */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .director-message {
+        flex-direction: column; /* Stack text and photo vertically on medium screens */
+        align-items: center; /* Center align the items */
+    }
+
+    .message-text {
+        flex: 1; /* Allow text to take up more space */
+        padding: 15px; /* Reduce padding */
+    }
+
+    .message-text h2 {
+        font-size: 20px; /* Reduce font size */
+        margin-bottom: 20px; /* Reduce margin */
+    }
+
+    .message-text p {
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .director-photo {
+        margin-top: 20px; /* Add margin for spacing */
+    }
+}
+
+@media (max-width: 768px) {
+    .director-message {
+        padding: 10px; /* Reduce padding */
+    }
+
+    .message-text {
+        padding: 10px; /* Further reduce padding */
+    }
+
+    .message-text h2 {
+        font-size: 18px; /* Further reduce font size */
+        margin-bottom: 15px; /* Further reduce margin */
+    }
+
+    .message-text p {
+        font-size: 12px; /* Further reduce font size */
+    }
+
+    .director-photo img {
+        max-width: 250px; /* Adjust max width of image */
+    }
+}
+
+@media (max-width: 480px) {
+    .message-text {
+        padding: 5px; /* Minimize padding */
+    }
+
+    .message-text h2 {
+        font-size: 16px; /* Further reduce font size */
+        margin-bottom: 10px; /* Further reduce margin */
+    }
+
+    .message-text p {
+        font-size: 10px; /* Further reduce font size */
+    }
+
+    .director-photo img {
+        max-width: 200px; /* Adjust max width of image */
+    }
+}

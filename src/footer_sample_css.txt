@@ -1,0 +1,211 @@
+
+.footer {
+    background-color: #E0F7FA;
+    color: #444;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-column p {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 10px; /* Adjust margin for small screens */
+}
+
+.footer-column-logo {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-column-other-links h4 {
+    margin-bottom: 25px;
+    font-size: 18px;
+    margin-right: 80px;
+}
+
+.footer-column-other-links p {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 10px; /* Adjust margin for small screens */
+}
+
+.footer-column h4 {
+    margin-bottom: 25px;
+    font-size: 18px;
+    margin-right: 210px;
+}
+.footer-column-logo p {
+    margin-bottom: 25px;
+    font-size: 18px;
+   margin-left: 100px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px; /* Adds space between social media icons */
+    margin-top: 15px; /* Adds space above the social media icons */
+    margin-left: 100px;
+}
+
+.social-icons .icon {
+    padding: 10px; /* Adds some padding inside the background color */
+    border-radius: 50%; /* Makes the background color round */
+    color: white; /* Makes the icon color white */
+}
+
+/* Specific background colors for each icon */
+.social-icons .facebook {
+    background-color: #3b5998; /* Facebook blue */
+}
+
+.social-icons .twitter {
+    background-color: #1da1f2; /* Twitter blue */
+}
+
+.social-icons .linkedin {
+    background-color: #0077b5; /* LinkedIn blue */
+}
+
+.social-icons .instagram {
+    background-color: #e4405f; /* Instagram gradient red */
+}
+
+.social-icons .youtube {
+    background-color: #ff0000; /* YouTube red */
+}
+
+.social-media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 10px; /* Space between images */
+    justify-content: center; /* Center the grid */
+}
+
+.social-media-icon {
+    width: 110px; /* Adjust size of icons */
+    height: 110px;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.footer-copyright {
+    flex: 1;
+}
+
+.footer-links a {
+    color: #444;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footer-columns {
+        flex-direction: column; /* Stack columns vertically on medium screens */
+        align-items: center; /* Center align the columns */
+    }
+
+    .footer-column {
+        margin: 10px 0; /* Adjust margin for stacked columns */
+        text-align: center; /* Center align text */
+    }
+
+    .footer-column p {
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .social-media-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+
+    .social-media-icon {
+        width: 90px; /* Adjust size of icons */
+        height: 90px;
+    }
+
+    .footer-bottom {
+        flex-direction: column; /* Stack footer bottom content vertically */
+        text-align: center;
+    }
+
+    .footer-copyright {
+        margin-bottom: 10px; /* Add margin for spacing */
+    }
+
+    .footer-links {
+        margin-top: 10px; /* Add margin to top */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-columns {
+        padding: 10px; /* Reduce padding */
+    }
+
+    .footer-column p {
+        font-size: 14px; /* Reduce font size */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .social-media-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .social-media-icon {
+        width: 80px; /* Adjust size of icons */
+        height: 80px;
+    }
+
+    .footer-bottom {
+        padding: 10px; /* Reduce padding */
+        flex-direction: column; /* Stack footer bottom content vertically */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-columns {
+        padding: 5px; /* Further reduce padding */
+    }
+
+    .footer-column p {
+        font-size: 12px; /* Further reduce font size */
+    }
+
+    .social-media-icon {
+        width: 60px; /* Further adjust size of icons */
+        height: 60px;
+    }
+
+    .footer-bottom {
+        padding: 5px; /* Further reduce padding */
+    }
+}
