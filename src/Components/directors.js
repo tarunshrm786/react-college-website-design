@@ -22,7 +22,7 @@ It is an honor for me to have taken on the role of Director at the National Acad
                     <hr />
                 </div>
                 <div className="director-photo">
-                    <img src="director.png" alt="Director" />
+                    <img src="director-2.jpg" alt="Director" />
                 </div>
             </section>
         </div>
