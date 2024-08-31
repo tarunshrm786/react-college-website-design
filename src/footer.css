@@ -206,3 +206,33 @@
         font-size: 12px; /* Adjust for small screens */
     }
 }
+
+.footer-column-logo {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.footer-column-logo p {
+    margin-bottom: 25px;
+    font-size: 16px; /* Default size */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footer-column-logo p {
+        font-size: 14px; /* Adjust for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-column-logo p {
+        font-size: 12px; /* Adjust for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-column-logo p {
+        font-size: 10px; /* Adjust for extra small screens */
+    }
+}
