@@ -1,5 +1,6 @@
 .footer {
-    background-color: #E0F7FA;
+    /* background-color: #E0F7FA; */
+    background-color: #FFE4E1;
     color: #444;
     padding: 20px;
     text-align: center;
@@ -192,5 +193,16 @@
 
     .footer-bottom {
         padding: 5px;
+    }
+}
+
+.footer-column-other-links p {
+    font-size: 16px; /* Default size */
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .footer-column-other-links p {
+        font-size: 12px; /* Adjust for small screens */
     }
 }
