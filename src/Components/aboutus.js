@@ -80,8 +80,10 @@ const AboutUs = () => {
             src="banner-1.jpg"
             alt="About Us"
             style={{
-              width: "1150px",
-              height: "500px",
+            //   width: "1150px",
+            //   height: "500px",
+            width: "100%", // Adjusts width to be responsive
+            height: "auto", // Adjusts height to maintain aspect ratio
               transition: "transform 0.3s ease",
               display: "block", // Ensures the image is treated as a block-level element, removing any inline spacing
               marginBottom: "0", // Ensures no margin at the bottom
