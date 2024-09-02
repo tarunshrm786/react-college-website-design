@@ -1,7 +1,7 @@
 .banner {
     position: relative;
     width: 100%;
-    height: 400px; /* Adjust the height as needed */
+    height: 400px; 
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -11,21 +11,72 @@
 .banner-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the container without distortion */
+    object-fit: cover; 
 }
 
 .banner-text {
     position: absolute;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional: Adds shadow to text for better readability */
-    text-align: center; /* Centers text horizontally */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+    text-align: center; 
 }
 
 .banner-text h1 {
-    font-size: 36px; /* Adjust font size as needed */
+    font-size: 36px; 
     margin-bottom: 10px;
 }
 
 .banner-text p {
-    font-size: 18px; /* Adjust font size as needed */
+    font-size: 18px; 
 }
+
+
+
+/* .banner {
+    position: relative;
+    width: 100%;
+    height: 400px; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1; 
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; 
+    height: 100%;
+    background: linear-gradient(to right, #FFD700, rgba(255, 215, 0, 0)); 
+    z-index: 2;
+}
+
+.banner-text {
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+    text-align: center; 
+    z-index: 3;
+}
+
+.banner-text h1 {
+    font-size: 36px; 
+    margin-bottom: 10px;
+}
+
+.banner-text p {
+    font-size: 18px; 
+} */
+

@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -11,15 +10,14 @@ body {
 
 .main-header {
     height: 80px;
-    /* background-color: #E0F7FA; */
     background-color: #FFE4E1;
     color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    position: relative; /* Added to ensure z-index works properly */
-    z-index: 10; /* Ensures the header stays on top of other elements */
+    position: relative;
+    z-index: 10; 
 }
 
 .logo img {
@@ -33,6 +31,7 @@ body {
 
 .main-nav ul li {
     margin-left: 20px;
+    position: relative; /* Required for dropdown positioning */
 }
 
 .main-nav ul li a {
@@ -43,7 +42,7 @@ body {
 }
 
 .main-nav ul li a:hover {
-    text-decoration: underline;
+    text-decoration: none; /* No underline on hover */
 }
 
 .hamburger {
@@ -83,5 +82,86 @@ body {
 
     .hamburger {
         display: flex;
+    }
+}
+
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: white;
+    list-style-type: none;
+    margin: 0;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    top: 100%; /* Position the menu directly below the parent */
+    left: 0;
+    padding-right: 15px;
+    width: 150px; /* Default width */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    z-index: 20;
+    text-align: center;
+}
+
+/* Show the dropdown menu when open */
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 10px 0; /* Padding for each menu item */
+}
+
+.dropdown-menu a {
+    text-decoration: none; /* Ensure no underline */
+    color: black; /* Match the link color */
+    display: block; /* Ensure full width for the links */
+    padding: 0 10px; /* Padding inside each link */
+    font-weight: normal;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu a:hover {
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.arrow {
+    margin-left: 5px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.arrow.up {
+    transform: rotate(180deg); /* Rotate arrow when dropdown is open */
+}
+
+.arrow.down {
+    transform: rotate(0deg); /* Default arrow position */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        width: 100%; /* Full width on small screens */
+        max-width: 100%; /* Prevent exceeding screen width */
+        left: 0; /* Align with the left edge of the screen */
+        box-shadow: none; /* Optional: remove shadow on small screens for a cleaner look */
+    }
+    
+    .dropdown-menu li {
+        padding: 15px; /* Increase padding for better touch targets */
+    }
+    
+    .dropdown-menu a {
+        padding: 0 15px; /* Increase padding for better touch targets */
+    }
+}
+
+@media (max-width: 480px) {
+    .dropdown-menu {
+        width: 100%; /* Full width on extra-small screens */
+    }
+    
+    .arrow {
+        font-size: 14px; /* Increase arrow size for better visibility */
     }
 }

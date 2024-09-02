@@ -1,24 +1,27 @@
 // src/App.js
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Header from './Components/header'; // Import the Header component
-import Banner from './Components/banner';
-import Aboutus from './Components/about_us';
-import Director from './Components/directors';
-import Services from './Components/services';
-import Footer from './Components/footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './home'; // Import Home page
+import Aboutus from './Components/aboutus'; 
+import FoundingMembers from './Components/founding-members'; 
+import Staff from './Components/staff'; 
+import Footer from './Components/footer'; 
+import Header from './Components/header';
 
 function App() {
   return (
-    <div className="App">
-      <Header /> 
-      <Banner /> 
-      <Aboutus />
-      <Services />
-      <Director />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} /> 
+          <Route path="/aboutus" element={<Aboutus />} /> 
+          <Route path="/founding-members" element={<FoundingMembers />} /> 
+          <Route path="/staff" element={<Staff />} /> 
+        </Routes>
+        <Footer /> 
+      </div>
+    </Router>
   );
 }
 

@@ -12,6 +12,7 @@
     font-size: 20px;
     color: #333;
     margin-bottom: 10px;
+    text-align: justify; /* Justify the heading text */
 }
 
 .full-width-text p {
@@ -19,13 +20,13 @@
     margin: 0 auto;
     font-size: 18px;
     color: #333;
-    text-align: justify;
+    text-align: justify; /* Justify the paragraph text */
 }
 
 /* Vision and Mission Section */
 .vision-mission {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack columns vertically to create rows */
     padding: 20px;
     background-color: #fff;
     margin-bottom: 20px; /* Optional: Add margin to separate sections */
@@ -36,56 +37,61 @@
     flex: 1;
     padding: 20px;
     box-sizing: border-box; /* Ensures padding does not affect width */
+    width: 100%; /* Ensure full width for each section */
 }
 
 .vision-column h2,
 .mission-column h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    text-align: justify; /* Justify the heading text */
 }
 
 .vision-column p,
 .mission-column p {
     font-size: 16px;
+    text-align: justify; /* Justify the paragraph text */
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
     .full-width-text h3 {
         font-size: 18px;
+        text-align: justify; /* Justify the heading text */
     }
 
     .full-width-text p {
         font-size: 16px;
-    }
-
-    .vision-mission {
-        flex-direction: column; /* Stack columns vertically on medium screens */
+        text-align: justify; /* Justify the paragraph text */
     }
 
     .vision-column,
     .mission-column {
-        margin-bottom: 20px; /* Space between stacked columns */
+        margin-bottom: 20px; /* Space between stacked rows */
     }
 
     .vision-column h2,
     .mission-column h2 {
         font-size: 22px;
+        text-align: justify; /* Justify the heading text */
     }
 
     .vision-column p,
     .mission-column p {
         font-size: 14px;
+        text-align: justify; /* Justify the paragraph text */
     }
 }
 
 @media (max-width: 768px) {
     .full-width-text h3 {
         font-size: 16px;
+        text-align: justify; /* Justify the heading text */
     }
 
     .full-width-text p {
         font-size: 14px;
+        text-align: justify; /* Justify the paragraph text */
     }
 
     .vision-mission {
@@ -100,30 +106,36 @@
     .vision-column h2,
     .mission-column h2 {
         font-size: 20px;
+        text-align: justify; /* Justify the heading text */
     }
 
     .vision-column p,
     .mission-column p {
         font-size: 12px;
+        text-align: justify; /* Justify the paragraph text */
     }
 }
 
 @media (max-width: 480px) {
     .full-width-text h3 {
         font-size: 14px;
+        text-align: justify; /* Justify the heading text */
     }
 
     .full-width-text p {
         font-size: 12px;
+        text-align: justify; /* Justify the paragraph text */
     }
 
     .vision-column h2,
     .mission-column h2 {
         font-size: 18px;
+        text-align: justify; /* Justify the heading text */
     }
 
     .vision-column p,
     .mission-column p {
         font-size: 10px;
+        text-align: justify; /* Justify the paragraph text */
     }
 }

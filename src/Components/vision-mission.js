@@ -1,0 +1,34 @@
+import React from 'react';
+import '../VisionMission.css'; 
+
+const VisionMission = () => {
+    return (
+        <div className="about-us">
+      
+            <section className="vision-mission">
+                <div className="vision-column">
+                    <h2>Our Vision</h2>
+                    <p>
+                    To engage the natural potential of an individual through Design Education enabled by positive thought and action, and empowering them to evolve, through the spirit of wholistic co-creation.
+                    </p>
+                </div>
+                <hr />
+                <div className="mission-column">
+                    <h2>Our Mission</h2>
+                    <p>
+                    Be an internationally acknowledged design institution built on an impeccable foundation of research and learning based on a broad spectrum of disciplines.
+To revive and renew the essence of time-honoured indigenous, knowledge, and practices, and
+ensure that their value and benefits are fully accessible to deal with problems faced by the present-day world.
+To collaborate with advanced Indian and foreign educational institutions, to develop, enhance and maintain global benchmarks in the quality and process of dissemination of knowledge and skills in Design.
+To enrol the youth of pluralistic identities and cultural contexts, and channelise and nurture their creative energies through inspirational learning experiences.
+Empower youth with a usable range of skill sets suited for industry and the emerging needs of society, which prepares them to be sensitive professionals and leaders, with the ability to transform the future.
+Establish a 'self-definition for women' by empowering and enabling them through education, towards becoming professionals and entrepreneurs, creating their own business or social enterprise and most importantly, in helping them form and nurture the thought processes of generations to come.
+                    </p>
+                </div>
+                <hr />
+            </section>
+        </div>
+    );
+}
+
+export default VisionMission;
