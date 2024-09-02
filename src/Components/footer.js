@@ -55,13 +55,13 @@ const Footer = () => {
                 <div className="footer-column">
                     <div className="social-media-grid">
                         <img src="our-vision.jpg" alt="Our Vision" className="social-media-icon" />
-                        <img src="img1.jpg" alt="Event Image 1" className="social-media-icon" />
-                        <img src="img2.jpg" alt="Event Image 2" className="social-media-icon" />
-                        <img src="img3.jpg" alt="Event Image 3" className="social-media-icon" />
-                        <img src="img4.jpg" alt="Event Image 4" className="social-media-icon" />
-                        <img src="imag5.jpg" alt="Event Image 5" className="social-media-icon" />
-                        <img src="img6.jpg" alt="Event Image 6" className="social-media-icon" />
-                        <img src="img7.jpg" alt="Event Image 7" className="social-media-icon" />
+                        <img src="img1.jpg" alt="Event  1" className="social-media-icon" />
+                        <img src="img2.jpg" alt="Event 2" className="social-media-icon" />
+                        <img src="img3.jpg" alt="Event  3" className="social-media-icon" />
+                        <img src="img4.jpg" alt="Event  4" className="social-media-icon" />
+                        <img src="imag5.jpg" alt="Event 5" className="social-media-icon" />
+                        <img src="img6.jpg" alt="Event  6" className="social-media-icon" />
+                        <img src="img7.jpg" alt="Event  7" className="social-media-icon" />
                         <img src="our-vision.jpg" alt="Our Vision" className="social-media-icon" />
                     </div>
                 </div>
