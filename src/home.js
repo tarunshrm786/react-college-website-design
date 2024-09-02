@@ -6,7 +6,7 @@ import Aboutus from './Components/about_us';
 import Director from './Components/directors';
 import Services from './Components/services';
 
-function App() {
+function Home() {
   return (
     <div className="App">
       {/* <Header />  */}
@@ -19,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

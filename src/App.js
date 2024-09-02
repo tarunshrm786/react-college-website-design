@@ -13,6 +13,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
+     
         <Routes>
           <Route path="/" element={<Home />} /> 
           <Route path="/aboutus" element={<Aboutus />} /> 
