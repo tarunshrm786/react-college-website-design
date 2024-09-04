@@ -9,20 +9,19 @@ const Director = () => {
                     <h2>Message from the Director</h2>
                     <hr />
                     <p>
-                        {/* It is a privilege for me to have assumed the position of Director, NIT Rourkela, on 18th February 2022. NIT Rourkela has a rich legacy of sixty dedicated years of service to the nation and is the pride of Odisha. Excellence in teaching and high-quality research are the pillars on which the Institute is built. The Institute aims to foster 21st-century skills and competencies supported by defined learning frameworks and industrial internships for the students as part of Industry 4.0. With these skillsets, our students are future-ready to make an impact at work in general and society in particular. Learn More
-                     */}
-It is an honor for me to have taken on the role of Director at the National Academy of Design. The Academy boasts a proud history of excellence in design education and is a beacon of creativity and innovation in the country. Building on decades of dedicated service to the nation, the Academy is committed to nurturing design thinking and fostering creative talent. Our focus on cutting-edge teaching methods and high-quality research ensures that we equip our students with the essential skills and competencies required for the 21st century. Through well-defined learning frameworks and industry partnerships, we prepare our students to be leaders in the design world, ready to make significant contributions to both their professions and society at large.
-
+NAD College of Design & Business has been disseminating quality Design Education with an Individual Centric Focus for 22 years now, and it continues to do so! NAD’s mandate is to nurture a culture of design and social entrepreneurship, with a holistic, multi-disciplinary approach; and to create design professionals who can keep reinventing themselves and position design more strategically as an integrator of aesthetics, business, technologies and sociological concerns.
                     </p>
                     <p>
                         <br />
-                        Prof. K. Umamaheshwar Rao
+                        Sumit Kumar  <br />
+                        Founder & Director   <br />
+                        NAD College of Design & Business
                         
                     </p>
                     <hr />
                 </div>
                 <div className="director-photo">
-                    <img src="director-2.jpg" alt="Director" />
+                    <img src="founding-member.jpeg" alt="Director" />
                 </div>
             </section>
         </div>

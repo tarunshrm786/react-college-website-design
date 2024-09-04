@@ -43,6 +43,7 @@
     max-width: 500px; /* Set a maximum width for the image */
     height: 340px; /* Maintain aspect ratio */
     border-radius: 8px; /* Optional: Rounded corners for the image */
+    margin-top: 20px;
 }
 
 /* Responsive Design */
