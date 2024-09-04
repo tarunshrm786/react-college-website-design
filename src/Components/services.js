@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 const servicesData = [
     {
         title: 'Bachelor of Science in Computer Science',
-        description: 'Comprehensive program covering of Computer Science.',
+        description: 'Comprehensive program',
         imgSrc: 'img6.jpg'
     },
     {
@@ -22,7 +22,7 @@ const servicesData = [
     },
     {
         title: 'Bachelor of Business Administration',
-        description: 'Comprehensive program covering of Business.',
+        description: 'Comprehensive program.',
         imgSrc: 'img6.jpg'
     },
     {
@@ -63,7 +63,7 @@ const Services = () => {
 
     return (
         <div className="services">
-            <h2>Our Programs</h2>
+            <h2>Our Courses</h2>
             <Slider {...settings}>
                 {servicesData.map((service, index) => (
                     <div key={index} className="service-card">

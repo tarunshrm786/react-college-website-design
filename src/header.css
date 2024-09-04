@@ -100,6 +100,7 @@ body {
     box-sizing: border-box; /* Ensure padding is included in width */
     z-index: 20;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Show the dropdown menu when open */
@@ -128,6 +129,7 @@ body {
     margin-left: 5px;
     font-size: 12px;
     vertical-align: middle;
+    transition: transform 0.3s ease-in-out;
 }
 
 .arrow.up {
@@ -165,3 +167,5 @@ body {
         font-size: 14px; /* Increase arrow size for better visibility */
     }
 }
+
+

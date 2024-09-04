@@ -10,9 +10,13 @@ import Bcom from './Components/ugcourses/bcom';
 import Bsc from './Components/ugcourses/bsc'; 
 import Bba from './Components/ugcourses/bba'; 
 
-// import BvocInterior from './Components/ugcourses/bvoc-interior-design'; 
-// import BvocGraphic from './Components/ugcourses/bvoc-graphic-design'; 
-// import BvocFashion from './Components/ugcourses/bvoc-fashion-design'; 
+import BvocInterior from './Components/ugcourses/bvoc-interior-design'; 
+import BvocGraphic from './Components/ugcourses/bvoc-graphic-design'; 
+import BvocFashion from './Components/ugcourses/bvoc-fashion-design'; 
+
+import MaCourse from './Components/pgcourses/ma'; 
+import McomCourse from './Components/pgcourses/mcom'; 
+import MscCourse from './Components/pgcourses/msc'; 
 
 import Footer from './Components/footer'; 
 import Header from './Components/header';
@@ -32,10 +36,14 @@ function App() {
           <Route path="/bcom" element={<Bcom />} /> 
           <Route path="/bsc" element={<Bsc />} /> 
           <Route path="/bba" element={<Bba />} /> 
-{/* 
+
           <Route path="/bvoc-interior-design" element={<BvocInterior />} /> 
           <Route path="/bvoc-graphic-design" element={<BvocGraphic />} /> 
-          <Route path="/bvoc-fashion-design" element={<BvocFashion />} />  */}
+          <Route path="/bvoc-fashion-design" element={<BvocFashion />} /> 
+
+          <Route path="/ma" element={<MaCourse />} /> 
+          <Route path="/msc" element={<MscCourse />} /> 
+          <Route path="/mcom" element={<McomCourse />} /> 
 
         </Routes>
         <Footer /> 
