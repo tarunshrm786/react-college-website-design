@@ -18,6 +18,9 @@ import MaCourse from './Components/pgcourses/ma';
 import McomCourse from './Components/pgcourses/mcom'; 
 import MscCourse from './Components/pgcourses/msc'; 
 
+import ContactUs from './Components/contact-us'; 
+import Placement from './Components/placement'; 
+import Admission from './Components/admission'; 
 import Footer from './Components/footer'; 
 import Header from './Components/header';
 
@@ -43,7 +46,11 @@ function App() {
 
           <Route path="/ma" element={<MaCourse />} /> 
           <Route path="/msc" element={<MscCourse />} /> 
-          <Route path="/mcom" element={<McomCourse />} /> 
+          <Route path="/mcom" element={<McomCourse />} />
+
+          <Route path="/contact-us" element={<ContactUs />} /> 
+          <Route path="/placement" element={<Placement />} /> 
+          <Route path="/admission" element={<Admission />} /> 
 
         </Routes>
         <Footer /> 
