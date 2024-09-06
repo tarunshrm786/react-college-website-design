@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
 .director {
     padding: 20px;
-    /* background-color: orange; */
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
 }
 
 .director-message {
@@ -29,7 +31,6 @@
     margin-bottom: 15px; /* Adds space below each paragraph */
     margin-top: 15px;
 }
-
 
 .director-photo {
     flex: 1; /* Allows the photo to take up less space */

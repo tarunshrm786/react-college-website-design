@@ -132,8 +132,8 @@ const Header = () => {
                     </li>
 
                     <li><a href="/placement">Placement</a></li>
-                    <li><a href="#admission">Admission</a></li>
-                    <li><a href="#enquiry">Gallery</a></li>
+                    <li><a href="/admission">Admission</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
                     <li><a href="/contact-us">Contact us</a></li>
                 </ul>
             </nav>

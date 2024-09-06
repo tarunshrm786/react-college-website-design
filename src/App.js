@@ -21,6 +21,7 @@ import MscCourse from './Components/pgcourses/msc';
 import ContactUs from './Components/contact-us'; 
 import Placement from './Components/placement'; 
 import Admission from './Components/admission'; 
+import Gallery from './Components/gallery'; 
 import Footer from './Components/footer'; 
 import Header from './Components/header';
 
@@ -51,6 +52,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} /> 
           <Route path="/placement" element={<Placement />} /> 
           <Route path="/admission" element={<Admission />} /> 
+          <Route path="/gallery" element={<Gallery />} /> 
 
         </Routes>
         <Footer /> 

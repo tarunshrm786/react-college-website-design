@@ -5,7 +5,7 @@ const BvocInteriorDesign = () => {
   return (
     <Container>
       <Box sx={{ textAlign: "center", margin: "20px 0" }}>
-        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px" }}>
+        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px", fontFamily: "'Montserrat', sans-serif" }}>
                 Bvoc Interior Design
         </Typography>
         <Box
@@ -33,7 +33,7 @@ const BvocInteriorDesign = () => {
 
         <Typography
           variant="body1"
-          sx={{ marginTop: "20px", textAlign: "justify" }}
+          sx={{ marginTop: "20px", textAlign: "justify", fontFamily: "'Montserrat', sans-serif" }}
         >
           The Specialization in Interior & Space Design is a vocational qualification crafted for aspiring interior designers. This course about interior designing blends creative design principles with practical skills and industry insights, ensuring students' professional success in the field. Our interior and design courses, including interior decorating courses and interior decoration design courses, provide comprehensive training. The globally recognized HNC in Interior Design equips students to manage a range of projects, from residential to commercial, with a strategic and sustainable approach. Whether you seek an interior design class or an interior styling course our interior design course is ideal.
         </Typography>

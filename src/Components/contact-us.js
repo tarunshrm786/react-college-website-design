@@ -89,8 +89,9 @@ const ContactUs = () => {
       <Grid container spacing={4} mt={5}>
         {/* Left Side: Contact Form */}
         <Grid item xs={12} md={6}>
-          <Box p={3} boxShadow={3} borderRadius={2} bgcolor="#f9f9f9">
-            <Typography variant="h4" align="center" gutterBottom>
+          {/* <Box p={3} boxShadow={3} borderRadius={2} bgcolor="#f9f9f9"> */}
+          <Box p={3} boxShadow={3} borderRadius={2} bgcolor="rgba(249, 249, 249, 0.7)">
+            <Typography variant="h4" align="center" gutterBottom sx={{fontFamily: 'Montserrat, sans-serif'}}>
               Contact Us
             </Typography>
             <form onSubmit={handleSubmit}>
@@ -254,14 +255,14 @@ const ContactUs = () => {
             ></iframe>
 
             <Box mt={2}>
-              <Typography variant="h6">Contact Information</Typography>
-              <Typography>Phone: +1 (555) 123-4567</Typography>
-              <Typography>Email: contact@company.com</Typography>
-              <Typography>Address: 1600 Amphitheatre Parkway, Mountain View, CA</Typography>
+              <Typography variant="h6" sx={{fontFamily: 'Montserrat, sans-serif'}}>Contact Information</Typography>
+              <Typography sx={{fontFamily: 'Montserrat, sans-serif'}}>Phone: +1 (555) 123-4567</Typography>
+              <Typography sx={{fontFamily: 'Montserrat, sans-serif'}}>Email: contact@company.com</Typography>
+              <Typography sx={{fontFamily: 'Montserrat, sans-serif'}}>Address: 1600 Amphitheatre Parkway, Mountain View, CA</Typography>
             </Box>
 
             <Box mt={2}>
-              <Typography variant="h6">Follow Us</Typography>
+              <Typography variant="h6" sx={{fontFamily: 'Montserrat, sans-serif'}}>Follow Us</Typography>
               <Box display="flex" justifyContent="center" sx={{ marginY: 2 }}>
   <Facebook sx={{ fontSize: 30, mx: 1, color: '#3b5998' }} />
   <Twitter sx={{ fontSize: 30, mx: 1, color: '#1da1f2' }} />

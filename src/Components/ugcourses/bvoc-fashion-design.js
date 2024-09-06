@@ -5,7 +5,7 @@ const BvocFashionDesign = () => {
   return (
     <Container>
       <Box sx={{ textAlign: "center", margin: "20px 0" }}>
-        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px" }}>
+        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px", fontFamily: "'Montserrat', sans-serif" }}>
                 Bvoc Fashion Design
         </Typography>
         <Box
@@ -32,14 +32,14 @@ const BvocFashionDesign = () => {
         </Box>
         <Typography
           variant="body1"
-          sx={{ marginTop: "20px", textAlign: "justify" }}
+          sx={{ marginTop: "20px", textAlign: "justify", fontFamily: "'Montserrat', sans-serif" }}
         >
          Fashion has become an important part of people’s life. The world of fashion could gain more popularity with the wide spread use of social media. According to a recent survey, more than 5 lakh students opt for a career in fashion designing every year in India. A career in this profession has various job opportunities.
         </Typography>
 
         <Typography
           variant="body1"
-          sx={{ marginTop: "20px", textAlign: "justify" }}
+          sx={{ marginTop: "20px", textAlign: "justify", fontFamily: "'Montserrat', sans-serif" }}
         >
           Let us have a look at some important aspects such as eligibility for fashion designing courses, what does a fashion designer do, the kind of scope it offers, types of courses available in India and a few related skills which will help those who are interested in this profession.
         </Typography>

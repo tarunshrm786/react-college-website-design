@@ -5,7 +5,7 @@ const BvocGraphicDesign = () => {
   return (
     <Container>
       <Box sx={{ textAlign: "center", margin: "20px 0" }}>
-        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px" }}>
+        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px", fontFamily: "'Montserrat', sans-serif" }}>
                 Bvoc Graphic Design
         </Typography>
         <Box
@@ -33,7 +33,7 @@ const BvocGraphicDesign = () => {
 
         <Typography
           variant="body1"
-          sx={{ marginTop: "20px", textAlign: "justify" }}
+          sx={{ marginTop: "20px", textAlign: "justify", fontFamily: "'Montserrat', sans-serif" }}
         >
           A Bachelor of Vocation (B.Voc) in Graphic Design is a three-year course that teaches the tools, techniques, and principles of graphic design and visual communication. The course is designed to help students apply these principles to create functional and visually appealing designs.
         </Typography>

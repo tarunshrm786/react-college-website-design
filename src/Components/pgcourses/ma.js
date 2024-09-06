@@ -5,7 +5,7 @@ const Macourse = () => {
   return (
     <Container>
       <Box sx={{ textAlign: "center", margin: "20px 0" }}>
-        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px" }}>
+        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px", fontFamily: "'Montserrat', sans-serif" }}>
         Master of Arts
         </Typography>
         <Box
@@ -32,7 +32,7 @@ const Macourse = () => {
         </Box>
         <Typography
           variant="body1"
-          sx={{ marginTop: "20px", textAlign: "justify" }}
+          sx={{ marginTop: "20px", textAlign: "justify", fontFamily: "'Montserrat', sans-serif" }}
         >
             Art enables us to find ourselves. So Art is not a thing — it is a way of expression. The arts and humanities encompasses a range of subjects that are all concerned with cultural expressions and how it has come to take the forms that exist today. Taking one of our qualifications or courses gives you the opportunity to explore human culture and its history, from the ancient civilizations of Greece and Rome through the Renaissance, to the art, history, literature, music and religions of the twenty-first century. Arts education encompasses all the visual and performing arts delivered in a standards-based, sequential approach by a qualified instructor as part of the core curriculum. It is studied as an individual discipline as well as integrated into general subject matter teaching.
       </Typography>
@@ -61,10 +61,10 @@ const Macourse = () => {
             padding: "16px", // Optional: adds padding inside the box for better spacing
           }}
           >
-            <Typography variant="h6" sx={{ color: "blue" }}>
+            <Typography variant="h6" sx={{ color: "blue", fontFamily: "'Montserrat', sans-serif" }}>
               Duration
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "8px" }}>
+            <Typography variant="body1" sx={{ marginTop: "8px", fontFamily: "'Montserrat', sans-serif" }}>
               2 Years
             </Typography>
           </Box>
@@ -77,10 +77,10 @@ const Macourse = () => {
             padding: "16px", // Optional: adds padding inside the box for better spacing
           }}
           >
-            <Typography variant="h6" sx={{ color: "blue" }}>
+            <Typography variant="h6" sx={{ color: "blue", fontFamily: "'Montserrat', sans-serif"}}>
               Language
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "8px" }}>
+            <Typography variant="body1" sx={{ marginTop: "8px", fontFamily: "'Montserrat', sans-serif" }}>
               Eng./Hindi
             </Typography>
           </Box>
@@ -93,10 +93,10 @@ const Macourse = () => {
             padding: "16px", // Optional: adds padding inside the box for better spacing
           }}
           >
-            <Typography variant="h6" sx={{ color: "blue" }}>
+            <Typography variant="h6" sx={{ color: "blue", fontFamily: "'Montserrat', sans-serif" }}>
               Certificates
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "8px" }}>
+            <Typography variant="body1" sx={{ marginTop: "8px", fontFamily: "'Montserrat', sans-serif" }}>
               Degree
             </Typography>
           </Box>
@@ -109,10 +109,10 @@ const Macourse = () => {
             padding: "16px", // Optional: adds padding inside the box for better spacing
           }}
           >
-            <Typography variant="h6" sx={{ color: "blue" }}>
+            <Typography variant="h6" sx={{ color: "blue", fontFamily: "'Montserrat', sans-serif" }}>
               Requirements
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "8px" }}>
+            <Typography variant="body1" sx={{ marginTop: "8px", fontFamily: "'Montserrat', sans-serif" }}>
             B.A. Degree
             </Typography>
           </Box>

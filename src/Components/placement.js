@@ -51,11 +51,11 @@ const Placement = () => {
 
   return (
     <Box sx={{ marginLeft: '40px', marginRight: '40px' }}>
-      <Typography variant="h4" align="center" gutterBottom sx={{marginTop: '20px', marginBottom: '20px'}}>
+      <Typography variant="h4" align="center" gutterBottom sx={{marginTop: '20px', marginBottom: '20px', fontFamily: 'Montserrat, sans-serif'}}>
       Welcome to Our Placement Records! 
       </Typography>
 
-      <Typography variant="h7"  gutterBottom sx={{ lineHeight: '1.5', marginTop: '40px', textAlign: 'justify'}}>
+      <Typography variant="h7"  gutterBottom sx={{ lineHeight: '1.5', marginTop: '40px', textAlign: 'justify', fontFamily: 'Montserrat, sans-serif'}}>
       Explore the impressive placement achievements of our students who have excelled in securing top positions with renowned companies. Our academy is dedicated to providing quality education and career opportunities, ensuring our graduates are well-prepared for the professional world. Discover how our students are making their mark in various industries.
       </Typography>
 

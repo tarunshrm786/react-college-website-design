@@ -1,5 +1,9 @@
+/* Import Montserrat Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* General Styles */
 .about-us {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
     line-height: 1.6;
 }
 

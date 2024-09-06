@@ -5,7 +5,7 @@ const McomCourse = () => {
   return (
     <Container>
       <Box sx={{ textAlign: "center", margin: "20px 0" }}>
-        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px" }}>
+        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px", fontFamily: "'Montserrat', sans-serif" }}>
         Master of Commerce
         </Typography>
         <Box
@@ -32,14 +32,14 @@ const McomCourse = () => {
         </Box>
         <Typography
           variant="body1"
-          sx={{ marginTop: "20px", textAlign: "justify" }}
+          sx={{ marginTop: "20px", textAlign: "justify", fontFamily: "'Montserrat', sans-serif" }}
         >
             Master of Commerce is a postgraduate master’s degree which is awarded after the successful completion of a two years program. The master’s degree covers the study of principles of accounting, economic theory, micro and macroeconomics, money and banking systems, knowledge about business, trade, and its characteristics and policies involved thus focusing on commerce, accounting, management, and economics related subjects.
    </Typography>
 
    <Typography
           variant="body1"
-          sx={{ marginTop: "20px", textAlign: "justify" }}
+          sx={{ marginTop: "20px", textAlign: "justify", fontFamily: "'Montserrat', sans-serif" }}
         >
    The M. Com. course offers an opportunity for graduates to acquire theoretical as well as practical inputs in commerce. A Master’s graduate in commerce has the advantage of entering a career either in academics, research, or, alternatively, in other professional areas of commerce and finance such as taxation, consultancy, and financial services.
    </Typography>
@@ -68,10 +68,10 @@ const McomCourse = () => {
             padding: "16px", // Optional: adds padding inside the box for better spacing
           }}
           >
-            <Typography variant="h6" sx={{ color: "blue" }}>
+            <Typography variant="h6" sx={{ color: "blue", fontFamily: "'Montserrat', sans-serif" }}>
               Duration
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "8px" }}>
+            <Typography variant="body1" sx={{ marginTop: "8px", fontFamily: "'Montserrat', sans-serif" }}>
               2 Years
             </Typography>
           </Box>
@@ -84,10 +84,10 @@ const McomCourse = () => {
             padding: "16px", // Optional: adds padding inside the box for better spacing
           }}
           >
-            <Typography variant="h6" sx={{ color: "blue" }}>
+            <Typography variant="h6" sx={{ color: "blue", fontFamily: "'Montserrat', sans-serif" }}>
               Language
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "8px" }}>
+            <Typography variant="body1" sx={{ marginTop: "8px", fontFamily: "'Montserrat', sans-serif" }}>
               Eng./Hindi
             </Typography>
           </Box>
@@ -100,10 +100,10 @@ const McomCourse = () => {
             padding: "16px", // Optional: adds padding inside the box for better spacing
           }}
           >
-            <Typography variant="h6" sx={{ color: "blue" }}>
+            <Typography variant="h6" sx={{ color: "blue", fontFamily: "'Montserrat', sans-serif" }}>
               Certificates
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "8px" }}>
+            <Typography variant="body1" sx={{ marginTop: "8px", fontFamily: "'Montserrat', sans-serif" }}>
               Degree
             </Typography>
           </Box>
@@ -116,10 +116,10 @@ const McomCourse = () => {
             padding: "16px", // Optional: adds padding inside the box for better spacing
           }}
           >
-            <Typography variant="h6" sx={{ color: "blue" }}>
+            <Typography variant="h6" sx={{ color: "blue", fontFamily: "'Montserrat', sans-serif" }}>
               Requirements
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "8px" }}>
+            <Typography variant="body1" sx={{ marginTop: "8px", fontFamily: "'Montserrat', sans-serif" }}>
             B.Com Degree
             </Typography>
           </Box>

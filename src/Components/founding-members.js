@@ -204,7 +204,7 @@ const FoundingMembers = () => {
   return (
     <Container>
       <Box sx={{ textAlign: "center", margin: "20px 0" }}>
-        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px" }}>
+        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px", fontFamily: 'Montserrat, sans-serif' }}>
           Our Mentors
         </Typography>
         <Grid container spacing={2}>

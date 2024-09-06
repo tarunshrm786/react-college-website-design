@@ -5,7 +5,7 @@ const MscCourse = () => {
   return (
     <Container>
       <Box sx={{ textAlign: "center", margin: "20px 0" }}>
-        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px" }}>
+        <Typography variant="h4" gutterBottom sx={{ marginBottom: "30px", fontFamily: "'Montserrat', sans-serif" }}>
         Master of Science
         </Typography>
         <Box
@@ -32,14 +32,14 @@ const MscCourse = () => {
         </Box>
         <Typography
           variant="body1"
-          sx={{ marginTop: "20px", textAlign: "justify" }}
+          sx={{ marginTop: "20px", textAlign: "justify", fontFamily: "'Montserrat', sans-serif" }}
         >
             M.Sc. (Master of Science) is a 2 years post-graduate degree program. This program is offered in a wide range of Specialized fields of Science such as Physics, Chemistry, Botany, Zoology, Mathematics, Biotechnology, Microbiology, Environmental Sciences, Food Sciences, Life Sciences, and so on. However, you will have an option to choose from Physics, Mathematics, Chemistry, Botany, and Zoology.
   </Typography>
 
    <Typography
           variant="body1"
-          sx={{ marginTop: "20px", textAlign: "justify" }}
+          sx={{ marginTop: "20px", textAlign: "justify", fontFamily: "'Montserrat', sans-serif"}}
         >
             A Master of Science degree prepares students for scientific and professional competency. In their chosen specialization, the students gain advanced theoretical and practical knowledge. The program is offered as semester-based or yearly based depending on the University’s policy.
   </Typography>
@@ -68,10 +68,10 @@ const MscCourse = () => {
             padding: "16px", // Optional: adds padding inside the box for better spacing
           }}
           >
-            <Typography variant="h6" sx={{ color: "blue" }}>
+            <Typography variant="h6" sx={{ color: "blue", fontFamily: "'Montserrat', sans-serif" }}>
               Duration
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "8px" }}>
+            <Typography variant="body1" sx={{ marginTop: "8px", fontFamily: "'Montserrat', sans-serif" }}>
               2 Years
             </Typography>
           </Box>
@@ -84,10 +84,10 @@ const MscCourse = () => {
             padding: "16px", // Optional: adds padding inside the box for better spacing
           }}
           >
-            <Typography variant="h6" sx={{ color: "blue" }}>
+            <Typography variant="h6" sx={{ color: "blue", fontFamily: "'Montserrat', sans-serif" }}>
               Language
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "8px" }}>
+            <Typography variant="body1" sx={{ marginTop: "8px", fontFamily: "'Montserrat', sans-serif" }}>
               Eng./Hindi
             </Typography>
           </Box>
@@ -100,10 +100,10 @@ const MscCourse = () => {
             padding: "16px", // Optional: adds padding inside the box for better spacing
           }}
           >
-            <Typography variant="h6" sx={{ color: "blue" }}>
+            <Typography variant="h6" sx={{ color: "blue", fontFamily: "'Montserrat', sans-serif" }}>
               Certificates
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "8px" }}>
+            <Typography variant="body1" sx={{ marginTop: "8px", fontFamily: "'Montserrat', sans-serif" }}>
               Degree
             </Typography>
           </Box>
@@ -116,10 +116,10 @@ const MscCourse = () => {
             padding: "16px", // Optional: adds padding inside the box for better spacing
           }}
           >
-            <Typography variant="h6" sx={{ color: "blue" }}>
+            <Typography variant="h6" sx={{ color: "blue", fontFamily: "'Montserrat', sans-serif" }}>
               Requirements
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "8px" }}>
+            <Typography variant="body1" sx={{ marginTop: "8px", fontFamily: "'Montserrat', sans-serif" }}>
             B.Sc. Degree
             </Typography>
           </Box>
