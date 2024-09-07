@@ -20,6 +20,8 @@ import MscCourse from './Components/pgcourses/msc';
 
 import ContactUs from './Components/contact-us'; 
 import Placement from './Components/placement'; 
+import Collaboration from './Components/collaboration'; 
+import Affiliation from './Components/affiliation'; 
 import Admission from './Components/admission'; 
 import Gallery from './Components/gallery'; 
 import Footer from './Components/footer'; 
@@ -53,6 +55,8 @@ function App() {
           <Route path="/placement" element={<Placement />} /> 
           <Route path="/admission" element={<Admission />} /> 
           <Route path="/gallery" element={<Gallery />} /> 
+          <Route path="/collaboration" element={<Collaboration />} /> 
+          <Route path="/affiliation" element={<Affiliation />} /> 
 
         </Routes>
         <Footer /> 
