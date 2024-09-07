@@ -136,7 +136,7 @@ const Header = () => {
                     <li><a href="/admission">Admission</a></li>
                     <li><a href="/gallery">Gallery</a></li>
                     <li><a href="/contact-us">Contact us</a></li>
-                    <li><a href="/student-login">Student Login</a></li>
+                    <li><a href="#student-login">Student Login</a></li>
                 </ul>
             </nav>
             <div className="hamburger" onClick={toggleMenu}>
