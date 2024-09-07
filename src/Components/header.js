@@ -120,10 +120,11 @@ const Header = () => {
                                     </a>
                                     {isDiplomaDropdownOpen && (
                                         <ul className="dropdown-menu nested-dropdown">
-                                            <li><a href="/web-designing">Web Designing</a></li>
-                                            <li><a href="/advance-web-designing">Advance Web Designing</a></li>
-                                            <li><a href="/master-diploma-web-designing">Master Diploma in Web Designing</a></li>
-                                            <li><a href="/professional-diploma-web-designing">Professional Diploma in Web Designing</a></li>
+                                            <li><a href="/web-designing">Architecture & interior design</a></li>
+                                            {/* <li><a href="/web-designing">Web development & design</a></li> */}
+                                            <li><a href="/advance-web-designing">Fashion design</a></li>
+                                            <li><a href="/master-diploma-web-designing">Graphic design</a></li>
+                                            <li><a href="/professional-diploma-web-designing">Jewellery design</a></li>
                                         </ul>
                                     )}
                                 </li>
@@ -135,6 +136,7 @@ const Header = () => {
                     <li><a href="/admission">Admission</a></li>
                     <li><a href="/gallery">Gallery</a></li>
                     <li><a href="/contact-us">Contact us</a></li>
+                    <li><a href="/student-login">Student Login</a></li>
                 </ul>
             </nav>
             <div className="hamburger" onClick={toggleMenu}>
