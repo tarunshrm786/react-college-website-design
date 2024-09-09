@@ -121,7 +121,7 @@ const Header = () => {
                                     {isDiplomaDropdownOpen && (
                                         <ul className="dropdown-menu nested-dropdown">
                                             <li><a href="/web-designing">Architecture & interior design</a></li>
-                                            {/* <li><a href="/web-designing">Web development & design</a></li> */}
+                                            <li><a href="/web-designing">Web development & design</a></li>
                                             <li><a href="/advance-web-designing">Fashion design</a></li>
                                             <li><a href="/master-diploma-web-designing">Graphic design</a></li>
                                             <li><a href="/professional-diploma-web-designing">Jewellery design</a></li>
