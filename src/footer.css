@@ -4,6 +4,7 @@
     color: #444;
     padding: 20px;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-columns {
@@ -30,7 +31,7 @@
 .footer-column p {
     margin: 10px 0;
     font-size: 16px;
-   
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-column-logo {
@@ -41,18 +42,20 @@
 
 .footer-column-other-links p {
     margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-column-other-links h4,
 .footer-column h4 {
     margin-bottom: 25px;
     font-size: 16px;
-
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-column-logo p {
     margin-bottom: 25px;
     font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .social-icons {
@@ -125,6 +128,7 @@
     color: #444;
     text-decoration: none;
     margin: 0 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-links a:hover {

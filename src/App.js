@@ -23,6 +23,14 @@ import Placement from './Components/placement';
 import Collaboration from './Components/collaboration'; 
 import Affiliation from './Components/affiliation'; 
 import Admission from './Components/admission'; 
+import Login from './Components/login'; 
+
+import ArchitectureDesign from './Components/diploma/architecture-design'; 
+import FashionDesign from './Components/diploma/fashion-design'; 
+import GraphicDesign from './Components/diploma/graphic-design'; 
+import JewelleryDesign from './Components/diploma/jewellery-design'; 
+import WebDesign from './Components/diploma/web-design'; 
+
 import Gallery from './Components/gallery'; 
 import Footer from './Components/footer'; 
 import Header from './Components/header';
@@ -57,6 +65,14 @@ function App() {
           <Route path="/gallery" element={<Gallery />} /> 
           <Route path="/collaboration" element={<Collaboration />} /> 
           <Route path="/affiliation" element={<Affiliation />} /> 
+
+          <Route path="/architecture-design" element={<ArchitectureDesign />} /> 
+          <Route path="/web-design" element={<WebDesign />} /> 
+          <Route path="/fashion-design" element={<FashionDesign />} /> 
+          <Route path="/graphic-design" element={<GraphicDesign />} /> 
+          <Route path="/jewellery-design" element={<JewelleryDesign />} /> 
+
+          <Route path="/login" element={<Login />} /> 
 
         </Routes>
         <Footer /> 

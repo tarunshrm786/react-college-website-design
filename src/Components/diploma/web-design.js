@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Typography, Box } from "@mui/material";
 
-const Bacourse = () => {
+const WebdesignCourse = () => {
   return (
     <Container>
       <Box sx={{ textAlign: "center", margin: "20px 0" }}>
@@ -13,7 +13,7 @@ const Bacourse = () => {
             fontFamily: 'Montserrat, sans-serif' 
           }}
         >
-          Bachelor's of Arts
+          Web development and design
         </Typography>
         <Box
           sx={{
@@ -27,7 +27,7 @@ const Bacourse = () => {
           }}
         >
           <img
-            src="ba.jpg"
+            src="webdesign.jpg"
             alt="Bachelor's of Arts"
             style={{
               width: "100%",
@@ -45,8 +45,8 @@ const Bacourse = () => {
             fontFamily: 'Montserrat, sans-serif' 
           }}
         >
-          Art enables us to find ourselves. So Art is not a thing — it is a way of expression. The arts and humanities encompass a range of subjects that are all concerned with cultural expressions and how it has come to take the forms that exist today. Taking one of our qualifications or courses gives you the opportunity to explore human culture and its history, from the ancient civilizations of Greece and Rome through the Renaissance, to the art, history, literature, music, and religions of the twenty-first century. Arts education encompasses all the visual and performing arts delivered in a standards-based, sequential approach by a qualified instructor as part of the core curriculum. It is studied as an individual discipline as well as integrated into general subject matter teaching.
-        </Typography>
+            A Web Designing course focuses on the creation of visually appealing, user-friendly, and functional websites. It encompasses both the aesthetic aspects of design and the technical skills required to bring those designs to life on the web. Here’s an overview of what a Web Designing course might cover:
+   </Typography>
 
         <Typography
           variant="body1"
@@ -56,14 +56,12 @@ const Bacourse = () => {
             fontFamily: 'Montserrat, sans-serif' 
           }}
         >
-          To promote Creative entrepreneurship and employability, NAD’s set up
-          Social Design Business Incubator (hubIN) and started the
-          CampusToCompany initiative which provides support to students to find
-          the right professional opportunities. NAD facilitates the necessary
-          mentoring and networking connections required to help foster the
-          development of scalable business models based on transformational
-          designs and innovative thinking and achieve commercial success through
-          'start-up' enterprises.
+          Design Principles for the Web: Understanding how layout, color, typography, and imagery impact user experience on websites.
+HTML/CSS: Learning the fundamental languages for structuring and styling web content.
+Responsive Design: Designing websites that adapt and function seamlessly across various devices and screen sizes.
+UI/UX Design: Creating interfaces that are intuitive, easy to navigate, and provide an optimal user experience.
+Web Design Software: Familiarizing with tools like Adobe XD, Sketch, or Figma for wireframing, prototyping, and designing web layouts.
+Basic Coding and Scripting: Introduction to JavaScript or other scripting languages to add interactivity and functionality to web designs.
         </Typography>
 
         {/* Enhanced DataGrid component with border radius and responsive design */}
@@ -105,7 +103,7 @@ const Bacourse = () => {
                 fontFamily: 'Montserrat, sans-serif' 
               }}
             >
-              3 Years
+              2 Years
             </Typography>
           </Box>
 
@@ -152,7 +150,7 @@ const Bacourse = () => {
                 fontFamily: 'Montserrat, sans-serif' 
               }}
             >
-              Certificates
+              Diploma
             </Typography>
             <Typography 
               variant="body1" 
@@ -180,7 +178,7 @@ const Bacourse = () => {
                 fontFamily: 'Montserrat, sans-serif' 
               }}
             >
-              Subjects
+              Courses Available
             </Typography>
             <Typography 
               variant="body1" 
@@ -189,7 +187,7 @@ const Bacourse = () => {
                 fontFamily: 'Montserrat, sans-serif' 
               }}
             >
-              Political Science
+              Diploma in Web Designing
             </Typography>
             <Typography 
               variant="body1" 
@@ -198,7 +196,7 @@ const Bacourse = () => {
                 fontFamily: 'Montserrat, sans-serif' 
               }}
             >
-              Hindi
+              Advanced Diploma in Web Designing
             </Typography>
             <Typography 
               variant="body1" 
@@ -207,7 +205,7 @@ const Bacourse = () => {
                 fontFamily: 'Montserrat, sans-serif' 
               }}
             >
-              History
+              Masters Diploma in Web Designing
             </Typography>
             <Typography 
               variant="body1" 
@@ -216,59 +214,15 @@ const Bacourse = () => {
                 fontFamily: 'Montserrat, sans-serif' 
               }}
             >
-              Geography
+              Professional Diploma in Web Designing
             </Typography>
-            <Typography 
-              variant="body1" 
-              sx={{ 
-                marginTop: "4px", 
-                fontFamily: 'Montserrat, sans-serif' 
-              }}
-            >
-              Economics
-            </Typography>
-            <Typography 
-              variant="body1" 
-              sx={{ 
-                marginTop: "4px", 
-                fontFamily: 'Montserrat, sans-serif' 
-              }}
-            >
-              English
-            </Typography>
+           
           </Box>
 
-          <Box className="grid-item" 
-            sx={{
-              backgroundColor: "#FFE4E1",
-              borderRadius: "8px",
-              boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)",
-              padding: "16px",
-            }}
-          >
-            <Typography 
-              variant="h6" 
-              sx={{ 
-                color: "blue", 
-                fontFamily: 'Montserrat, sans-serif' 
-              }}
-            >
-              Requirements
-            </Typography>
-            <Typography 
-              variant="body1" 
-              sx={{ 
-                marginTop: "8px", 
-                fontFamily: 'Montserrat, sans-serif' 
-              }}
-            >
-              10+2 Certificate
-            </Typography>
-          </Box>
         </Box>
       </Box>
     </Container>
   );
 };
 
-export default Bacourse;
+export default WebdesignCourse;

@@ -40,10 +40,10 @@
 }
 
 .director-photo img {
-    width: 100%; /* Adjust width to fit the container */
-    max-width: 500px; /* Set a maximum width for the image */
-    height: 340px; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: Rounded corners for the image */
+    width: 400px; /* Adjust width to fit your design */
+    height: 400px; /* Keep height same as width for circular shape */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
     margin-top: 20px;
 }
 
@@ -92,7 +92,8 @@
     }
 
     .director-photo img {
-        max-width: 250px; /* Adjust max width of image */
+        width: 300px; /* Adjust width of image */
+        height: 300px; /* Adjust height to match width for circular shape */
     }
 }
 
@@ -111,6 +112,7 @@
     }
 
     .director-photo img {
-        max-width: 200px; /* Adjust max width of image */
+        width: 300px; /* Adjust width of image */
+        height: 300px; /* Adjust height to match width for circular shape */
     }
 }
