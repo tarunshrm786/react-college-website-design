@@ -10,6 +10,7 @@
     align-items: flex-start; /* Align items at the top of the row */
     justify-content: space-between;
     gap: 20px; /* Add space between text and photo */
+    flex-wrap: wrap; /* Ensure the content wraps on smaller screens */
 }
 
 .message-text {
@@ -44,6 +45,7 @@
     height: 400px; /* Keep height same as width for circular shape */
     border-radius: 50%; /* Makes the image circular */
     object-fit: cover; /* Ensures the image covers the area without distortion */
+    object-position: center top; /* Ensure the image focuses on the top center */
     margin-top: 20px;
 }
 
@@ -112,7 +114,7 @@
     }
 
     .director-photo img {
-        width: 300px; /* Adjust width of image */
-        height: 300px; /* Adjust height to match width for circular shape */
+        width: 250px; /* Adjust width of image */
+        height: 250px; /* Adjust height to match width for circular shape */
     }
 }

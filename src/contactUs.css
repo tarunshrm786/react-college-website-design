@@ -1,7 +1,17 @@
 .contact-us-background {
-    background-image: url('../public/contactform.png');
+    /* background-image: url('../public/contactform.png'); */
+    background-image: url('../public/banner-1.jpg');
     background-size: cover;
     background-position: center;
     min-height: 100vh; /* Ensure the background covers the full viewport height */
   }
   
+  /* Global styles or inside contactUs.css */
+
+/* Media query for small devices */
+@media only screen and (max-width: 600px) {
+  .contact-us-background {
+    margin-top: 20px;  /* Adjust the top margin to give space after the header */
+    padding-bottom: 20px;  /* Add some space at the bottom after the contact form */
+  }
+}

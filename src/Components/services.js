@@ -89,7 +89,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const servicesData = [
     {
-        title: 'Bachelor of Science in Computer Science',
+        title: 'Bachelor of Computer Science',
         description: 'Comprehensive program',
         imgSrc: 'img6.jpg'
     },

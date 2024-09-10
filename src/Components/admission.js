@@ -388,7 +388,7 @@ const Admission = () => {
 
   return (
     <div className="admission-form-background" style={{ position: 'relative' }}>
-      <Container maxWidth="lg" sx={{ marginBottom: '30px' }}>
+      <Container maxWidth="lg" sx={{ marginBottom: '30px', marginTop: '-40px' }}>
         <Grid container spacing={4} mt={5} alignItems="center" justifyContent="center">
     
           <Grid item xs={10}>
