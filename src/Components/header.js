@@ -148,6 +148,7 @@
 
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../header.css';
 
 const Header = () => {
@@ -198,12 +199,19 @@ const Header = () => {
 
     return (
         <header className="main-header">
-            <div className="logo">
+            {/* <div className="logo">
                 <img src="NAD-Logo.png" alt="Farrmi Logo" />
-            </div>
+            </div> */}
+            <div className="logo">
+  <Link to="/">
+    <img src="NAD-Logo.png" alt="Farrmi Logo" />
+  </Link>
+</div>
+
             <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    {/* <li><a href="/">Home</a></li> */}
+                    <li><Link to="/">Home</Link></li>
 
                     {/* About Menu */}
                     <li
@@ -219,9 +227,13 @@ const Header = () => {
                         </a>
                         {isAboutDropdownOpen && (
                             <ul className="dropdown-menu">
-                                <li><a href="/aboutus">About Us</a></li>
+                                {/* <li><a href="/aboutus">About Us</a></li>
                                 <li><a href="/founding-members">Mentor</a></li>
-                                <li><a href="/staff">Faculty</a></li>
+                                <li><a href="/staff">Faculty</a></li> */}
+
+<li><Link to="/aboutus">About Us</Link></li>
+<li><Link to="/founding-members">Mentor</Link></li>
+<li><Link to="/staff">Faculty</Link></li>
                             </ul>
                         )}
                     </li>
@@ -248,13 +260,20 @@ const Header = () => {
                                     </a>
                                     {isUGDropdownOpen && (
                                         <ul className="dropdown-menu nested-dropdown">
-                                            <li><a href="/ba">B.A</a></li>
+                                            {/* <li><a href="/ba">B.A</a></li>
                                             <li><a href="/bcom">B.Com</a></li>
                                             <li><a href="/bsc">B.Sc</a></li>
                                             <li><a href="/bba">B.B.A</a></li>
                                             <li><a href="/bvoc-interior-design">B.Voc Interior Design</a></li>
                                             <li><a href="/bvoc-graphic-design">B.Voc Graphic Design</a></li>
-                                            <li><a href="/bvoc-fashion-design">B.Voc Fashion Design</a></li>
+                                            <li><a href="/bvoc-fashion-design">B.Voc Fashion Design</a></li> */}
+                                            <li><Link to="/ba">B.A</Link></li>
+<li><Link to="/bcom">B.Com</Link></li>
+<li><Link to="/bsc">B.Sc</Link></li>
+<li><Link to="/bba">B.B.A</Link></li>
+<li><Link to="/bvoc-interior-design">B.Voc Interior Design</Link></li>
+<li><Link to="/bvoc-graphic-design">B.Voc Graphic Design</Link></li>
+<li><Link to="/bvoc-fashion-design">B.Voc Fashion Design</Link></li>
                                         </ul>
                                     )}
                                 </li>
@@ -269,13 +288,20 @@ const Header = () => {
                                     </a>
                                     {isPGDropdownOpen && (
                                         <ul className="dropdown-menu nested-dropdown">
-                                            <li><a href="/ma">M.A</a></li>
+                                            {/* <li><a href="/ma">M.A</a></li>
                                             <li><a href="/mcom">M.Com</a></li>
                                             <li><a href="/msc">M.Sc</a></li>
                                             <li><a href="/mba">M.B.A</a></li>
                                             <li><a href="/mvoc-fashion-design">M.Voc Fashion Design</a></li>
                                             <li><a href="/mvoc-graphic-design">M.Voc Graphic Design</a></li>
-                                            <li><a href="/mvoc-interior-design">M.Voc Interior Design</a></li>
+                                            <li><a href="/mvoc-interior-design">M.Voc Interior Design</a></li> */}
+                                            <li><Link to="/ma">M.A</Link></li>
+<li><Link to="/mcom">M.Com</Link></li>
+<li><Link to="/msc">M.Sc</Link></li>
+<li><Link to="/mba">M.B.A</Link></li>
+<li><Link to="/mvoc-fashion-design">M.Voc Fashion Design</Link></li>
+<li><Link to="/mvoc-graphic-design">M.Voc Graphic Design</Link></li>
+<li><Link to="/mvoc-interior-design">M.Voc Interior Design</Link></li>
                                         </ul>
                                     )}
                                 </li>
@@ -290,11 +316,16 @@ const Header = () => {
                                     </a>
                                     {isDiplomaDropdownOpen && (
                                         <ul className="dropdown-menu nested-dropdown">
-                                            <li><a href="/architecture-design">Architecture, Engineering & Construction</a></li>
+                                            {/* <li><a href="/architecture-design">Architecture, Engineering & Construction</a></li>
                                             <li><a href="/web-design">Web development & design</a></li>
                                             <li><a href="/fashion-design">Fashion design</a></li>
                                             <li><a href="/graphic-design">Graphic design</a></li>
-                                            <li><a href="/jewellery-design">Jewellery design</a></li>
+                                            <li><a href="/jewellery-design">Jewellery design</a></li> */}
+                                            <li><Link to="/architecture-design">Architecture, Engineering & Construction</Link></li>
+<li><Link to="/web-design">Web Development & Design</Link></li>
+<li><Link to="/fashion-design">Fashion Design</Link></li>
+<li><Link to="/graphic-design">Graphic Design</Link></li>
+<li><Link to="/jewellery-design">Jewellery Design</Link></li>
                                         </ul>
                                     )}
                                 </li>
@@ -302,11 +333,16 @@ const Header = () => {
                         )}
                     </li>
 
-                    <li><a href="/placement">Placement</a></li>
+                    {/* <li><a href="/placement">Placement</a></li>
                     <li><a href="/admission">Admission</a></li>
                     <li><a href="/gallery">Gallery</a></li>
                     <li><a href="/contact-us">Contact us</a></li>
-                    <li><a href="/login">Student Login</a></li>
+                    <li><a href="/login">Student Login</a></li> */}
+                    <li><Link to="/placement">Placement</Link></li>
+<li><Link to="/admission">Admission</Link></li>
+<li><Link to="/gallery">Gallery</Link></li>
+<li><Link to="/contact-us">Contact us</Link></li>
+<li><Link to="/login">Student Login</Link></li>
                 </ul>
             </nav>
             <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>

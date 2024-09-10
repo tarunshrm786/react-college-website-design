@@ -14,6 +14,10 @@ import BvocInterior from './Components/ugcourses/bvoc-interior-design';
 import BvocGraphic from './Components/ugcourses/bvoc-graphic-design'; 
 import BvocFashion from './Components/ugcourses/bvoc-fashion-design'; 
 
+import MvocInterior from './Components/pgcourses/mvoc-interior-design'; 
+import MvocGraphic from './Components/pgcourses/mvoc-graphic-design'; 
+import MvocFashion from './Components/pgcourses/mvoc-fashion-design'; 
+
 import MaCourse from './Components/pgcourses/ma'; 
 import McomCourse from './Components/pgcourses/mcom'; 
 import MscCourse from './Components/pgcourses/msc'; 
@@ -54,6 +58,10 @@ function App() {
           <Route path="/bvoc-interior-design" element={<BvocInterior />} /> 
           <Route path="/bvoc-graphic-design" element={<BvocGraphic />} /> 
           <Route path="/bvoc-fashion-design" element={<BvocFashion />} /> 
+
+          <Route path="/mvoc-interior-design" element={<MvocInterior />} /> 
+          <Route path="/mvoc-graphic-design" element={<MvocGraphic />} /> 
+          <Route path="/mvoc-fashion-design" element={<MvocFashion />} /> 
 
           <Route path="/ma" element={<MaCourse />} /> 
           <Route path="/msc" element={<MscCourse />} /> 
