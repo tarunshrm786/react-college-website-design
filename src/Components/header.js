@@ -1,3 +1,152 @@
+// import React, { useState } from 'react';
+// import '../header.css';
+
+// const Header = () => {
+//     const [isMenuOpen, setIsMenuOpen] = useState(false);
+//     const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+//     const [isCoursesDropdownOpen, setIsCoursesDropdownOpen] = useState(false);
+//     const [isUGDropdownOpen, setIsUGDropdownOpen] = useState(false);
+//     const [isPGDropdownOpen, setIsPGDropdownOpen] = useState(false);
+//     const [isDiplomaDropdownOpen, setIsDiplomaDropdownOpen] = useState(false);
+
+//     const toggleMenu = () => {
+//         setIsMenuOpen(!isMenuOpen);
+//     };
+
+//     return (
+//         <header className="main-header">
+//             <div className="logo">
+//                 <img src="NAD-Logo.png" alt="Farrmi Logo" />
+//             </div>
+//             <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
+//                 <ul>
+//                     <li><a href="/">Home</a></li>
+
+                
+//                      {/* About Menu */}
+//                      <li
+//                         className={`dropdown ${isAboutDropdownOpen ? 'open' : ''}`}
+//                         style={{ position: 'relative' }}
+//                     >
+//                         <a href="#about" onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}>
+//                             About
+//                             <span className={`arrow ${isAboutDropdownOpen ? 'up' : 'down'}`}>▼</span>
+//                         </a>
+//                         {isAboutDropdownOpen && (
+//                             <ul className="dropdown-menu">
+//                                 <li><a href="/aboutus">About Us</a></li>
+//                                 <li><a href="/founding-members">Mentor</a></li>
+//                                 <li><a href="/staff">Faculty</a></li>
+//                             </ul>
+//                         )}
+//                     </li>
+
+
+//                     <li
+//   className={`dropdown ${isCoursesDropdownOpen ? 'open' : ''}`}
+//   style={{ position: 'relative' }}
+// >
+//   <a href="#courses" onClick={() => setIsCoursesDropdownOpen(!isCoursesDropdownOpen)}>
+//     Our Courses
+//     <span className={`arrow ${isCoursesDropdownOpen ? 'up' : 'down'}`}>▼</span>
+//   </a>
+//   {isCoursesDropdownOpen && (
+//     <ul className="dropdown-menu">
+//       {/* UG Dropdown */}
+//       <li
+//         className={`dropdown ${isUGDropdownOpen ? 'open' : ''}`}
+//         style={{ position: 'relative' }}
+//       >
+//         <a href="#ug" onClick={(e) => {
+//             e.stopPropagation(); // Prevent closing the parent dropdown
+//             setIsUGDropdownOpen(!isUGDropdownOpen);
+//         }}>
+//           UG
+//           <span className={`arrow ${isUGDropdownOpen ? 'up' : 'down'}`}>▼</span>
+//         </a>
+//         {isUGDropdownOpen && (
+//           <ul className="dropdown-menu nested-dropdown">
+//             <li><a href="/ba">B.A</a></li>
+//             <li><a href="/bcom">B.Com</a></li>
+//             <li><a href="/bsc">B.Sc</a></li>
+//             <li><a href="/bba">B.B.A</a></li>
+//             <li><a href="/bvoc-interior-design">B.Voc Interior Design</a></li>
+//             <li><a href="/bvoc-graphic-design">B.Voc Graphic Design</a></li>
+//             <li><a href="/bvoc-fashion-design">B.Voc Fashion Design</a></li>
+//           </ul>
+//         )}
+//       </li>
+//       {/* PG Dropdown */}
+//       <li
+//         className={`dropdown ${isPGDropdownOpen ? 'open' : ''}`}
+//         style={{ position: 'relative' }}
+//       >
+//         <a href="#pg" onClick={(e) => {
+//             e.stopPropagation(); // Prevent closing the parent dropdown
+//             setIsPGDropdownOpen(!isPGDropdownOpen);
+//         }}>
+//           PG
+//           <span className={`arrow ${isPGDropdownOpen ? 'up' : 'down'}`}>▼</span>
+//         </a>
+//         {isPGDropdownOpen && (
+//           <ul className="dropdown-menu nested-dropdown">
+//             <li><a href="/ma">M.A</a></li>
+//             <li><a href="/mcom">M.Com</a></li>
+//             <li><a href="/msc">M.Sc</a></li>
+//             <li><a href="/mba">M.B.A</a></li>
+//             <li><a href="/mvoc-fashion-design">M.Voc Fashion Design</a></li>
+//             <li><a href="/mvoc-graphic-design">M.Voc Graphic Design</a></li>
+//             <li><a href="/mvoc-interior-design">M.Voc Interior Design</a></li>
+//           </ul>
+//         )}
+//       </li>
+//       {/* Diploma Dropdown */}
+//       <li
+//         className={`dropdown ${isDiplomaDropdownOpen ? 'open' : ''}`}
+//         style={{ position: 'relative' }}
+//       >
+//         <a href="#diploma" onClick={(e) => {
+//             e.stopPropagation(); // Prevent closing the parent dropdown
+//             setIsDiplomaDropdownOpen(!isDiplomaDropdownOpen);
+//         }}>
+//           Diploma
+//           <span className={`arrow ${isDiplomaDropdownOpen ? 'up' : 'down'}`}>▼</span>
+//         </a>
+//         {isDiplomaDropdownOpen && (
+//           <ul className="dropdown-menu nested-dropdown">
+//             <li><a href="/architecture-design">Architecture, Engineering & Construction</a></li>
+//             <li><a href="/web-design">Web development & design</a></li>
+//             <li><a href="/fashion-design">Fashion design</a></li>
+//             <li><a href="/graphic-design">Graphic design</a></li>
+//             <li><a href="/jewellery-design">Jewellery design</a></li>
+//           </ul>
+//         )}
+//       </li>
+//     </ul>
+//   )}
+// </li>
+
+
+//                     <li><a href="/placement">Placement</a></li>
+//                     <li><a href="/admission">Admission</a></li>
+//                     <li><a href="/gallery">Gallery</a></li>
+//                     <li><a href="/contact-us">Contact us</a></li>
+//                     <li><a href="/login">Student Login</a></li>
+//                 </ul>
+//             </nav>
+//             <div className="hamburger" onClick={toggleMenu}>
+//                 <div className="line"></div>
+//                 <div className="line"></div>
+//                 <div className="line"></div>
+//             </div>
+//         </header>
+//     );
+// };
+
+// export default Header;
+
+
+
 import React, { useState } from 'react';
 import '../header.css';
 
@@ -9,16 +158,42 @@ const Header = () => {
     const [isPGDropdownOpen, setIsPGDropdownOpen] = useState(false);
     const [isDiplomaDropdownOpen, setIsDiplomaDropdownOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+    // Function to close all dropdowns
+    const closeAllDropdowns = () => {
+        setIsAboutDropdownOpen(false);
+        setIsCoursesDropdownOpen(false);
+        setIsUGDropdownOpen(false);
+        setIsPGDropdownOpen(false);
+        setIsDiplomaDropdownOpen(false);
     };
 
-    const handleMouseEnter = (setDropdownOpen) => {
-        setDropdownOpen(true);
+    // Function to toggle the Courses dropdown and close others
+    const handleCoursesClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevents event from bubbling up and closing parent dropdowns
+        closeAllDropdowns();
+        setIsCoursesDropdownOpen(!isCoursesDropdownOpen);
     };
 
-    const handleMouseLeave = (setDropdownOpen) => {
-        setDropdownOpen(false);
+    // Function to handle UG dropdown click
+    const handleUGClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevents event from bubbling up and closing parent dropdowns
+        setIsUGDropdownOpen(!isUGDropdownOpen);
+    };
+
+    // Function to handle PG dropdown click
+    const handlePGClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevents event from bubbling up and closing parent dropdowns
+        setIsPGDropdownOpen(!isPGDropdownOpen);
+    };
+
+    // Function to handle Diploma dropdown click
+    const handleDiplomaClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevents event from bubbling up and closing parent dropdowns
+        setIsDiplomaDropdownOpen(!isDiplomaDropdownOpen);
     };
 
     return (
@@ -30,13 +205,15 @@ const Header = () => {
                 <ul>
                     <li><a href="/">Home</a></li>
 
+                    {/* About Menu */}
                     <li
                         className={`dropdown ${isAboutDropdownOpen ? 'open' : ''}`}
-                        onMouseEnter={() => handleMouseEnter(setIsAboutDropdownOpen)}
-                        onMouseLeave={() => handleMouseLeave(setIsAboutDropdownOpen)}
                         style={{ position: 'relative' }}
                     >
-                        <a href="#about" onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}>
+                        <a href="#about" onClick={() => {
+                            closeAllDropdowns();
+                            setIsAboutDropdownOpen(!isAboutDropdownOpen);
+                        }}>
                             About
                             <span className={`arrow ${isAboutDropdownOpen ? 'up' : 'down'}`}>▼</span>
                         </a>
@@ -49,13 +226,12 @@ const Header = () => {
                         )}
                     </li>
 
+                    {/* Courses Menu */}
                     <li
                         className={`dropdown ${isCoursesDropdownOpen ? 'open' : ''}`}
-                        onMouseEnter={() => handleMouseEnter(setIsCoursesDropdownOpen)}
-                        onMouseLeave={() => handleMouseLeave(setIsCoursesDropdownOpen)}
                         style={{ position: 'relative' }}
                     >
-                        <a href="#courses" onClick={() => setIsCoursesDropdownOpen(!isCoursesDropdownOpen)}>
+                        <a href="#courses" onClick={handleCoursesClick}>
                             Our Courses
                             <span className={`arrow ${isCoursesDropdownOpen ? 'up' : 'down'}`}>▼</span>
                         </a>
@@ -64,11 +240,9 @@ const Header = () => {
                                 {/* UG Dropdown */}
                                 <li
                                     className={`dropdown ${isUGDropdownOpen ? 'open' : ''}`}
-                                    onMouseEnter={() => handleMouseEnter(setIsUGDropdownOpen)}
-                                    onMouseLeave={() => handleMouseLeave(setIsUGDropdownOpen)}
                                     style={{ position: 'relative' }}
                                 >
-                                    <a href="#ug" onClick={() => setIsUGDropdownOpen(!isUGDropdownOpen)}>
+                                    <a href="#ug" onClick={handleUGClick}>
                                         UG
                                         <span className={`arrow ${isUGDropdownOpen ? 'up' : 'down'}`}>▼</span>
                                     </a>
@@ -87,11 +261,9 @@ const Header = () => {
                                 {/* PG Dropdown */}
                                 <li
                                     className={`dropdown ${isPGDropdownOpen ? 'open' : ''}`}
-                                    onMouseEnter={() => handleMouseEnter(setIsPGDropdownOpen)}
-                                    onMouseLeave={() => handleMouseLeave(setIsPGDropdownOpen)}
                                     style={{ position: 'relative' }}
                                 >
-                                    <a href="#pg" onClick={() => setIsPGDropdownOpen(!isPGDropdownOpen)}>
+                                    <a href="#pg" onClick={handlePGClick}>
                                         PG
                                         <span className={`arrow ${isPGDropdownOpen ? 'up' : 'down'}`}>▼</span>
                                     </a>
@@ -110,11 +282,9 @@ const Header = () => {
                                 {/* Diploma Dropdown */}
                                 <li
                                     className={`dropdown ${isDiplomaDropdownOpen ? 'open' : ''}`}
-                                    onMouseEnter={() => handleMouseEnter(setIsDiplomaDropdownOpen)}
-                                    onMouseLeave={() => handleMouseLeave(setIsDiplomaDropdownOpen)}
                                     style={{ position: 'relative' }}
                                 >
-                                    <a href="#diploma" onClick={() => setIsDiplomaDropdownOpen(!isDiplomaDropdownOpen)}>
+                                    <a href="#diploma" onClick={handleDiplomaClick}>
                                         Diploma
                                         <span className={`arrow ${isDiplomaDropdownOpen ? 'up' : 'down'}`}>▼</span>
                                     </a>
@@ -139,7 +309,7 @@ const Header = () => {
                     <li><a href="/login">Student Login</a></li>
                 </ul>
             </nav>
-            <div className="hamburger" onClick={toggleMenu}>
+            <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 <div className="line"></div>
                 <div className="line"></div>
                 <div className="line"></div>
@@ -149,5 +319,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
