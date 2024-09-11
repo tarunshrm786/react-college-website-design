@@ -1,0 +1,15 @@
+/* src/Components/ScrollIcon.css */
+.fixed-icon {
+    position: fixed;      /* Fix the position on the screen */
+    right: 20px;          /* Distance from the right edge */
+    top: 80%;             /* Vertically centered */
+    transform: translateY(-50%);  /* Adjust for exact centering */
+    z-index: 1000;        /* Ensure it stays on top of other elements */
+    background-color: #fff; /* Optional: Background for the icon */
+    border-radius: 50%;   /* Optional: Rounded background */
+    padding: 10px;        /* Padding for the icon */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+    cursor: pointer;      /* Change cursor to pointer */
+  }
+  

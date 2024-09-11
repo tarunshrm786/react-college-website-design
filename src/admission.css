@@ -1,5 +1,6 @@
 .admission-form-background {
-    background-image: url('../public/banner-1.jpg');
+    background-image: url('../public/contact-2.png');
+
     background-size: cover;
     background-position: center;
     min-height: 100vh; /* Ensure the background covers the full viewport height */

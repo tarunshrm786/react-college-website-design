@@ -151,6 +151,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../header.css';
 
+
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
@@ -342,7 +343,8 @@ const Header = () => {
 <li><Link to="/admission">Admission</Link></li>
 <li><Link to="/gallery">Gallery</Link></li>
 <li><Link to="/contact-us">Contact us</Link></li>
-<li><Link to="/login">Student Login</Link></li>
+{/* <li><Link to="/login">Student Login</Link></li> */}
+
                 </ul>
             </nav>
             <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>

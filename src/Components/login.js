@@ -209,6 +209,7 @@
 // export default LoginForm;
 
 import React, { useState, useEffect } from "react";
+import { FaUserGraduate } from 'react-icons/fa';
 import {
   Container,
   TextField,
@@ -326,13 +327,24 @@ const LoginForm = () => {
           backgroundColor: "rgba(255, 255, 255, 0.8)", // Slightly transparent to show bg through
         }}
       >
-        <Typography
+        {/* <Typography
           component="h1"
           variant="h5"
           sx={{ fontFamily: "Montserrat, sans-serif" }}
         >
           Login
-        </Typography>
+        </Typography> */}
+        <Box sx={{ display: 'flex', alignItems: 'center' }}> {/* Flexbox for row alignment */}
+          <FaUserGraduate style={{ marginRight: '8px', height: '20px' }} /> {/* Student icon */}
+          <Typography
+            component="h1"
+            variant="h5"
+            sx={{ fontFamily: "Montserrat, sans-serif", color: 'inherit' }} // Maintain default color
+          >
+            Login
+          </Typography>
+        </Box>
+
         <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <TextField
             variant="outlined"

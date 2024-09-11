@@ -7,6 +7,7 @@ import Director from './Components/directors';
 import Services from './Components/services';
 import Collaboration from './Components/collaboration';
 import Affiliation from './Components/affiliation';
+import ScrollIcon from './Components/scrollIcon';
 
 function Home() {
   return (
@@ -19,6 +20,7 @@ function Home() {
       <Collaboration />
       <Affiliation />
       {/* <Footer /> */}
+      <ScrollIcon /> 
     </div>
   );
 }
