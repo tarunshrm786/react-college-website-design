@@ -1,0 +1,58 @@
+/* Default Banner Styles */
+.banner {
+  width: 100vw;
+  height: 500px; /* Default height for larger screens */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.banner-image {
+  width: 100vw;
+  height: 100%; /* Ensure it fills the banner container */
+  object-fit: cover; /* Ensure the image covers the container */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.banner-text {
+  position: absolute;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Dark shadow for better readability */
+  text-align: center;
+  z-index: 1; /* Ensure text is above the overlay */
+}
+
+.banner-text h1 {
+  font-size: 36px; /* Adjust as needed */
+  margin-bottom: 10px;
+}
+
+.banner-text p {
+  font-size: 18px; /* Adjust as needed */
+}
+
+/* Media Queries for Small Screens */
+@media (max-width: 600px) {
+  .banner {
+    height: 300px; /* Height for smaller screens */
+  }
+
+  .banner-image {
+    width: 100vw;
+    height: 100%; /* Adjust the height to fill the banner */
+    object-fit: contain; /* Show the entire image with empty spaces if necessary */
+  }
+
+  .banner-text h1 {
+    font-size: 24px; /* Smaller font size on small screens */
+  }
+
+  .banner-text p {
+    font-size: 14px; /* Smaller font size on small screens */
+  }
+}

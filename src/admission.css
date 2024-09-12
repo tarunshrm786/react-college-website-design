@@ -1,5 +1,5 @@
 .admission-form-background {
-    background-image: url('../public/background.jpg');
+    /* background-image: url('../public/background.jpg'); */
 
     background-size: cover;
     background-position: center;
@@ -55,7 +55,7 @@
   transform: translate(-50%, -50%);
   width: 100px;
   height: 100px;
-  background: url('../public/img1.jpg') no-repeat center center;
+  /* background: url('../public/img1.jpg') no-repeat center center; */
   background-size: cover;
   animation: smokeEffect 2s ease-out forwards;
   z-index: -1; /* To ensure it appears behind the text */
