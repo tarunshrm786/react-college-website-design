@@ -66,13 +66,13 @@ const FashionCourse = () => {
     <Box
    sx={{
      width: "100vw", // Full width of the viewport
-     height: "400px", // Fixed height for the banner
+     height: "500px", // Fixed height for the banner
      position: "relative",
      overflow: "hidden",
    }}
  >
    <img
-     src="ba.jpg" // Replace with your image path
+     src="fashion-design.png" // Replace with your image path
      alt="Bachelor's of Arts"
      style={{
        width: "100vw", // Full width of the viewport

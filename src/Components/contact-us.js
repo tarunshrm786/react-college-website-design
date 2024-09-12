@@ -553,8 +553,8 @@ const ContactUs = () => {
                   Contact Details
                 </Typography>
                 <Typography variant="body1" align="center" gutterBottom>
-                  Khwaja Gharib Nawaz College of Nursing, Tala, Rajasthan, India <br />
-                  Email: contact@kgncollege.edu.in <br />
+                  National Academy Of Design, Sikar, Rajasthan, India <br />
+                  Email: contact@academydesign.edu.in <br />
                   Phone: +91 12345 67890
                 </Typography>
 

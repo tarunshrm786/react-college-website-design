@@ -77,13 +77,13 @@ const MvocFashionDesign = () => {
       <Box
         sx={{
           width: "100vw", // Full width of the viewport
-          height: "400px", // Fixed height for the banner
+          height: "450px", // Fixed height for the banner
           position: "relative",
           overflow: "hidden",
         }}
       >
         <img
-          src="ba.jpg" // Replace with your image path
+          src="mvoc-fashion.png" // Replace with your image path
           alt="Mvoc Fashion Design"
           style={{
             width: "100vw", // Full width of the viewport

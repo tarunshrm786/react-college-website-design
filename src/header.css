@@ -110,6 +110,21 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
+.nested-dropdown {
+    top: 0;
+    left: 100%; /* Move the nested dropdown to the right of the parent */
+    transform: translateX(10px); /* Optional: small gap between parent and submenu */
+    display: none;
+}
+
+.dropdown.open .nested-dropdown {
+    display: block;
+}
+
 /* Show the dropdown menu when open */
 .dropdown.open .dropdown-menu {
     display: block;
@@ -172,5 +187,24 @@ body {
     
     .arrow {
         font-size: 14px; /* Increase arrow size for better visibility */
+    }
+}
+
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: relative; /* Stack vertically on small screens */
+        width: 100%; /* Make the dropdown take full width */
+        top: auto;
+        left: 0;
+    }
+
+    .nested-dropdown {
+        position: relative; /* Position relative for stacked view */
+        left: 0; /* Reset left */
+        transform: none; /* Remove any transform */
+        width: 100%; /* Make the nested dropdown take full width */
+        padding-left: 20px; /* Optional: Add some padding for indentation */
     }
 }

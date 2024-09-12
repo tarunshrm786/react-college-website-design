@@ -1,6 +1,6 @@
 .contact-us-background {
     /* background-image: url('../public/contactform.png'); */
-    background-image: url('../public/contact-2.png');
+    background-image: url('../public/background.jpg');
     background-size: cover;
     background-position: center;
     min-height: 100vh; /* Ensure the background covers the full viewport height */
