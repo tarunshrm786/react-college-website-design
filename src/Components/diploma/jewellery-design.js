@@ -87,8 +87,8 @@ const JewelleryCourse = () => {
    }}
  >
    <img
-     src="jewellery.png" // Replace with your image path
-     alt="Bachelor's of Arts"
+     src="/courses/jewellery.png" // Replace with your image path
+     alt="Jewellery"
      style={{
        width: "100vw", // Full width of the viewport
        height: "100%", // Full height of the container
@@ -115,7 +115,7 @@ const JewelleryCourse = () => {
        zIndex: "1", // Ensures the text is above the image
      }}
    >
-     Jewellery Design
+     {/* Jewellery Design */}
    </Box>
  </Box>
 

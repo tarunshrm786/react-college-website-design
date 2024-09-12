@@ -74,7 +74,7 @@ const GraphicCourse = () => {
    <img
       src="graphic-banner.png" // Replace with your image path
     //  src="sample.jpg"
-     alt="Bachelor's of Arts"
+     alt="Graphic"
      style={{
        width: "100vw", // Full width of the viewport
        height: "100%", // Full height of the container

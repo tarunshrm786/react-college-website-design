@@ -73,7 +73,7 @@ const FashionCourse = () => {
  >
    <img
      src="fashion-design.png" // Replace with your image path
-     alt="Bachelor's of Arts"
+     alt="fashion-design"
      style={{
        width: "100vw", // Full width of the viewport
        height: "100%", // Full height of the container

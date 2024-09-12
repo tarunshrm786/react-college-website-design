@@ -761,13 +761,13 @@ const ArchitectureCourse = () => {
       <Box
         sx={{
           width: "100vw", // Full width of the viewport
-          height: "400px", // Fixed height for the banner
+          height: "500px", // Fixed height for the banner
           position: "relative",
           overflow: "hidden",
         }}
       >
         <img
-          src="architecture.jpg" // Replace with your image path
+          src="/courses/interior-design.png" // Replace with your image path
           alt="Architecture and Interior Design"
           style={{
             width: "100vw", // Full width of the viewport
@@ -795,7 +795,7 @@ const ArchitectureCourse = () => {
             zIndex: "1", // Ensures the text is above the image
           }}
         >
-          Architecture and Interior Design
+          {/* Architecture and Interior Design */}
         </Box>
       </Box>
 

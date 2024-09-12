@@ -289,8 +289,8 @@ import React from "react";
 import { Container, Typography, Box } from "@mui/material";
 
 const sampleData = {
-  "bannerImage": "ba.jpg",
-  "bannerText": "Bachelor's of Arts",
+  "bannerImage": "/courses/BA-POSTER.png",
+  "bannerText": " ",
   "description": [
     "Art enables us to find ourselves. So Art is not a thing — it is a way of expression. The arts and humanities encompass a range of subjects that are all concerned with cultural expressions and how it has come to take the forms that exist today. Taking one of our qualifications or courses gives you the opportunity to explore human culture and its history, from the ancient civilizations of Greece and Rome through the Renaissance, to the art, history, literature, music, and religions of the twenty-first century. Arts education encompasses all the visual and performing arts delivered in a standards-based, sequential approach by a qualified instructor as part of the core curriculum. It is studied as an individual discipline as well as integrated into general subject matter teaching.",
     "To promote Creative entrepreneurship and employability, NAD’s set up Social Design Business Incubator (hubIN) and started the CampusToCompany initiative which provides support to students to find the right professional opportunities. NAD facilitates the necessary mentoring and networking connections required to help foster the development of scalable business models based on transformational designs and innovative thinking and achieve commercial success through 'start-up' enterprises."
@@ -321,7 +321,7 @@ const Bacourse = () => {
       <Box
         sx={{
           width: "100vw", // Full width of the viewport
-          height: "400px", // Fixed height for the banner
+          height: "500px", // Fixed height for the banner
           position: "relative",
           overflow: "hidden",
         }}

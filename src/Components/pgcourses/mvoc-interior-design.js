@@ -76,13 +76,13 @@ const MvocInteriorDesign = () => {
       <Box
         sx={{
           width: "100vw", // Full width of the viewport
-          height: "400px", // Fixed height for the banner
+          height: "500px", // Fixed height for the banner
           position: "relative",
           overflow: "hidden",
         }}
       >
         <img
-          src="ba.jpg" // Replace with your image path
+          src="/courses/Interior-Designer-MVOC.png" // Replace with your image path
           alt="Interior Design"
           style={{
             width: "100vw", // Full width of the viewport
@@ -109,7 +109,7 @@ const MvocInteriorDesign = () => {
             background: "transparent", // No background color
           }}
         >
-          Mvoc Interior Design
+          {/* Mvoc Interior Design */}
         </Box>
       </Box>
 

@@ -10,14 +10,14 @@ const Bba = () => {
     <Box
    sx={{
      width: "100vw", // Full width of the viewport
-     height: "400px", // Fixed height for the banner
+     height: "500px", // Fixed height for the banner
      position: "relative",
      overflow: "hidden",
    }}
  >
    <img
-     src="bba.jpg" // Replace with your image path
-     alt="Bachelor's of Arts"
+     src="/courses/BBA.png" // Replace with your image path
+     alt="BBA"
      style={{
        width: "100vw", // Full width of the viewport
        height: "100%", // Full height of the container
@@ -44,7 +44,7 @@ const Bba = () => {
        zIndex: "1", // Ensures the text is above the image
      }}
    >
-     Bachelor of Business Administration (BBA) Online Program
+     {/* Bachelor of Business Administration (BBA) Online Program */}
    </Box>
  </Box>
 

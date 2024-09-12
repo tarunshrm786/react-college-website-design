@@ -9,14 +9,14 @@ const BvocInteriorDesign = () => {
     <Box
    sx={{
      width: "100vw", // Full width of the viewport
-     height: "400px", // Fixed height for the banner
+     height: "500px", // Fixed height for the banner
      position: "relative",
      overflow: "hidden",
    }}
  >
    <img
-     src="ba.jpg" // Replace with your image path
-     alt="Bachelor's of Arts"
+     src="/courses/bvoc-interior-Designer.png" // Replace with your image path
+     alt="bvoc-interior-design"
      style={{
        width: "100vw", // Full width of the viewport
        height: "100%", // Full height of the container
@@ -43,7 +43,7 @@ const BvocInteriorDesign = () => {
        zIndex: "1", // Ensures the text is above the image
      }}
    >
-     Bachelor's of interior-design
+     {/* Bachelor's of interior-design */}
    </Box>
  </Box>
 

@@ -459,14 +459,14 @@ const WebdesignCourse = () => {
     <Box
    sx={{
      width: "100vw", // Full width of the viewport
-     height: "400px", // Fixed height for the banner
+     height: "500px", // Fixed height for the banner
      position: "relative",
      overflow: "hidden",
    }}
  >
    <img
-     src="ba.jpg" // Replace with your image path
-     alt="Bachelor's of Arts"
+     src="/courses/web-design-development.png" // Replace with your image path
+     alt="web-design-development"
      style={{
        width: "100vw", // Full width of the viewport
        height: "100%", // Full height of the container
@@ -493,7 +493,7 @@ const WebdesignCourse = () => {
        zIndex: "1", // Ensures the text is above the image
      }}
    >
-     Web development & design
+     {/* Web development & design */}
    </Box>
  </Box>
 

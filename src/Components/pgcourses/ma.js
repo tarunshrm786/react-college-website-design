@@ -135,13 +135,13 @@ const Macourse = () => {
       <Box
         sx={{
           width: "100vw", // Full width of the viewport
-          height: "400px", // Fixed height for the banner
+          height: "500px", // Fixed height for the banner
           position: "relative",
           overflow: "hidden",
         }}
       >
         <img
-          src="ba.jpg"
+          src="/courses/ma.png"
           alt="Master of Arts"
           style={{
             width: "100vw", // Full width of the viewport
@@ -167,7 +167,7 @@ const Macourse = () => {
             padding: "10px 20px", // Optional: Adds some padding around the text
           }}
         >
-          Master of Arts (M.A.)
+          {/* Master of Arts (M.A.) */}
         </Box>
       </Box>
 
