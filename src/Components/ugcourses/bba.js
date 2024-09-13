@@ -2,52 +2,60 @@ import React from "react";
 import { Container, Typography, Box } from "@mui/material";
 //import { Montserrat } from '@fontsource/montserrat'; // Import Montserrat
 
+
 const Bba = () => {
+
+  const sampleData = {
+    bannerImage: "bba.jpg",
+    bannerText: " "
+  };
+  
+  const { bannerImage, bannerText} = sampleData;
+
   return (
     <>
 
-    {/* Full-Width Image Banner with Text */}
-    <Box
-   sx={{
-     width: "100vw", // Full width of the viewport
-     height: "500px", // Fixed height for the banner
-     position: "relative",
-     overflow: "hidden",
-   }}
- >
-   <img
-     src="/courses/BBA.png" // Replace with your image path
-     alt="BBA"
-     style={{
-       width: "100vw", // Full width of the viewport
-       height: "100%", // Full height of the container
-       objectFit: "cover", // Ensures the image covers the container
-       position: "absolute",
-       top: "0",
-       left: "0",
-     }}
-   />
-   {/* Text Overlay on Image */}
-   <Box
-     sx={{
-       position: "absolute",
-       top: "50%",
-       left: "50%",
-       transform: "translate(-50%, -50%)",
-       color: "white", // Text color
-       textAlign: "center",
-       fontWeight: "bold", // Makes the text bold
-       fontSize: "2rem", // Adjust the size of the text
-       fontFamily: "'Montserrat', sans-serif",
-       padding: "10px 20px", // Optional: Adds some padding around the text
-       background: "transparent", // No background color
-       zIndex: "1", // Ensures the text is above the image
-     }}
-   >
-     {/* Bachelor of Business Administration (BBA) Online Program */}
-   </Box>
- </Box>
 
+<Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          overflow: "hidden",
+        }}
+      >
+        <Box
+          component="img"
+          src={bannerImage}
+          alt={bannerText}
+          sx={{
+            width: "100%",
+            height: "300px",
+            display: "block",
+          }}
+        />
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "white",
+            backgroundColor: "transparent", // Removed dim layer
+            textAlign: "center",
+            padding: 2,
+            fontSize: { xs: "1rem", sm: "1.5rem" }, // Responsive font size
+            fontFamily: "'Montserrat', sans-serif",
+          }}
+        >
+          {bannerText}
+        </Box>
+      </Box>
+
+    
     <Container>
       <Box sx={{ textAlign: "center", margin: "20px 0", fontFamily: 'Montserrat, sans-serif' }}>
 
