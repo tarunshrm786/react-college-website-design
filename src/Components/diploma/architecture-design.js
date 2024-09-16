@@ -722,6 +722,211 @@
 
 // export default ArchitectureCourse;
 
+
+
+// import React from "react";
+// import { Container, Typography, Box } from "@mui/material";
+
+// const sampleData = {
+//   "architectureCourse": {
+//     "description": "An Architecture & Design course is an immersive exploration into the realms of architectural theory, design principles, and the practical skills needed to create functional and aesthetically pleasing structures. It’s a multidisciplinary field that merges creativity, technical expertise, and critical thinking. Here’s an overview of what this course might encompass:",
+//     "subjects": [
+//       "AutoCAD Electrical",
+//       "AutoCAD Civil",
+//       "3Ds Max (Max for Engineers)",
+//       "STAAD Pro",
+//       "5D BIM",
+//       "5D BIM Using Navisworks",
+//       "Revit Architecture",
+//       "SketchUp",
+//       "V-Ray"
+//     ]
+//   },
+//   "interiorDesignCourse": {
+//     "description": "The field of Interior Design is rapidly evolving in today's modern world, merging creative interests with practical needs to enhance and contribute to business growth. It offers immense career prospects for interior designers, especially for students with innate creativity and technical proficiency. National academy of design a diverse range of Interior Design courses, empowering students to translate their creative ideas into innovative designs for various types of structures, including homes, retail spaces, hotels, offices, museums, public spaces, and entertainment venues. The Interior Design course at national academy of design encompasses a comprehensive set of modules, including:",
+//     "modules": [
+//       "Fundamentals of interior design",
+//       "Manual creative work training",
+//       "Extensive project work utilizing software, complemented by lectures and seminars.",
+//       "Proficiency in CAD software for interior design.",
+//       "Knowledge acquisition in digital visualization, enabling students to digitally model and conceptualize interior spaces."
+//     ]
+//   }
+// };
+
+// const ArchitectureCourse = () => {
+//   const { architectureCourse, interiorDesignCourse } = sampleData;
+
+//   return (
+//     <>
+      
+//       <Box
+//         sx={{
+//           width: "100vw", // Full width of the viewport
+//           height: "500px", // Fixed height for the banner
+//           position: "relative",
+//           overflow: "hidden",
+//         }}
+//       >
+//         <img
+//           src="/courses/interior-design.png" // Replace with your image path
+//           alt="Architecture and Interior Design"
+//           style={{
+//             width: "100vw", // Full width of the viewport
+//             height: "100%", // Full height of the container
+//             objectFit: "cover", // Ensures the image covers the container
+//             position: "absolute",
+//             top: "0",
+//             left: "0",
+//           }}
+//         />
+        
+//         <Box
+//           sx={{
+//             position: "absolute",
+//             top: "50%",
+//             left: "50%",
+//             transform: "translate(-50%, -50%)",
+//             color: "white", // Text color
+//             textAlign: "center",
+//             fontWeight: "bold", // Makes the text bold
+//             fontSize: "2rem", // Adjust the size of the text
+//             fontFamily: "'Montserrat', sans-serif",
+//             padding: "10px 20px", // Optional: Adds some padding around the text
+//             background: "transparent", // No background color
+//             zIndex: "1", // Ensures the text is above the image
+//           }}
+//         >
+         
+//         </Box>
+//       </Box>
+
+//       <Container sx={{ padding: "20px", maxWidth: "md" }}>
+//         <Typography
+//           variant="body1"
+//           sx={{
+//             marginTop: "20px",
+//             textAlign: "justify",
+//             fontFamily: 'Montserrat, sans-serif',
+//           }}
+//         >
+//           {architectureCourse.description}
+//         </Typography>
+
+//         {/* Subjects Section */}
+//         <Box
+//           sx={{
+//             display: "grid",
+//             gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+//             gap: "20px",
+//             marginTop: "40px",
+//             '& .grid-item': {
+//               border: "1px solid #ccc",
+//               borderRadius: "8px",
+//               padding: "16px",
+//               boxSizing: "border-box",
+//             },
+//           }}
+//         >
+//           <Box
+//             className="grid-item"
+//             sx={{
+//               backgroundColor: "#FFE4E1",
+//               borderRadius: "8px",
+//               boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)",
+//               padding: "16px",
+//             }}
+//           >
+//             <Typography
+//               variant="h6"
+//               sx={{
+//                 color: "blue",
+//                 fontFamily: 'Montserrat, sans-serif',
+//               }}
+//             >
+//               Subjects
+//             </Typography>
+//             {architectureCourse.subjects.map((subject, index) => (
+//               <Typography
+//                 key={index}
+//                 variant="body1"
+//                 sx={{
+//                   marginTop: "4px",
+//                   fontFamily: 'Montserrat, sans-serif',
+//                 }}
+//               >
+//                 {subject}
+//               </Typography>
+//             ))}
+//           </Box>
+//         </Box>
+
+//         {/* Interior Design Course Details */}
+//         <Typography
+//           variant="body1"
+//           sx={{
+//             marginTop: "40px",
+//             textAlign: "justify",
+//             fontFamily: 'Montserrat, sans-serif',
+//           }}
+//         >
+//           {interiorDesignCourse.description}
+//         </Typography>
+
+//         {/* Modules Section */}
+//         <Box
+//           sx={{
+//             display: "grid",
+//             gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+//             gap: "20px",
+//             marginTop: "40px",
+//             '& .grid-item': {
+//               border: "1px solid #ccc",
+//               borderRadius: "8px",
+//               padding: "16px",
+//               boxSizing: "border-box",
+//             },
+//           }}
+//         >
+//           <Box
+//             className="grid-item"
+//             sx={{
+//               backgroundColor: "#FFE4E1",
+//               borderRadius: "8px",
+//               boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)",
+//               padding: "16px",
+//             }}
+//           >
+//             <Typography
+//               variant="h6"
+//               sx={{
+//                 color: "blue",
+//                 fontFamily: 'Montserrat, sans-serif',
+//               }}
+//             >
+//               Modules
+//             </Typography>
+//             {interiorDesignCourse.modules.map((module, index) => (
+//               <Typography
+//                 key={index}
+//                 variant="body1"
+//                 sx={{
+//                   marginTop: "4px",
+//                   fontFamily: 'Montserrat, sans-serif',
+//                 }}
+//               >
+//                 {module}
+//               </Typography>
+//             ))}
+//           </Box>
+//         </Box>
+//       </Container>
+//     </>
+//   );
+// };
+
+// export default ArchitectureCourse;
+
 import React from "react";
 import { Container, Typography, Box } from "@mui/material";
 
@@ -749,56 +954,57 @@ const sampleData = {
       "Proficiency in CAD software for interior design.",
       "Knowledge acquisition in digital visualization, enabling students to digitally model and conceptualize interior spaces."
     ]
-  }
+  },
+  bannerImage: "/courses/interior-design.png",
+  bannerText: " ",
 };
 
 const ArchitectureCourse = () => {
-  const { architectureCourse, interiorDesignCourse } = sampleData;
+  const { architectureCourse, interiorDesignCourse, bannerImage, bannerText } = sampleData;
 
   return (
     <>
-      {/* Full-Width Image Banner with Text */}
+      {/* Banner Section */}
       <Box
         sx={{
-          width: "100vw", // Full width of the viewport
-          height: "500px", // Fixed height for the banner
           position: "relative",
+          width: "100%",
           overflow: "hidden",
         }}
       >
-        <img
-          src="/courses/interior-design.png" // Replace with your image path
-          alt="Architecture and Interior Design"
-          style={{
-            width: "100vw", // Full width of the viewport
-            height: "100%", // Full height of the container
-            objectFit: "cover", // Ensures the image covers the container
-            position: "absolute",
-            top: "0",
-            left: "0",
+        <Box
+          component="img"
+          src={bannerImage}
+          alt={bannerText}
+          sx={{
+            width: "100%",
+            height: "300px",
+            display: "block",
           }}
         />
-        {/* Text Overlay on Image */}
         <Box
           sx={{
             position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            color: "white", // Text color
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "white",
+            backgroundColor: "transparent", // No dim layer
             textAlign: "center",
-            fontWeight: "bold", // Makes the text bold
-            fontSize: "2rem", // Adjust the size of the text
+            padding: 2,
+            fontSize: { xs: "1rem", sm: "1.5rem" }, // Responsive font size
             fontFamily: "'Montserrat', sans-serif",
-            padding: "10px 20px", // Optional: Adds some padding around the text
-            background: "transparent", // No background color
-            zIndex: "1", // Ensures the text is above the image
           }}
         >
-          {/* Architecture and Interior Design */}
+          {bannerText}
         </Box>
       </Box>
 
+      {/* Course Description */}
       <Container sx={{ padding: "20px", maxWidth: "md" }}>
         <Typography
           variant="body1"
