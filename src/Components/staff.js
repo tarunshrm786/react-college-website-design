@@ -838,10 +838,10 @@ const Staff = () => {
 
   const foundingMembers = [
     { id: 1, name: "Shubham Jangir", image: "/faculty/faculty-2.jpg", jobRole: "MBA", location: "Rajasthan" },
-    { id: 2, name: "Sangeeta Jangir", image: "/faculty/faculty-1.jpg", jobRole: "MBA Fashion Design", location: "Rajasthan" },
-    { id: 3, name: "Mariya", image: "/faculty/faculty-3.jpg", jobRole: "MBA", location: "Rajasthan" },
-    { id: 4, name: "AR. PRERNA", image: "/faculty/faculty-4.jpg", jobRole: "B.Arch", location: "Jammu Kashmir" },
-    { id: 5, name: "Urmila Jangir", image: "/faculty/faculty-5.jpg", jobRole: "Co-founder and CEO, MBA IT", location: "Rajasthan" },
+    { id: 2, name: "Mariya", image: "/faculty/faculty-1.jpg", jobRole: "MBA Fashion Design", location: "Rajasthan" },
+    { id: 3, name: "Sangeeta Jangir", image: "/faculty/faculty-3.jpg", jobRole: "MBA", location: "Rajasthan" },
+    { id: 4, name: "Urmila Jangir", image: "/faculty/faculty-4.jpg", jobRole: "B.Arch", location: "Jammu Kashmir" },
+    { id: 5, name: "AR. PRERNA", image: "/faculty/faculty-5.jpg", jobRole: "Co-founder and CEO, MBA IT", location: "Rajasthan" },
   ];
 
   const handleOpen = (member) => {
