@@ -234,7 +234,7 @@ const Header = () => {
 
 <li><Link to="/aboutus">About Us</Link></li>
 <li><Link to="/founding-members">Mentor</Link></li>
-<li><Link to="/staff">Faculty</Link></li>
+<li><Link to="/staff">Our Team</Link></li>
                             </ul>
                         )}
                     </li>
