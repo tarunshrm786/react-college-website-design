@@ -1,0 +1,62 @@
+.admission-form-background {
+    /* background-image: url('../public/background.jpg'); */
+
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Ensure the background covers the full viewport height */
+  }
+
+  .text-container {
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+  }
+  
+  .text-container .admission-title {
+    margin-right: 5px; /* Adjust the space between the texts */
+  }
+  
+  .text-container .admission-form {
+    margin-left: 5px; /* Optional: Adjust the space on the left side */
+  }
+  
+  
+/* Animation for sliding in from the left */
+@keyframes slideInFromLeft {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Animation for sliding in from the right */
+@keyframes slideInFromRight {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Animation for smoke effect */
+@keyframes smokeEffect {
+  0% { opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+
+.admission-title {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.admission-form {
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+.smoke-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  /* background: url('../public/img1.jpg') no-repeat center center; */
+  background-size: cover;
+  animation: smokeEffect 2s ease-out forwards;
+  z-index: -1; /* To ensure it appears behind the text */
+}

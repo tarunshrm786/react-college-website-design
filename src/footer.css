@@ -1,5 +1,4 @@
 .footer {
-    /* background-color: #E0F7FA; */
     background-color: #FFE4E1;
     color: #444;
     padding: 20px;
@@ -21,12 +20,23 @@
     text-align: center; /* Center align text in small screens */
 }
 
-.footer-logo img {
-    /* background-color: #e0e0e0; */
+/* .footer-logo img {
     display: block;
-    /* This ensures space is reserved even if the image is still loading */
+    margin-left: 90px;
+} */
+
+.footer-logo {
+    display: flex;
+    justify-content: center; /* Center-aligns the logo horizontally */
+    margin-bottom: 20px; /* Optional: Adds space below the logo */
 }
 
+.footer-logo img {
+    display: block;
+    max-width: 100%; /* Ensures the logo scales down on small screens */
+    height: auto; /* Maintains the aspect ratio of the logo */
+    margin: 0 auto; /* Centers the image horizontally */
+}
 
 .footer-column p {
     margin: 10px 0;
@@ -38,18 +48,6 @@
     flex: 1;
     margin: 0 10px;
     text-align: center;
-}
-
-.footer-column-other-links p {
-    margin-top: 10px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.footer-column-other-links h4,
-.footer-column h4 {
-    margin-bottom: 25px;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-column-logo p {
@@ -92,18 +90,11 @@
     background-color: #ff0000;
 }
 
-.social-media-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    justify-content: center;
-}
-
-.social-media-icon {
-    width: 110px;
-    height: 110px;
-    display: block;
-    margin: 0 auto;
+/* Map Container Styling */
+.map-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
 }
 
 .footer-bottom {
@@ -135,6 +126,46 @@
     text-decoration: underline;
 }
 
+/* Remove bullets and styling for the IMPORTANT LINKS section */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column h4 {
+    margin-bottom: 20px; /* Adds space below the <h4> element */
+    margin-top: 20px;
+}
+
+
+.footer-column ul li {
+    margin-bottom: 20px; /* Space between links */
+}
+
+.footer-column ul a {
+    color: #444;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-column ul a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-logo img {
+        max-width: 80%; /* Adjust as needed for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo img {
+        max-width: 70%; /* Adjust further if needed */
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .footer-columns {
@@ -144,19 +175,6 @@
 
     .footer-column {
         margin: 10px 0;
-    }
-
-    .footer-column p {
-        margin-left: 0;
-    }
-
-    .social-media-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .social-media-icon {
-        width: 90px;
-        height: 90px;
     }
 
     .footer-bottom {
@@ -170,19 +188,6 @@
         padding: 10px;
     }
 
-    .footer-column p {
-        font-size: 12px;
-    }
-
-    .social-media-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .social-media-icon {
-        width: 80px;
-        height: 80px;
-    }
-
     .footer-bottom {
         padding: 10px;
     }
@@ -193,57 +198,7 @@
         padding: 5px;
     }
 
-    .footer-column p {
-        font-size: 12px;
-    }
-
-    .social-media-icon {
-        width: 60px;
-        height: 60px;
-    }
-
     .footer-bottom {
         padding: 5px;
-    }
-}
-
-.footer-column-other-links p {
-    font-size: 16px; /* Default size */
-    margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-    .footer-column-other-links p {
-        font-size: 12px; /* Adjust for small screens */
-    }
-}
-
-.footer-column-logo {
-    flex: 1;
-    margin: 0 10px;
-    text-align: center;
-}
-
-.footer-column-logo p {
-    margin-bottom: 25px;
-    font-size: 16px; /* Default size */
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .footer-column-logo p {
-        font-size: 14px; /* Adjust for medium screens */
-    }
-}
-
-@media (max-width: 768px) {
-    .footer-column-logo p {
-        font-size: 12px; /* Adjust for small screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-column-logo p {
-        font-size: 10px; /* Adjust for extra small screens */
     }
 }

@@ -130,6 +130,7 @@ import JewelleryDesign from './Components/diploma/jewellery-design';
 import WebDesign from './Components/diploma/web-design'; 
 
 import Gallery from './Components/gallery'; 
+import Career from './Components/career'; 
 import Footer from './Components/footer'; 
 import Header from './Components/header';
 import ScrollIcon from './Components/scrollIcon'; // Import ScrollIcon
@@ -148,6 +149,7 @@ function App() {
           <Route path="/aboutus" element={<Aboutus />} /> 
           <Route path="/founding-members" element={<FoundingMembers />} /> 
           <Route path="/staff" element={<Staff />} /> 
+          <Route path="/career" element={<Career />} /> 
           <Route path="/ba" element={<Bacourse />} /> 
           <Route path="/bcom" element={<Bcom />} /> 
           <Route path="/bsc" element={<Bsc />} /> 

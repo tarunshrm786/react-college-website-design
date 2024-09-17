@@ -343,6 +343,7 @@ const Header = () => {
 <li><Link to="/admission">Admission</Link></li>
 <li><Link to="/gallery">Gallery</Link></li>
 <li><Link to="/contact-us">Contact us</Link></li>
+<li><Link to="/career">Career</Link></li>
 {/* <li><Link to="/login">Student Login</Link></li> */}
 
                 </ul>
