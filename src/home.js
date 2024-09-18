@@ -165,8 +165,78 @@
 
 // export default Home;
 
+// import React, { useState, useEffect } from 'react';
+// import { ToastContainer, toast } from 'react-toastify';
+// import ModalForm from './Components/EnquiryModalForm';
+// import Banner from './Components/banner';
+// import Aboutus from './Components/about_us';
+// import Director from './Components/directors';
+// import Services from './Components/services';
+// import Collaboration from './Components/collaboration';
+// import Affiliation from './Components/affiliation';
+// // import ScrollIcon from './Components/scrollIcon';
+
+// function Home() {
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+
+//   // useEffect(() => {
+//   //   // Check if the modal has been shown before
+//   //   const hasModalBeenShown = localStorage.getItem('modalShown');
+//   //   if (!hasModalBeenShown) {
+//   //     setIsModalOpen(true);
+//   //   }
+//   // }, []);
+//   useEffect(() => {
+//     try {
+//       const hasModalBeenShown = localStorage.getItem('modalShown');
+//       if (!hasModalBeenShown) {
+//         setIsModalOpen(true);
+//       }
+//     } catch (error) {
+//       console.error("Error accessing localStorage:", error);
+//     }
+//   }, []);
+  
+
+//   const handleModalClose = () => {
+//     setIsModalOpen(false);
+//   };
+
+//   const handleModalSubmit = (formData) => {
+//     setIsModalOpen(false); // Close modal on successful submission
+//     console.log("Form submitted with data:", formData); // Display form data in console
+  
+//     // Show success toast notification
+//     toast.success("Form submitted successfully!", {
+//       position: "top-center",
+//       autoClose: 3000,
+//     });
+//   };
+
+//   return (
+//     <div className="App">
+//       <Banner />
+//       <Aboutus />
+//       <Services />
+//       <Director />
+//       <Collaboration />
+//       <Affiliation />
+//       {/* <ScrollIcon /> */}
+
+//       {/* Modal Form */}
+//       <ModalForm
+//         isOpen={isModalOpen}
+//         onClose={handleModalClose}
+//         onSubmit={handleModalSubmit}
+//       />
+//       <ToastContainer />
+//     </div>
+//   );
+// }
+
+// export default Home;
+
 import React, { useState, useEffect } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import ModalForm from './Components/EnquiryModalForm';
 import Banner from './Components/banner';
 import Aboutus from './Components/about_us';
@@ -180,10 +250,13 @@ function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    // Check if the modal has been shown before
-    const hasModalBeenShown = localStorage.getItem('modalShown');
-    if (!hasModalBeenShown) {
-      setIsModalOpen(true);
+    try {
+      const hasModalBeenShown = localStorage.getItem('modalShown');
+      if (!hasModalBeenShown) {
+        setIsModalOpen(true);
+      }
+    } catch (error) {
+      console.error("Error accessing localStorage:", error);
     }
   }, []);
 
@@ -195,11 +268,8 @@ function Home() {
     setIsModalOpen(false); // Close modal on successful submission
     console.log("Form submitted with data:", formData); // Display form data in console
   
-    // Show success toast notification
-    toast.success("Form submitted successfully!", {
-      position: "top-center",
-      autoClose: 3000,
-    });
+    // Simple message in console instead of toast notification
+    console.log("Form submitted successfully!");
   };
 
   return (
@@ -218,10 +288,8 @@ function Home() {
         onClose={handleModalClose}
         onSubmit={handleModalSubmit}
       />
-      <ToastContainer />
     </div>
   );
 }
 
 export default Home;
-
