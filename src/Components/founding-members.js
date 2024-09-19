@@ -334,7 +334,7 @@ const FoundingMembers = () => {
           gutterBottom
           sx={{ marginBottom: "30px", fontFamily: 'Montserrat, sans-serif' }}
         >
-          Our Team
+          Our Mentor
         </Typography>
 
         {rows.map((row, rowIndex) => (
