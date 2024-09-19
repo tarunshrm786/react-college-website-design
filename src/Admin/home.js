@@ -1,224 +1,745 @@
-// import React from 'react';
-// import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemText, Divider, CssBaseline, Box, Container, useMediaQuery, useTheme } from '@mui/material';
-// import MenuIcon from '@mui/icons-material/Menu';
-// import DashboardIcon from '@mui/icons-material/Dashboard';
-// import SettingsIcon from '@mui/icons-material/Settings';
-// import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+// // src/pages/home.js
+// import React, { useState } from 'react';
+// import { Box, Container, Typography, CssBaseline, TextField, Button, Stack, IconButton, Divider } from '@mui/material';
+// import Header from '../Admin/Components/header';
+// import Sidebar from '../Admin/Components/Sidebar';
+// import Footer from '../Admin/Components/footer';
+// import UploadIcon from '@mui/icons-material/Upload';
+// import DeleteIcon from '@mui/icons-material/Delete';
+// import { styled } from '@mui/material/styles';
 
-// function AdminPanel() {
-//   const theme = useTheme();
-//   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-//   const [open, setOpen] = React.useState(false);
+// const UploadButton = styled(Button)({
+//   backgroundColor: 'black',
+//   color: 'white',
+//   '&:hover': {
+//     backgroundColor: 'darkgray',
+//   },
+// });
 
-//   // Toggle drawer open/close state
-//   const handleDrawerToggle = () => {
-//     setOpen(!open);
+// const Home = () => {
+//   const [open, setOpen] = useState(false);
+//   const [aboutOpen, setAboutOpen] = useState(false);
+//   const [coursesOpen, setCoursesOpen] = useState(false);
+//   const [ugOpen, setUgOpen] = useState(false);
+//   const [pgOpen, setPgOpen] = useState(false);
+//   const [diplomaOpen, setDiplomaOpen] = useState(false);
+
+//   // State management for form inputs
+//   const [bannerImage, setBannerImage] = useState(null);
+//   const [bannerText, setBannerText] = useState('');
+//   const [aboutText, setAboutText] = useState('');
+//   const [visionText, setVisionText] = useState('');
+//   const [missionText, setMissionText] = useState('');
+//   const [coursesImages, setCoursesImages] = useState([]);
+//   const [directorMessage, setDirectorMessage] = useState('');
+//   const [directorImage, setDirectorImage] = useState(null);
+//   const [collaborators, setCollaborators] = useState([]);
+//   const [affiliations, setAffiliations] = useState([]);
+
+//   // Handlers for file inputs
+//   const handleFileChange = (event, setter) => {
+//     setter(event.target.files[0]);
+//   };
+
+//   const handleMultipleFilesChange = (event, setter) => {
+//     setter(Array.from(event.target.files));
+//   };
+
+//   const handleDeleteImage = (index, setter, array) => {
+//     setter(array.filter((_, i) => i !== index));
+//   };
+
+//   const handleSave = () => {
+//     // Add your save logic here
+//     console.log('Saving data...');
 //   };
 
 //   return (
-//     <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+//     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
 //       <CssBaseline />
-     
-//       <AppBar position="fixed" sx={{ zIndex: 1300, backgroundColor: 'black' }}>
-//   <Toolbar>
-//     {isSmallScreen && (
-//       <IconButton
-//         edge="start"
-//         color="inherit"
-//         aria-label="menu"
-//         onClick={handleDrawerToggle}
-//         sx={{ marginRight: 2 }}
-//       >
-//         <MenuIcon sx={{ color: 'white' }} />
-//       </IconButton>
-//     )}
-//     <Typography variant="h6" sx={{ color: 'white' }}>
-//       Admin Panel
-//     </Typography>
-//   </Toolbar>
-// </AppBar>
-
-//       <Box sx={{ display: 'flex', flex: 1 }}>
-//         <Drawer
-//           variant={isSmallScreen ? "temporary" : "permanent"}
-//           anchor="left"
+//       <Header onDrawerToggle={() => setOpen(!open)} />
+//       <Box sx={{ display: 'flex', flex: 1, pt: 8 }}>
+//         <Sidebar
 //           open={open}
-//           onClose={handleDrawerToggle}
-//           sx={{
-//             width: 240,
-//             flexShrink: 0,
-//             '& .MuiDrawer-paper': {
-//               width: 240,
-//               boxShadow: 3,
-//             },
-//           }}
-//         >
-//           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', padding: 1, marginTop: 8 }}>
-//             {isSmallScreen && (
-//               <IconButton onClick={handleDrawerToggle}>
-//                 <MenuIcon />
-//               </IconButton>
-//             )}
-//           </Box>
-//           <Divider />
-//           <List>
-//             {['Dashboard', 'Settings', 'Logout'].map((text, index) => (
-//               <ListItem button key={text}>
-//                 <IconButton>
-//                   {index === 0 && <DashboardIcon />}
-//                   {index === 1 && <SettingsIcon />}
-//                   {index === 2 && <ExitToAppIcon />}
-//                 </IconButton>
-//                 <ListItemText primary={text} />
-//               </ListItem>
-//             ))}
-//           </List>
-//         </Drawer>
-//         <Box
-//           component="main"
-//           sx={{
-//             flexGrow: 1,
-//             padding: 3,
-//             marginTop: 8,
-//             marginLeft: isSmallScreen ? 0 : 0, // Adjust margin-left based on screen size
-//             transition: 'margin-left 0.3s', // Smooth transition for margin-left change
-//           }}
-//         >
+//           onDrawerToggle={() => setOpen(!open)}
+//           aboutOpen={aboutOpen}
+//           onAboutToggle={() => setAboutOpen(!aboutOpen)}
+//           coursesOpen={coursesOpen}
+//           onCoursesToggle={() => setCoursesOpen(!coursesOpen)}
+//           ugOpen={ugOpen}
+//           onUgToggle={() => setUgOpen(!ugOpen)}
+//           pgOpen={pgOpen}
+//           onPgToggle={() => setPgOpen(!pgOpen)}
+//           diplomaOpen={diplomaOpen}
+//           onDiplomaToggle={() => setDiplomaOpen(!diplomaOpen)}
+//         />
+//         <Box component="main" sx={{ flexGrow: 1, padding: 3 }}>
 //           <Container>
 //             <Typography paragraph>
-//               Welcome to the Admin Panel. Here you can manage all the aspects of your application.
+//               Welcome to the Admin Panel. Here you can manage all aspects of the application.
 //             </Typography>
-//             <Typography paragraph>
-//               This is a sample admin panel layout using Material UI. You can add more components and functionality as needed.
+            
+//             <Typography variant="h4" gutterBottom>
+//               Home
 //             </Typography>
-//           </Container>
-//         </Box>
-//       </Box>
-//         <Box component="footer" sx={{ padding: 2, backgroundColor: '#f1f1f1', position: 'fixed', bottom: 0, width: '100%' }}>
-//         <Container>
-//           <Typography variant="body2" color="textSecondary" align="center">
-//             © 2024 The NAD. All rights reserved.
-//           </Typography>
-//           <Typography variant="body2" color="textSecondary" align="center" sx={{ mt: 1 }}>
-//             Designed by Star Marketing
-//           </Typography>
-//         </Container>
-//       </Box>
-//     </Box>
+//             <Divider sx={{ my: 2 }} />
+
+//             <Typography variant="h6" gutterBottom>
+//               Home Page Banner
+//             </Typography>
+//             <TextField
+//               fullWidth
+//               label="Text on Banner Image"
+//               value={bannerText}
+//               onChange={(e) => setBannerText(e.target.value)}
+//               sx={{ mb: 2 }}
+//             />
+//             <Button
+//               variant="contained"
+//               component="label"
+//               startIcon={<UploadIcon />}
+//               sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
+//             >
+//               Upload Banner Image
+//               <input
+//                 type="file"
+//                 hidden
+//                 onChange={(e) => handleFileChange(e, setBannerImage)}
+//               />
+//             </Button>
+//             {bannerImage && (
+//               <Box sx={{ position: 'relative', width: '100%', height: 'auto' }}>
+//                 <img src={URL.createObjectURL(bannerImage)} alt="Banner" style={{ width: '100%', height: 'auto' }} />
+//                 <IconButton
+//                   sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+//                   onClick={() => setBannerImage(null)}
+//                 >
+//                   <DeleteIcon />
+//                 </IconButton>
+//               </Box>
+//             )}
+
+//             <Divider sx={{ my: 2 }} />
+
+//             <Typography variant="h6" gutterBottom>
+//               About Us
+//             </Typography>
+//             <TextField
+//               fullWidth
+//               multiline
+//               rows={4}
+//               label="About Us Text"
+//               value={aboutText}
+//               onChange={(e) => setAboutText(e.target.value)}
+//               sx={{ mb: 2 }}
+//             />
+
+//             <Divider sx={{ my: 2 }} />
+
+//             <Typography variant="h6" gutterBottom>
+//               Our Vision
+//             </Typography>
+//             <TextField
+//               fullWidth
+//               multiline
+//               rows={2}
+//               label="Our Vision Text"
+//               value={visionText}
+//               onChange={(e) => setVisionText(e.target.value)}
+//               sx={{ mb: 2 }}
+//             />
+
+//             <Divider sx={{ my: 2 }} />
+
+//             <Typography variant="h6" gutterBottom>
+//               Our Mission
+//             </Typography>
+//             <TextField
+//               fullWidth
+//               multiline
+//               rows={2}
+//               label="Our Mission Text"
+//               value={missionText}
+//               onChange={(e) => setMissionText(e.target.value)}
+//               sx={{ mb: 2 }}
+//             />
+
+//             <Divider sx={{ my: 2 }} />
+
+//             <Typography variant="h6" gutterBottom>
+//               Our Courses: Image Slider
+//             </Typography>
+//             <Button
+//               variant="contained"
+//               component="label"
+//               startIcon={<UploadIcon />}
+//               sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
+//             >
+//               Upload Slider Images
+//               <input
+//                 type="file"
+//                 multiple
+//                 hidden
+//                 onChange={(e) => handleMultipleFilesChange(e, setCoursesImages)}
+//               />
+//             </Button>
+//             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+//               {coursesImages.map((file, index) => (
+//                 <Box key={index} sx={{ position: 'relative', width: '150px', height: 'auto', mb: 2 }}>
+//                   <img
+//                     src={URL.createObjectURL(file)}
+//                     alt={`Course ${index}`}
+//                     style={{ width: '100%', height: 'auto' }}
+//                   />
+//                   <IconButton
+//                     sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+//                     onClick={() => handleDeleteImage(index, setCoursesImages, coursesImages)}
+//                   >
+//                     <DeleteIcon />
+//                   </IconButton>
+//                 </Box>
+//               ))}
+//             </Box>
+
+//             <Divider sx={{ my: 2 }} />
+
+//             <Typography variant="h6" gutterBottom>
+//               Director's Message
+//             </Typography>
+//             <TextField
+//               fullWidth
+//               multiline
+//               rows={4}
+//               label="Director's Message"
+//               value={directorMessage}
+//               onChange={(e) => setDirectorMessage(e.target.value)}
+//               sx={{ mb: 2 }}
+//             />
+//             <Button
+//               variant="contained"
+//               component="label"
+//               startIcon={<UploadIcon />}
+//               sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
+//             >
+//               Upload Director Photo
+//               <input
+//                 type="file"
+//                 hidden
+//                 onChange={(e) => handleFileChange(e, setDirectorImage)}
+//               />
+//             </Button>
+//             {directorImage && (
+//               <Box sx={{ position: 'relative', width: '150px', height: 'auto' }}>
+//                 <img src={URL.createObjectURL(directorImage)} alt="Director" style={{ width: '100%', height: 'auto' }} />
+//                 <IconButton
+//                   sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+//                   onClick={() => setDirectorImage(null)}
+//                 >
+//                   <DeleteIcon />
+//                 </IconButton>
+//               </Box>
+//             )}
+
+//             <Divider sx={{ my: 2 }} />
+
+//             <Typography variant="h6" gutterBottom>
+//               Our Collaborators
+//             </Typography>
+//             <Button
+//               variant="contained"
+//               component="label"
+//               startIcon={<UploadIcon />}
+//               sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
+//             >
+//               Upload Collaborator Logos
+//               <input
+//                 type="file"
+//                 multiple
+//                 hidden
+//                 onChange={(e) => handleMultipleFilesChange(e, setCollaborators)}
+//               />
+//             </Button>
+//             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+//               {collaborators.map((file, index) => (
+//                 <Box key={index} sx={{ position: 'relative', width: '150px', height: 'auto', mb: 2 }}>
+//                   <img
+//                     src={URL.createObjectURL(file)}
+//                     alt={`Collaborator ${index}`}
+//                     style={{ width: '100%', height: 'auto' }}
+//                   />
+//                   <IconButton
+//                     sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+//                     onClick={() => handleDeleteImage(index, setCollaborators, collaborators)}
+//                   >
+//                     <DeleteIcon />
+//                   </IconButton>
+//                 </Box>
+//               ))}
+//             </Box>
+
+//             <Divider sx={{ my: 2 }} />
+
+//             <Typography variant="h6" gutterBottom>
+//               Our Affiliations
+//             </Typography>
+//             <Button
+//               variant="contained"
+//               component="label"
+//               startIcon={<UploadIcon />}
+//               sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
+//             >
+//               Upload Affiliation Logos
+//               <input
+//                 type="file"
+//                 multiple
+//                 hidden
+//                 onChange={(e) => handleMultipleFilesChange(e, setAffiliations)}
+//               />
+//             </Button>
+//             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+//               {affiliations.map((file, index) => (
+//                 <Box key={index} sx={{ position: 'relative', width: '150px', height: 'auto', mb: 2 }}>
+//                   <img
+//                     src={URL.createObjectURL(file)}
+//                     alt={`Affiliation ${index}`}
+//                     style={{ width: '100%', height: 'auto' }}
+//                   />
+//                   <IconButton
+//                     sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+//                     onClick={() => handleDeleteImage(index, setAffiliations, affiliations)}
+//                   >
+    //                 <DeleteIcon />
+    //               </IconButton>
+    //             </Box>
+    //           ))}
+    //         </Box>
+
+            // <Divider sx={{ my: 2 }} />
+
+            // <Button
+            //   variant="contained"
+            //   onClick={handleSave}
+            //   sx={{ backgroundColor: 'black', color: 'white' }}
+            // >
+            //   Save Changes
+            // </Button>
+
+            
+
+    //         {/* <Footer /> */}
+    //       </Container>
+    //     </Box>
+    //   </Box>
+    //   <Footer />
+    // </Box>
 //   );
-// }
+// };
 
-// export default AdminPanel;
+// export default Home;
 
-import React from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemText, Divider, CssBaseline, Box, Container, useMediaQuery, useTheme } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import SettingsIcon from '@mui/icons-material/Settings';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
-function AdminPanel() {
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const [open, setOpen] = React.useState(false);
 
-  // Toggle drawer open/close state
-  const handleDrawerToggle = () => {
-    setOpen(!open);
+// src/pages/home.js
+import React, { useState } from 'react';
+import { Box, Container, Typography, CssBaseline, TextField, Button, Stack, IconButton, Divider } from '@mui/material';
+import Header from '../Admin/Components/header';
+import Sidebar from '../Admin/Components/Sidebar';
+import Footer from '../Admin/Components/footer';
+import UploadIcon from '@mui/icons-material/Upload';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { styled } from '@mui/material/styles';
+
+const UploadButton = styled(Button)({
+  backgroundColor: 'black',
+  color: 'white',
+  '&:hover': {
+    backgroundColor: 'darkgray',
+  },
+});
+
+const Home = () => {
+  const [open, setOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [coursesOpen, setCoursesOpen] = useState(false);
+  const [ugOpen, setUgOpen] = useState(false);
+  const [pgOpen, setPgOpen] = useState(false);
+  const [diplomaOpen, setDiplomaOpen] = useState(false);
+
+  // State management for form inputs
+  const [bannerImage, setBannerImage] = useState(null);
+  const [bannerText, setBannerText] = useState('');
+  const [aboutText, setAboutText] = useState('');
+  const [visionText, setVisionText] = useState('');
+  const [missionText, setMissionText] = useState('');
+  const [coursesImages, setCoursesImages] = useState([]);
+  const [directorMessage, setDirectorMessage] = useState('');
+  const [directorImage, setDirectorImage] = useState(null);
+  const [collaborators, setCollaborators] = useState([]);
+  const [affiliations, setAffiliations] = useState([]);
+
+  // Handlers for file inputs
+  const handleFileChange = (event, setter) => {
+    setter(event.target.files[0]);
+  };
+
+  const handleMultipleFilesChange = (event, setter) => {
+    setter(Array.from(event.target.files));
+  };
+
+  const handleDeleteImage = (index, setter, array) => {
+    setter(array.filter((_, i) => i !== index));
+  };
+
+  const handleSave = () => {
+    // Add your save logic here
+    console.log('Saving data...');
   };
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ zIndex: 1300, backgroundColor: 'black' }}>
-        <Toolbar>
-          {isSmallScreen && (
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              onClick={handleDrawerToggle}
-              sx={{ marginRight: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-          )}
-          <Typography variant="h6" sx={{ color: 'white' }}>
-            Admin Panel
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Box sx={{ display: 'flex', flex: 1 }}>
-        <Drawer
-          variant={isSmallScreen ? "temporary" : "permanent"}
-          anchor="left"
+      <Header onDrawerToggle={() => setOpen(!open)} />
+      <Box sx={{ display: 'flex', flex: 1, pt: 8 }}>
+        <Sidebar
           open={open}
-          onClose={handleDrawerToggle}
-          sx={{
-            width: 240,
-            flexShrink: 0,
-            '& .MuiDrawer-paper': {
-              width: 240,
-              boxShadow: 3,
-              display: 'flex',
-              flexDirection: 'column',
-            },
-          }}
-        >
-          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', padding: 1 }}>
-            <IconButton onClick={handleDrawerToggle}>
-              <CloseIcon />
-            </IconButton>
-          </Box>
-          <Divider />
-          <List>
-            <ListItem button onClick={() => console.log('Dashboard clicked')}>
-              <DashboardIcon sx={{ marginRight: 2 }} />
-              <ListItemText primary="Dashboard" />
-            </ListItem>
-            <ListItem button onClick={() => console.log('Settings clicked')}>
-              <SettingsIcon sx={{ marginRight: 2 }} />
-              <ListItemText primary="Settings" />
-            </ListItem>
-            <ListItem button onClick={() => console.log('Logout clicked')}>
-              <ExitToAppIcon sx={{ marginRight: 2 }} />
-              <ListItemText primary="Logout" />
-            </ListItem>
-          </List>
-        </Drawer>
-        <Box
-          component="main"
-          sx={{
-            flexGrow: 1,
-            padding: 3,
-            marginTop: 8,
-            marginLeft: isSmallScreen ? 0 : 240, // Adjust margin-left based on screen size
-            transition: 'margin-left 0.3s', // Smooth transition for margin-left change
-          }}
-        >
+          onDrawerToggle={() => setOpen(!open)}
+          aboutOpen={aboutOpen}
+          onAboutToggle={() => setAboutOpen(!aboutOpen)}
+          coursesOpen={coursesOpen}
+          onCoursesToggle={() => setCoursesOpen(!coursesOpen)}
+          ugOpen={ugOpen}
+          onUgToggle={() => setUgOpen(!ugOpen)}
+          pgOpen={pgOpen}
+          onPgToggle={() => setPgOpen(!pgOpen)}
+          diplomaOpen={diplomaOpen}
+          onDiplomaToggle={() => setDiplomaOpen(!diplomaOpen)}
+        />
+        <Box component="main" sx={{ flexGrow: 1, padding: 3 }}>
           <Container>
             <Typography paragraph>
-              Welcome to the Admin Panel. Here you can manage all the aspects of your application.
+              Welcome to the Admin Panel. Here you can manage all aspects of the application.
             </Typography>
-            <Typography paragraph>
-              This is a sample admin panel layout using Material UI. You can add more components and functionality as needed.
+            
+            <Typography variant="h4" gutterBottom>
+              Home
             </Typography>
+            <Divider sx={{ my: 2 }} />
+
+            <Typography variant="h6" gutterBottom>
+              Home Page Banner
+            </Typography>
+            <TextField
+              fullWidth
+              label="Text on Banner Image"
+              value={bannerText}
+              onChange={(e) => setBannerText(e.target.value)}
+              sx={{ mb: 2 }}
+            />
+            <Button
+              variant="contained"
+              component="label"
+              startIcon={<UploadIcon />}
+              sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
+            >
+              Upload Banner Image
+              <input
+                type="file"
+                hidden
+                onChange={(e) => handleFileChange(e, setBannerImage)}
+              />
+            </Button>
+            {bannerImage && (
+              <Box sx={{ position: 'relative', width: '100%', height: 'auto', mb: 2 }}>
+                <img
+                  src={URL.createObjectURL(bannerImage)}
+                  alt="Banner"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    maxHeight: '400px',
+                    objectFit: 'cover',
+                    borderRadius: '8px',
+                  }}
+                />
+                <IconButton
+                  sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+                  onClick={() => setBannerImage(null)}
+                >
+                  <DeleteIcon />
+                </IconButton>
+              </Box>
+            )}
+
+            <Divider sx={{ my: 2 }} />
+
+            <Typography variant="h6" gutterBottom>
+              About Us
+            </Typography>
+            <TextField
+              fullWidth
+              multiline
+              rows={4}
+              label="About Us Text"
+              value={aboutText}
+              onChange={(e) => setAboutText(e.target.value)}
+              sx={{ mb: 2 }}
+            />
+
+            <Divider sx={{ my: 2 }} />
+
+            <Typography variant="h6" gutterBottom>
+              Our Vision
+            </Typography>
+            <TextField
+              fullWidth
+              multiline
+              rows={2}
+              label="Our Vision Text"
+              value={visionText}
+              onChange={(e) => setVisionText(e.target.value)}
+              sx={{ mb: 2 }}
+            />
+
+            <Divider sx={{ my: 2 }} />
+
+            <Typography variant="h6" gutterBottom>
+              Our Mission
+            </Typography>
+            <TextField
+              fullWidth
+              multiline
+              rows={2}
+              label="Our Mission Text"
+              value={missionText}
+              onChange={(e) => setMissionText(e.target.value)}
+              sx={{ mb: 2 }}
+            />
+
+            <Divider sx={{ my: 2 }} />
+
+            <Typography variant="h6" gutterBottom>
+              Our Courses: Images
+            </Typography>
+            <Button
+              variant="contained"
+              component="label"
+              startIcon={<UploadIcon />}
+              sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
+            >
+              Upload Course Images
+              <input
+                type="file"
+                multiple
+                hidden
+                onChange={(e) => handleMultipleFilesChange(e, setCoursesImages)}
+              />
+            </Button>
+            {coursesImages.length > 0 && (
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+                {coursesImages.map((file, index) => (
+                  <Box
+                    key={index}
+                    sx={{
+                      position: 'relative',
+                      width: '100%',
+                      maxWidth: '300px',
+                      mb: 2,
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <img
+                      src={URL.createObjectURL(file)}
+                      alt={`Course ${index}`}
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        borderRadius: '8px',
+                        objectFit: 'cover',
+                      }}
+                    />
+                    <IconButton
+                      sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+                      onClick={() => handleDeleteImage(index, setCoursesImages, coursesImages)}
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+                  </Box>
+                ))}
+              </Box>
+            )}
+
+            <Divider sx={{ my: 2 }} />
+
+            <Typography variant="h6" gutterBottom>
+              Director's Message
+            </Typography>
+            <TextField
+              fullWidth
+              multiline
+              rows={4}
+              label="Director's Message"
+              value={directorMessage}
+              onChange={(e) => setDirectorMessage(e.target.value)}
+              sx={{ mb: 2 }}
+            />
+            <Button
+              variant="contained"
+              component="label"
+              startIcon={<UploadIcon />}
+              sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
+            >
+              Upload Director Photo
+              <input
+                type="file"
+                hidden
+                onChange={(e) => handleFileChange(e, setDirectorImage)}
+              />
+            </Button>
+            {directorImage && (
+              <Box sx={{ position: 'relative', width: '150px', height: 'auto' }}>
+                <img
+                  src={URL.createObjectURL(directorImage)}
+                  alt="Director"
+                  style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+                />
+                <IconButton
+                  sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+                  onClick={() => setDirectorImage(null)}
+                >
+                  <DeleteIcon />
+                </IconButton>
+              </Box>
+            )}
+
+            <Divider sx={{ my: 2 }} />
+
+            <Typography variant="h6" gutterBottom>
+              Our Collaborators
+            </Typography>
+            <Button
+              variant="contained"
+              component="label"
+              startIcon={<UploadIcon />}
+              sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
+            >
+              Upload Collaborators
+              <input
+                type="file"
+                multiple
+                hidden
+                onChange={(e) => handleMultipleFilesChange(e, setCollaborators)}
+              />
+            </Button>
+            {collaborators.length > 0 && (
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+                {collaborators.map((file, index) => (
+                  <Box
+                    key={index}
+                    sx={{
+                      position: 'relative',
+                      width: '150px',
+                      height: 'auto',
+                      mb: 2,
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <img
+                      src={URL.createObjectURL(file)}
+                      alt={`Collaborator ${index}`}
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        borderRadius: '8px',
+                        objectFit: 'cover',
+                      }}
+                    />
+                    <IconButton
+                      sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+                      onClick={() => handleDeleteImage(index, setCollaborators, collaborators)}
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+                  </Box>
+                ))}
+              </Box>
+            )}
+
+            <Divider sx={{ my: 2 }} />
+
+            <Typography variant="h6" gutterBottom>
+              Our Affiliations
+            </Typography>
+            <Button
+              variant="contained"
+              component="label"
+              startIcon={<UploadIcon />}
+              sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
+            >
+              Upload Affiliations
+              <input
+                type="file"
+                multiple
+                hidden
+                onChange={(e) => handleMultipleFilesChange(e, setAffiliations)}
+              />
+            </Button>
+            {affiliations.length > 0 && (
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+                {affiliations.map((file, index) => (
+                  <Box
+                    key={index}
+                    sx={{
+                      position: 'relative',
+                      width: '150px',
+                      height: 'auto',
+                      mb: 2,
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <img
+                      src={URL.createObjectURL(file)}
+                      alt={`Affiliation ${index}`}
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        borderRadius: '8px',
+                        objectFit: 'cover',
+                      }}
+                    />
+                    <IconButton
+                      sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+                      onClick={() => handleDeleteImage(index, setAffiliations, affiliations)}
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+                  </Box>
+                ))}
+              </Box>
+            )}
+
+<Divider sx={{ my: 2 }} />
+
+<Button
+  variant="contained"
+  onClick={handleSave}
+  sx={{ backgroundColor: 'black', color: 'white' }}
+>
+  Save Changes
+</Button>
+
+            {/* <Button variant="contained" color="primary" onClick={handleSave}>
+              Save Changes
+            </Button> */}
+
           </Container>
-          <Box component="footer" sx={{ padding: 2, backgroundColor: '#f1f1f1', position: 'fixed', bottom: 0, width: '100%' }}>
-            <Container>
-              <Typography variant="body2" color="textSecondary" align="center">
-                © 2024 Your Company. All rights reserved.
-              </Typography>
-              <Typography variant="body2" color="textSecondary" align="center" sx={{ mt: 1 }}>
-                Designed by Star Marketing
-              </Typography>
-            </Container>
-          </Box>
         </Box>
       </Box>
+      <Footer />
     </Box>
   );
-}
+};
 
-export default AdminPanel;
+export default Home;

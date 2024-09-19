@@ -199,6 +199,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './home'; // Import Home page
 import Admin from '../src/Admin/login';
 import AdminHome from '../src/Admin/home';
+import AdminGallery from '../src/Admin/Components/gallery';
 import Aboutus from './Components/aboutus'; 
 import FoundingMembers from './Components/founding-members'; 
 import Staff from './Components/staff'; 
@@ -399,6 +400,7 @@ function App() {
         } />
         <Route path="/admin-login" element={<Admin />} />
         <Route path="/admin-home" element={<AdminHome />} />
+        <Route path="/admin-gallery" element={<AdminGallery />} />
       </Routes>
     </Router>
   );
