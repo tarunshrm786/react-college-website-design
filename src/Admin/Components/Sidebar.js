@@ -291,8 +291,8 @@ const Sidebar = ({
       <Divider />
       <List>
         <ListItem component="a" button sx={{ mt: { xs: 2, md: 8 } }} href="/admin-home">
-          <HomeIcon sx={{ marginRight: 2 }} />
-          <ListItemText primary="Home" />
+          <HomeIcon  sx={{color: 'black', marginRight: 2 }} />
+          <ListItemText primary="Home" primaryTypographyProps={{ style: { color: 'black' } }} />
         </ListItem>
 
         <ListItem button onClick={onAboutToggle}>
@@ -409,13 +409,13 @@ const Sidebar = ({
         </Collapse>
 
         <ListItem button component="a" href="/admin-gallery">
-          <ImageIcon sx={{ marginRight: 2 }} />
-          <ListItemText primary="Gallery" />
+          <ImageIcon  sx={{color: 'black', marginRight: 2 }} />
+          <ListItemText primary="Gallery" primaryTypographyProps={{ style: { color: 'black' } }} />
         </ListItem>
 
         <ListItem button component="a" href="/placement">
-          <SchoolIcon sx={{ marginRight: 2 }} />
-          <ListItemText primary="Placement" />
+          <SchoolIcon  sx={{color: 'black', marginRight: 2 }} />
+          <ListItemText primary="Placement" primaryTypographyProps={{ style: { color: 'black' } }} />
         </ListItem>
 
         <ListItem button component="a" href="/contact-us-form-data">
