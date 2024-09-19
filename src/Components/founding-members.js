@@ -306,8 +306,8 @@ const FoundingMembers = () => {
     { id: 2, name: "Dr. Satyanarayan Jangid", image: "/mentor/mentor-6.jpg", jobRole: "Gynecologist and Obstetrician", location: "Sujangarh", description: "Detailed description here" },
     { id: 3, name: "Dr. Rohit Soni", image: "/mentor/mentor-2.jpg", jobRole: "Professor of Practice, School of Law Mody University of Science and Technology, Rajasthan", location: "Rajasthan", description: "Detailed description here" },
     { id: 4, name: "Vivek Kumawat", image: "/mentor/mentor-7.jpg", jobRole: "B.Tech. (CE) M.Tech.(SE) Member of The Institution Of Engineers, India (M-1807018) Assistant Engineer Civil Rajasthan Vidyut Utpadan Nigam", location: "Rajasthan", description: "Detailed description here" },
-    { id: 5, name: "Shyam Sundar Kumawat", image: "/mentor/mentor-3.jpg", jobRole: "Ph.D., Rajasthan", location: "Rajasthan", description: "Detailed description here" },
-    { id: 6, name: "Dr. Daksh Jangid", image: "/mentor/mentor-5.jpg", jobRole: "MBBS MD Radio Diagnosis", location: "Sujangarh", description: "Detailed description here" }
+    { id: 5, name: "Dr. Daksh Jangid", image: "/mentor/mentor-3.jpg", jobRole: "MBBS MD Radio Diagnosis", location: "Sujangarh", description: "Detailed description here" },
+    { id: 6, name: "Shyam Sundar Kumawat", image: "/mentor/mentor-5.jpg", jobRole: "Ph.D., Rajasthan", location: "Rajasthan", description: "Detailed description here" }
   ];
 
   const handleOpen = (member) => {
