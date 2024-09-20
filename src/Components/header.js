@@ -312,16 +312,11 @@ const Header = () => {
                                     style={{ position: 'relative' }}
                                 >
                                     <a href="#diploma" onClick={handleDiplomaClick}>
-                                        Diploma
+                                        Professional Diploma
                                         <span className={`arrow ${isDiplomaDropdownOpen ? 'up' : 'down'}`}>▼</span>
                                     </a>
                                     {isDiplomaDropdownOpen && (
                                         <ul className="dropdown-menu nested-dropdown">
-                                            {/* <li><a href="/architecture-design">Architecture, Engineering & Construction</a></li>
-                                            <li><a href="/web-design">Web development & design</a></li>
-                                            <li><a href="/fashion-design">Fashion design</a></li>
-                                            <li><a href="/graphic-design">Graphic design</a></li>
-                                            <li><a href="/jewellery-design">Jewellery design</a></li> */}
                                             <li><Link to="/architecture-design">Architecture, Engineering & Construction</Link></li>
 <li><Link to="/web-design">Web Development & Design</Link></li>
 <li><Link to="/fashion-design">Fashion Design</Link></li>
@@ -330,21 +325,28 @@ const Header = () => {
                                         </ul>
                                     )}
                                 </li>
+
+
+                                <li
+                                    className={`dropdown ${isPGDropdownOpen ? 'open' : ''}`}
+                                    style={{ position: 'relative' }}
+                                >
+                                    <a href="#pg" onClick={handlePGClick}>
+                                        Academic Diploma
+                                 </a>                          
+                                </li>
+
+
+
                             </ul>
                         )}
                     </li>
 
-                    {/* <li><a href="/placement">Placement</a></li>
-                    <li><a href="/admission">Admission</a></li>
-                    <li><a href="/gallery">Gallery</a></li>
-                    <li><a href="/contact-us">Contact us</a></li>
-                    <li><a href="/login">Student Login</a></li> */}
                     <li><Link to="/placement">Placement</Link></li>
 <li><Link to="/admission">Admission</Link></li>
 <li><Link to="/gallery">Gallery</Link></li>
 <li><Link to="/contact-us">Contact us</Link></li>
 <li><Link to="/career">Career</Link></li>
-{/* <li><Link to="/login">Student Login</Link></li> */}
 
                 </ul>
             </nav>

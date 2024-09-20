@@ -199,6 +199,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './home'; // Import Home page
 import Admin from '../src/Admin/login';
 import AdminHome from '../src/Admin/home';
+
+import AdminAboutUs from '../src/Admin/Components/admin-aboutus';
+import AdminMentor from '../src/Admin/Components/admin-mentor';
+import AdminTeam from '../src/Admin/Components/admin-team';
+import AdminPlacement from '../src/Admin/Components/admin-placement';
+import AdminContactus from '../src/Admin/Components/admin-contactus';
+
 import AdminGallery from '../src/Admin/Components/gallery';
 import Aboutus from './Components/aboutus'; 
 import FoundingMembers from './Components/founding-members'; 
@@ -401,6 +408,13 @@ function App() {
         <Route path="/admin-login" element={<Admin />} />
         <Route path="/admin-home" element={<AdminHome />} />
         <Route path="/admin-gallery" element={<AdminGallery />} />
+        <Route path="/admin-aboutus" element={<AdminAboutUs />} />
+
+        <Route path="/admin-mentor" element={<AdminMentor />} />
+        <Route path="/admin-team" element={<AdminTeam />} />
+        <Route path="/admin-placement" element={<AdminPlacement />} />
+        <Route path="/admin-contactus" element={<AdminContactus />} />
+
       </Routes>
     </Router>
   );

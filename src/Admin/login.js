@@ -1,5 +1,5 @@
 // import React, { useState, useEffect } from "react";
-// import { FaUserShield } from 'react-icons/fa'; // Changed to an admin icon
+// import { FaUserShield } from 'react-icons/fa';
 // import {
 //   Container,
 //   TextField,
@@ -13,7 +13,8 @@
 // import AccountCircle from "@mui/icons-material/AccountCircle";
 // import LockIcon from "@mui/icons-material/Lock";
 // import SecurityIcon from "@mui/icons-material/Security";
-// import './css/login.css'; // Ensure your CSS file is properly linked
+// import './css/login.css';
+// import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 // const AdminLogin = () => {
 //   const [username, setUsername] = useState("");
@@ -26,6 +27,9 @@
 //     captcha: "",
 //   });
 //   const [isMounted, setIsMounted] = useState(false);
+
+//   // Initialize useNavigate
+//   const navigate = useNavigate();
 
 //   // Function to generate random captcha (4 digits)
 //   const generateCaptcha = () => {
@@ -74,7 +78,8 @@
 //       // Static login check
 //       if (username === "admin" && password === "admin123") {
 //         alert("Login successful!");
-//         // Add your login logic here (e.g., redirect, API calls)
+//         // Redirect to the admin home page
+//         navigate('/admin-home'); // Adjust the route as necessary
 //       } else {
 //         alert("Invalid username or password.");
 //       }
@@ -96,11 +101,11 @@
 //         display: "flex",
 //         alignItems: "center",
 //         justifyContent: "center",
-//         backgroundImage: `url('/banner-1.jpg')`, // Replace with your image path
+//         backgroundImage: `url('/banner-1.jpg')`,
 //         backgroundSize: "cover",
 //         backgroundPosition: "center",
-//         opacity: 0.9, // Controls overall opacity
-//         width: "100vw", // Full width of the viewport
+//         opacity: 0.9,
+//         width: "100vw",
 //       }}
 //     >
 //       <Box
@@ -116,15 +121,15 @@
 //           boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
 //           padding: "20px",
 //           borderRadius: "10px",
-//           backgroundColor: "rgba(255, 255, 255, 0.8)", // Slightly transparent to show bg through
+//           backgroundColor: "rgba(255, 255, 255, 0.8)",
 //         }}
 //       >
-//         <Box sx={{ display: 'flex', alignItems: 'center' }}> {/* Flexbox for row alignment */}
-//           <FaUserShield style={{ marginRight: '8px', height: '20px' }} /> {/* Admin icon */}
+//         <Box sx={{ display: 'flex', alignItems: 'center' }}>
+//           <FaUserShield style={{ marginRight: '8px', height: '20px' }} />
 //           <Typography
 //             component="h1"
 //             variant="h5"
-//             sx={{ fontFamily: "Montserrat, sans-serif", color: 'inherit' }} // Maintain default color
+//             sx={{ fontFamily: "Montserrat, sans-serif", color: 'inherit' }}
 //           >
 //             Admin Login
 //           </Typography>
@@ -234,12 +239,15 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import LockIcon from "@mui/icons-material/Lock";
 import SecurityIcon from "@mui/icons-material/Security";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import './css/login.css';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const AdminLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
   const [captcha, setCaptcha] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
   const [errors, setErrors] = useState({
@@ -312,6 +320,11 @@ const AdminLogin = () => {
     setCaptchaInput(""); // Reset the captcha input field
   };
 
+  // Toggle password visibility
+  const handleClickShowPassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
   return (
     <Container
       maxWidth={false}
@@ -378,13 +391,15 @@ const AdminLogin = () => {
               ),
             }}
           />
+
+          {/* Password Field with Eye Icon */}
           <TextField
             variant="outlined"
             margin="normal"
             fullWidth
             name="password"
             label="Password"
-            type="password"
+            type={showPassword ? "text" : "password"}
             id="password"
             autoComplete="current-password"
             value={password}
@@ -395,6 +410,13 @@ const AdminLogin = () => {
               startAdornment: (
                 <InputAdornment position="start">
                   <LockIcon />
+                </InputAdornment>
+              ),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton onClick={handleClickShowPassword}>
+                    {showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
                 </InputAdornment>
               ),
             }}
