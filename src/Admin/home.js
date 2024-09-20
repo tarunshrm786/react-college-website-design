@@ -108,8 +108,18 @@
 //               />
 //             </Button>
 //             {bannerImage && (
-//               <Box sx={{ position: 'relative', width: '100%', height: 'auto' }}>
-//                 <img src={URL.createObjectURL(bannerImage)} alt="Banner" style={{ width: '100%', height: 'auto' }} />
+//               <Box sx={{ position: 'relative', width: '100%', height: 'auto', mb: 2 }}>
+//                 <img
+//                   src={URL.createObjectURL(bannerImage)}
+//                   alt="Banner"
+//                   style={{
+//                     width: '100%',
+//                     height: 'auto',
+//                     maxHeight: '400px',
+//                     objectFit: 'cover',
+//                     borderRadius: '8px',
+//                   }}
+//                 />
 //                 <IconButton
 //                   sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
 //                   onClick={() => setBannerImage(null)}
@@ -167,7 +177,7 @@
 //             <Divider sx={{ my: 2 }} />
 
 //             <Typography variant="h6" gutterBottom>
-//               Our Courses: Image Slider
+//               Our Courses: Images
 //             </Typography>
 //             <Button
 //               variant="contained"
@@ -175,7 +185,7 @@
 //               startIcon={<UploadIcon />}
 //               sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
 //             >
-//               Upload Slider Images
+//               Upload Course Images
 //               <input
 //                 type="file"
 //                 multiple
@@ -183,23 +193,40 @@
 //                 onChange={(e) => handleMultipleFilesChange(e, setCoursesImages)}
 //               />
 //             </Button>
-//             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
-//               {coursesImages.map((file, index) => (
-//                 <Box key={index} sx={{ position: 'relative', width: '150px', height: 'auto', mb: 2 }}>
-//                   <img
-//                     src={URL.createObjectURL(file)}
-//                     alt={`Course ${index}`}
-//                     style={{ width: '100%', height: 'auto' }}
-//                   />
-//                   <IconButton
-//                     sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
-//                     onClick={() => handleDeleteImage(index, setCoursesImages, coursesImages)}
+//             {coursesImages.length > 0 && (
+//               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+//                 {coursesImages.map((file, index) => (
+//                   <Box
+//                     key={index}
+//                     sx={{
+//                       position: 'relative',
+//                       width: '100%',
+//                       maxWidth: '300px',
+//                       mb: 2,
+//                       borderRadius: '8px',
+//                       overflow: 'hidden',
+//                     }}
 //                   >
-//                     <DeleteIcon />
-//                   </IconButton>
-//                 </Box>
-//               ))}
-//             </Box>
+//                     <img
+//                       src={URL.createObjectURL(file)}
+//                       alt={`Course ${index}`}
+//                       style={{
+//                         width: '100%',
+//                         height: 'auto',
+//                         borderRadius: '8px',
+//                         objectFit: 'cover',
+//                       }}
+//                     />
+//                     <IconButton
+//                       sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+//                       onClick={() => handleDeleteImage(index, setCoursesImages, coursesImages)}
+//                     >
+//                       <DeleteIcon />
+//                     </IconButton>
+//                   </Box>
+//                 ))}
+//               </Box>
+//             )}
 
 //             <Divider sx={{ my: 2 }} />
 
@@ -230,7 +257,11 @@
 //             </Button>
 //             {directorImage && (
 //               <Box sx={{ position: 'relative', width: '150px', height: 'auto' }}>
-//                 <img src={URL.createObjectURL(directorImage)} alt="Director" style={{ width: '100%', height: 'auto' }} />
+//                 <img
+//                   src={URL.createObjectURL(directorImage)}
+//                   alt="Director"
+//                   style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+//                 />
 //                 <IconButton
 //                   sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
 //                   onClick={() => setDirectorImage(null)}
@@ -251,7 +282,7 @@
 //               startIcon={<UploadIcon />}
 //               sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
 //             >
-//               Upload Collaborator Logos
+//               Upload Collaborators
 //               <input
 //                 type="file"
 //                 multiple
@@ -259,23 +290,40 @@
 //                 onChange={(e) => handleMultipleFilesChange(e, setCollaborators)}
 //               />
 //             </Button>
-//             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
-//               {collaborators.map((file, index) => (
-//                 <Box key={index} sx={{ position: 'relative', width: '150px', height: 'auto', mb: 2 }}>
-//                   <img
-//                     src={URL.createObjectURL(file)}
-//                     alt={`Collaborator ${index}`}
-//                     style={{ width: '100%', height: 'auto' }}
-//                   />
-//                   <IconButton
-//                     sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
-//                     onClick={() => handleDeleteImage(index, setCollaborators, collaborators)}
+//             {collaborators.length > 0 && (
+//               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+//                 {collaborators.map((file, index) => (
+//                   <Box
+//                     key={index}
+//                     sx={{
+//                       position: 'relative',
+//                       width: '150px',
+//                       height: 'auto',
+//                       mb: 2,
+//                       borderRadius: '8px',
+//                       overflow: 'hidden',
+//                     }}
 //                   >
-//                     <DeleteIcon />
-//                   </IconButton>
-//                 </Box>
-//               ))}
-//             </Box>
+//                     <img
+//                       src={URL.createObjectURL(file)}
+//                       alt={`Collaborator ${index}`}
+//                       style={{
+//                         width: '100%',
+//                         height: 'auto',
+//                         borderRadius: '8px',
+//                         objectFit: 'cover',
+//                       }}
+//                     />
+//                     <IconButton
+//                       sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+//                       onClick={() => handleDeleteImage(index, setCollaborators, collaborators)}
+//                     >
+//                       <DeleteIcon />
+//                     </IconButton>
+//                   </Box>
+//                 ))}
+//               </Box>
+//             )}
 
 //             <Divider sx={{ my: 2 }} />
 
@@ -288,7 +336,7 @@
 //               startIcon={<UploadIcon />}
 //               sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
 //             >
-//               Upload Affiliation Logos
+//               Upload Affiliations
 //               <input
 //                 type="file"
 //                 multiple
@@ -296,52 +344,63 @@
 //                 onChange={(e) => handleMultipleFilesChange(e, setAffiliations)}
 //               />
 //             </Button>
-//             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
-//               {affiliations.map((file, index) => (
-//                 <Box key={index} sx={{ position: 'relative', width: '150px', height: 'auto', mb: 2 }}>
-//                   <img
-//                     src={URL.createObjectURL(file)}
-//                     alt={`Affiliation ${index}`}
-//                     style={{ width: '100%', height: 'auto' }}
-//                   />
-//                   <IconButton
-//                     sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
-//                     onClick={() => handleDeleteImage(index, setAffiliations, affiliations)}
+//             {affiliations.length > 0 && (
+//               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+//                 {affiliations.map((file, index) => (
+//                   <Box
+//                     key={index}
+//                     sx={{
+//                       position: 'relative',
+//                       width: '150px',
+//                       height: 'auto',
+//                       mb: 2,
+//                       borderRadius: '8px',
+//                       overflow: 'hidden',
+//                     }}
 //                   >
-    //                 <DeleteIcon />
-    //               </IconButton>
-    //             </Box>
-    //           ))}
-    //         </Box>
+//                     <img
+//                       src={URL.createObjectURL(file)}
+//                       alt={`Affiliation ${index}`}
+//                       style={{
+//                         width: '100%',
+//                         height: 'auto',
+//                         borderRadius: '8px',
+//                         objectFit: 'cover',
+//                       }}
+//                     />
+//                     <IconButton
+//                       sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
+//                       onClick={() => handleDeleteImage(index, setAffiliations, affiliations)}
+//                     >
+//                       <DeleteIcon />
+//                     </IconButton>
+//                   </Box>
+//                 ))}
+//               </Box>
+//             )}
 
-            // <Divider sx={{ my: 2 }} />
+// <Divider sx={{ my: 2 }} />
 
-            // <Button
-            //   variant="contained"
-            //   onClick={handleSave}
-            //   sx={{ backgroundColor: 'black', color: 'white' }}
-            // >
-            //   Save Changes
-            // </Button>
+// <Button
+//   variant="contained"
+//   onClick={handleSave}
+//   sx={{ backgroundColor: 'black', color: 'white' }}
+// >
+//   Save Changes
+// </Button>
 
-            
-
-    //         {/* <Footer /> */}
-    //       </Container>
-    //     </Box>
-    //   </Box>
-    //   <Footer />
-    // </Box>
+//           </Container>
+//         </Box>
+//       </Box>
+//       <Footer />
+//     </Box>
 //   );
 // };
 
 // export default Home;
 
-
-
-// src/pages/home.js
 import React, { useState } from 'react';
-import { Box, Container, Typography, CssBaseline, TextField, Button, Stack, IconButton, Divider } from '@mui/material';
+import { Box, Container, Typography, CssBaseline, TextField, Button, IconButton, Divider } from '@mui/material';
 import Header from '../Admin/Components/header';
 import Sidebar from '../Admin/Components/Sidebar';
 import Footer from '../Admin/Components/footer';
@@ -359,21 +418,10 @@ const UploadButton = styled(Button)({
 
 const Home = () => {
   const [open, setOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
-  const [coursesOpen, setCoursesOpen] = useState(false);
-  const [ugOpen, setUgOpen] = useState(false);
-  const [pgOpen, setPgOpen] = useState(false);
-  const [diplomaOpen, setDiplomaOpen] = useState(false);
 
   // State management for form inputs
   const [bannerImage, setBannerImage] = useState(null);
   const [bannerText, setBannerText] = useState('');
-  const [aboutText, setAboutText] = useState('');
-  const [visionText, setVisionText] = useState('');
-  const [missionText, setMissionText] = useState('');
-  const [coursesImages, setCoursesImages] = useState([]);
-  const [directorMessage, setDirectorMessage] = useState('');
-  const [directorImage, setDirectorImage] = useState(null);
   const [collaborators, setCollaborators] = useState([]);
   const [affiliations, setAffiliations] = useState([]);
 
@@ -391,7 +439,6 @@ const Home = () => {
   };
 
   const handleSave = () => {
-    // Add your save logic here
     console.log('Saving data...');
   };
 
@@ -400,31 +447,15 @@ const Home = () => {
       <CssBaseline />
       <Header onDrawerToggle={() => setOpen(!open)} />
       <Box sx={{ display: 'flex', flex: 1, pt: 8 }}>
-        <Sidebar
-          open={open}
-          onDrawerToggle={() => setOpen(!open)}
-          aboutOpen={aboutOpen}
-          onAboutToggle={() => setAboutOpen(!aboutOpen)}
-          coursesOpen={coursesOpen}
-          onCoursesToggle={() => setCoursesOpen(!coursesOpen)}
-          ugOpen={ugOpen}
-          onUgToggle={() => setUgOpen(!ugOpen)}
-          pgOpen={pgOpen}
-          onPgToggle={() => setPgOpen(!pgOpen)}
-          diplomaOpen={diplomaOpen}
-          onDiplomaToggle={() => setDiplomaOpen(!diplomaOpen)}
-        />
+        <Sidebar open={open} onDrawerToggle={() => setOpen(!open)} />
         <Box component="main" sx={{ flexGrow: 1, padding: 3 }}>
           <Container>
-            <Typography paragraph>
-              Welcome to the Admin Panel. Here you can manage all aspects of the application.
-            </Typography>
-            
             <Typography variant="h4" gutterBottom>
               Home
             </Typography>
             <Divider sx={{ my: 2 }} />
 
+            {/* Banner Section */}
             <Typography variant="h6" gutterBottom>
               Home Page Banner
             </Typography>
@@ -472,148 +503,7 @@ const Home = () => {
 
             <Divider sx={{ my: 2 }} />
 
-            <Typography variant="h6" gutterBottom>
-              About Us
-            </Typography>
-            <TextField
-              fullWidth
-              multiline
-              rows={4}
-              label="About Us Text"
-              value={aboutText}
-              onChange={(e) => setAboutText(e.target.value)}
-              sx={{ mb: 2 }}
-            />
-
-            <Divider sx={{ my: 2 }} />
-
-            <Typography variant="h6" gutterBottom>
-              Our Vision
-            </Typography>
-            <TextField
-              fullWidth
-              multiline
-              rows={2}
-              label="Our Vision Text"
-              value={visionText}
-              onChange={(e) => setVisionText(e.target.value)}
-              sx={{ mb: 2 }}
-            />
-
-            <Divider sx={{ my: 2 }} />
-
-            <Typography variant="h6" gutterBottom>
-              Our Mission
-            </Typography>
-            <TextField
-              fullWidth
-              multiline
-              rows={2}
-              label="Our Mission Text"
-              value={missionText}
-              onChange={(e) => setMissionText(e.target.value)}
-              sx={{ mb: 2 }}
-            />
-
-            <Divider sx={{ my: 2 }} />
-
-            <Typography variant="h6" gutterBottom>
-              Our Courses: Images
-            </Typography>
-            <Button
-              variant="contained"
-              component="label"
-              startIcon={<UploadIcon />}
-              sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
-            >
-              Upload Course Images
-              <input
-                type="file"
-                multiple
-                hidden
-                onChange={(e) => handleMultipleFilesChange(e, setCoursesImages)}
-              />
-            </Button>
-            {coursesImages.length > 0 && (
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
-                {coursesImages.map((file, index) => (
-                  <Box
-                    key={index}
-                    sx={{
-                      position: 'relative',
-                      width: '100%',
-                      maxWidth: '300px',
-                      mb: 2,
-                      borderRadius: '8px',
-                      overflow: 'hidden',
-                    }}
-                  >
-                    <img
-                      src={URL.createObjectURL(file)}
-                      alt={`Course ${index}`}
-                      style={{
-                        width: '100%',
-                        height: 'auto',
-                        borderRadius: '8px',
-                        objectFit: 'cover',
-                      }}
-                    />
-                    <IconButton
-                      sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
-                      onClick={() => handleDeleteImage(index, setCoursesImages, coursesImages)}
-                    >
-                      <DeleteIcon />
-                    </IconButton>
-                  </Box>
-                ))}
-              </Box>
-            )}
-
-            <Divider sx={{ my: 2 }} />
-
-            <Typography variant="h6" gutterBottom>
-              Director's Message
-            </Typography>
-            <TextField
-              fullWidth
-              multiline
-              rows={4}
-              label="Director's Message"
-              value={directorMessage}
-              onChange={(e) => setDirectorMessage(e.target.value)}
-              sx={{ mb: 2 }}
-            />
-            <Button
-              variant="contained"
-              component="label"
-              startIcon={<UploadIcon />}
-              sx={{ mb: 2, backgroundColor: 'black', color: 'white' }}
-            >
-              Upload Director Photo
-              <input
-                type="file"
-                hidden
-                onChange={(e) => handleFileChange(e, setDirectorImage)}
-              />
-            </Button>
-            {directorImage && (
-              <Box sx={{ position: 'relative', width: '150px', height: 'auto' }}>
-                <img
-                  src={URL.createObjectURL(directorImage)}
-                  alt="Director"
-                  style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-                />
-                <IconButton
-                  sx={{ position: 'absolute', top: 0, right: 0, color: 'red' }}
-                  onClick={() => setDirectorImage(null)}
-                >
-                  <DeleteIcon />
-                </IconButton>
-              </Box>
-            )}
-
-            <Divider sx={{ my: 2 }} />
-
+            {/* Our Collaborators Section */}
             <Typography variant="h6" gutterBottom>
               Our Collaborators
             </Typography>
@@ -668,6 +558,7 @@ const Home = () => {
 
             <Divider sx={{ my: 2 }} />
 
+            {/* Our Affiliations Section */}
             <Typography variant="h6" gutterBottom>
               Our Affiliations
             </Typography>
@@ -720,20 +611,15 @@ const Home = () => {
               </Box>
             )}
 
-<Divider sx={{ my: 2 }} />
+            <Divider sx={{ my: 2 }} />
 
-<Button
-  variant="contained"
-  onClick={handleSave}
-  sx={{ backgroundColor: 'black', color: 'white' }}
->
-  Save Changes
-</Button>
-
-            {/* <Button variant="contained" color="primary" onClick={handleSave}>
+            <Button
+              variant="contained"
+              onClick={handleSave}
+              sx={{ backgroundColor: 'black', color: 'white' }}
+            >
               Save Changes
-            </Button> */}
-
+            </Button>
           </Container>
         </Box>
       </Box>
