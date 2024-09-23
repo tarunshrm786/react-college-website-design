@@ -1,6 +1,10 @@
 .contact-us-background {
     /* background-image: url('../public/contactform.png'); */
     /* background-image: url('../public/background.jpg'); */
+    /* background: linear-gradient(253.55deg, rgb(99, 121, 132) 0.51%, rgb(52, 55, 64) 49.67%, rgb(16, 16, 16) 100%);
+     */
+     /* background: linear-gradient(253.55deg, rgb(169, 192, 202) 0.51%, rgb(133, 138, 145) 49.67%, rgb(210, 210, 210) 100%);
+   */
     background-size: cover;
     background-position: center;
     min-height: 100vh; /* Ensure the background covers the full viewport height */

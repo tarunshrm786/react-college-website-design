@@ -1,0 +1,184 @@
+import React, { useState } from 'react';
+import {
+  Box, Typography, Table, TableBody, TableCell, TableHead, TableRow, IconButton, TableContainer,
+  Paper, TablePagination, InputBase
+} from '@mui/material';
+import { SaveAlt as PdfIcon } from '@mui/icons-material';
+import { GrDocumentExcel as ExcelIcon } from 'react-icons/gr';
+import Header from './header';
+import Footer from './footer';
+import Sidebar from './Sidebar';
+import { jsPDF } from 'jspdf';
+import 'jspdf-autotable';
+import * as XLSX from 'xlsx';
+
+const initialEnquiryData = Array.from({ length: 50 }, (_, i) => ({
+  name: `User ${i + 1}`,
+  email: `user${i + 1}@example.com`,
+  contactNo: `123456789${i}`,
+  city: `City ${i % 5}`,
+}));
+
+const EnquiryForm = () => {
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [page, setPage] = useState(0);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [enquiryData, setEnquiryData] = useState(initialEnquiryData);
+
+  const handlePageChange = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleRowsPerPageChange = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  const handleSearch = (event) => {
+    const query = event.target.value.toLowerCase();
+    setSearchQuery(query);
+    const filteredData = initialEnquiryData.filter((user) =>
+      user.name.toLowerCase().includes(query) ||
+      user.email.toLowerCase().includes(query) ||
+      user.contactNo.includes(query) ||
+      user.city.toLowerCase().includes(query)
+    );
+    setEnquiryData(filteredData);
+  };
+
+  const downloadPDF = () => {
+    const doc = new jsPDF();
+    const tableColumn = ['Name', 'Email', 'Contact No', 'City'];
+    const tableRows = enquiryData.map(user => [
+      user.name,
+      user.email,
+      user.contactNo,
+      user.city,
+    ]);
+
+    doc.autoTable({
+      head: [tableColumn],
+      body: tableRows,
+    });
+
+    doc.save('enquiry_form_data.pdf');
+  };
+
+  const downloadExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(enquiryData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Enquiry Form Data');
+    XLSX.writeFile(workbook, 'enquiry_form_data.xlsx');
+  };
+
+  return (
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <Header />
+      <Box sx={{ display: 'flex', flexGrow: 1 }}>
+        <Sidebar />
+
+        <Box
+          sx={{
+            flexGrow: 1,
+            p: 4,
+            marginTop: '55px',
+            mx: { xs: 2, sm: 4, md: 6 },
+            overflowX: 'hidden',
+            '@media (max-width: 600px)': {
+              mx: 0,
+            },
+          }}
+        >
+          <Typography variant="h4" sx={{ mb: 2 }}>
+            Enquiry Form Management
+          </Typography>
+
+          <Box sx={{ mb: 3, display: 'flex', alignItems: 'center' }}>
+            <IconButton onClick={downloadPDF} color="primary" aria-label="Download as PDF">
+              <PdfIcon />
+            </IconButton>
+            <IconButton onClick={downloadExcel} color="primary" aria-label="Download as Excel">
+              <ExcelIcon size={24} />
+            </IconButton>
+
+            <InputBase
+              placeholder="Search enquiries..."
+              value={searchQuery}
+              onChange={handleSearch}
+              sx={{
+                ml: 2,
+                px: 1,
+                py: 0.5,
+                border: '1px solid #ccc',
+                borderRadius: '4px',
+                width: '300px',
+              }}
+            />
+          </Box>
+
+          {/* Responsive Table */}
+          <TableContainer
+            component={Paper}
+            sx={{
+              overflowX: 'auto',
+              borderRadius: 2,
+              boxShadow: 2,
+              marginBottom: 4,
+              width: '100%',
+              '@media (max-width: 600px)': {
+                width: '100%',
+                minWidth: 'auto',
+              },
+            }}
+          >
+            <Table
+              sx={{
+                minWidth: 650,
+                width: '100%',
+                border: '1px solid #ccc',
+                '@media (max-width: 600px)': {
+                  minWidth: '100%',
+                },
+              }}
+              aria-label="enquiry form data"
+            >
+              <TableHead>
+                <TableRow>
+                  <TableCell sx={{ border: '1px solid #ccc', backgroundColor: 'lightgrey' }}>Name</TableCell>
+                  <TableCell sx={{ border: '1px solid #ccc', backgroundColor: 'lightgrey' }}>Email</TableCell>
+                  <TableCell sx={{ border: '1px solid #ccc', backgroundColor: 'lightgrey' }}>Contact No</TableCell>
+                  <TableCell sx={{ border: '1px solid #ccc', backgroundColor: 'lightgrey' }}>City</TableCell>
+                </TableRow>
+              </TableHead>
+
+              <TableBody>
+                {enquiryData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((user, index) => (
+                  <TableRow key={index}>
+                    <TableCell sx={{ border: '1px solid #ccc' }}>{user.name}</TableCell>
+                    <TableCell sx={{ border: '1px solid #ccc' }}>{user.email}</TableCell>
+                    <TableCell sx={{ border: '1px solid #ccc' }}>{user.contactNo}</TableCell>
+                    <TableCell sx={{ border: '1px solid #ccc' }}>{user.city}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
+          <TablePagination
+            rowsPerPageOptions={[10, 25, 50]}
+            component="div"
+            count={enquiryData.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handlePageChange}
+            onRowsPerPageChange={handleRowsPerPageChange}
+          />
+        </Box>
+      </Box>
+
+      <Footer sx={{ marginBottom: 0 }} />
+    </Box>
+  );
+};
+
+export default EnquiryForm;

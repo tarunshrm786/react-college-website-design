@@ -438,27 +438,27 @@
 //           <ListItemText primary="Career Form Data" primaryTypographyProps={{ style: { color: 'black' } }} />
 //         </ListItem>
 
-//         <ListItem button onClick={handleStudentDetailsClick}>
-//           <SchoolIcon sx={{ color: 'black', marginRight: 2 }} />
-//           <ListItemText primary="Student Details" primaryTypographyProps={{ style: { color: 'black' } }} />
-//           {openStudentDetails ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-//         </ListItem>
-//         <Collapse in={openStudentDetails} timeout="auto" unmountOnExit>
-//           <List component="div" disablePadding>
-//             <ListItem button component="a" href="/student-portal">
-//               <AccountBoxIcon sx={{ color: 'black', marginRight: 2 }} />
-//               <ListItemText primary="Student Portal" primaryTypographyProps={{ style: { color: 'black' } }} />
-//             </ListItem>
-//             <ListItem button component="a" href="/fees-structure">
-//               <AttachMoneyIcon sx={{ color: 'black', marginRight: 2 }} />
-//               <ListItemText primary="Fees Structure" primaryTypographyProps={{ style: { color: 'black' } }} />
-//             </ListItem>
-//             <ListItem button component="a" href="/document-verification">
-//               <AssignmentIcon sx={{ color: 'black', marginRight: 2 }} />
-//               <ListItemText primary="Document Verification" primaryTypographyProps={{ style: { color: 'black' } }} />
-//             </ListItem>
-//           </List>
-//         </Collapse>
+        // <ListItem button onClick={handleStudentDetailsClick}>
+        //   <SchoolIcon sx={{ color: 'black', marginRight: 2 }} />
+        //   <ListItemText primary="Student Details" primaryTypographyProps={{ style: { color: 'black' } }} />
+        //   {openStudentDetails ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        // </ListItem>
+        // <Collapse in={openStudentDetails} timeout="auto" unmountOnExit>
+        //   <List component="div" disablePadding>
+        //     <ListItem button component="a" href="/student-portal">
+        //       <AccountBoxIcon sx={{ color: 'black', marginRight: 2 }} />
+        //       <ListItemText primary="Student Portal" primaryTypographyProps={{ style: { color: 'black' } }} />
+        //     </ListItem>
+        //     <ListItem button component="a" href="/fees-structure">
+        //       <AttachMoneyIcon sx={{ color: 'black', marginRight: 2 }} />
+        //       <ListItemText primary="Fees Structure" primaryTypographyProps={{ style: { color: 'black' } }} />
+        //     </ListItem>
+        //     <ListItem button component="a" href="/document-verification">
+        //       <AssignmentIcon sx={{ color: 'black', marginRight: 2 }} />
+        //       <ListItemText primary="Document Verification" primaryTypographyProps={{ style: { color: 'black' } }} />
+        //     </ListItem>
+        //   </List>
+        // </Collapse>
 
      
 //         <ListItem button component="a" href="/logout">
@@ -669,15 +669,40 @@ const Sidebar = ({ open, onDrawerToggle }) => {
           <ListItemText primary="Contact Us Form Data" primaryTypographyProps={{ style: { color: 'black' } }} />
         </ListItem>
 
-        <ListItem button component="a" href="/admin-enquiryform">
+        <ListItem button component="a" href="/admin-enquiry">
           <QuestionAnswerIcon sx={{ color: 'black', marginRight: 2 }} />
           <ListItemText primary="Enquiry Form Data" primaryTypographyProps={{ style: { color: 'black' } }} />
         </ListItem>
 
-        <ListItem button component="a" href="/admin-admissionform">
+        <ListItem button component="a" href="/admin-admission">
           <SchoolIcon sx={{ color: 'black', marginRight: 2 }} />
           <ListItemText primary="Admission Form Data" primaryTypographyProps={{ style: { color: 'black' } }} />
         </ListItem>
+
+
+        
+        <ListItem button onClick={handleStudentDetailsClick}>
+          <SchoolIcon sx={{ color: 'black', marginRight: 2 }} />
+          <ListItemText primary="Student Details" primaryTypographyProps={{ style: { color: 'black' } }} />
+          {openStudentDetails ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </ListItem>
+        <Collapse in={openStudentDetails} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem button component="a" href="/student-portal">
+              <AccountBoxIcon sx={{ color: 'black', marginRight: 2 }} />
+              <ListItemText primary="Student Portal" primaryTypographyProps={{ style: { color: 'black' } }} />
+            </ListItem>
+            <ListItem button component="a" href="/fees-structure">
+              <AttachMoneyIcon sx={{ color: 'black', marginRight: 2 }} />
+              <ListItemText primary="Fees Structure" primaryTypographyProps={{ style: { color: 'black' } }} />
+            </ListItem>
+            <ListItem button component="a" href="/document-verification">
+              <AssignmentIcon sx={{ color: 'black', marginRight: 2 }} />
+              <ListItemText primary="Document Verification" primaryTypographyProps={{ style: { color: 'black' } }} />
+            </ListItem>
+          </List>
+        </Collapse>
+        
 
         {/* Logout */}
         <ListItem button component="a" href="/">

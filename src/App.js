@@ -205,6 +205,8 @@ import AdminMentor from '../src/Admin/Components/admin-mentor';
 import AdminTeam from '../src/Admin/Components/admin-team';
 import AdminPlacement from '../src/Admin/Components/admin-placement';
 import AdminContactus from '../src/Admin/Components/admin-contactus';
+import AdminAdmission from '../src/Admin/Components/admin-admission';
+import AdminEnquiry from '../src/Admin/Components/admin-enquiry';
 
 import AdminGallery from '../src/Admin/Components/gallery';
 import Aboutus from './Components/aboutus'; 
@@ -246,7 +248,9 @@ import PublicLayout from './layouts/PublicLayout'; // Import PublicLayout
 
 function App() {
   return (
+
     <Router>
+
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={
@@ -414,9 +418,12 @@ function App() {
         <Route path="/admin-team" element={<AdminTeam />} />
         <Route path="/admin-placement" element={<AdminPlacement />} />
         <Route path="/admin-contactus" element={<AdminContactus />} />
+        <Route path="/admin-admission" element={<AdminAdmission />} />
+        <Route path="/admin-enquiry" element={<AdminEnquiry/>} />
 
       </Routes>
     </Router>
+
   );
 }
 
