@@ -1,5 +1,5 @@
 
-  .certificate-container {
+.certificate-container {
     width: 1000px;
     height: 700px; /* Fixed height to maintain layout */
     margin: 0 auto;
@@ -15,7 +15,9 @@
     font-family: 'Georgia', serif;
     overflow: hidden; /* Prevents overflow issues */
     visibility: hidden; /* Start as hidden */
+    margin-bottom: 25px;
 }
+
 
 .certificate-container.visible {
     visibility: visible; /* Make it visible when data is filled */
@@ -40,6 +42,7 @@
     color: #000;
     font-weight: 500;
     margin-top: 2px;
+    letter-spacing: 1px;
   }
   
   .logo-image {
@@ -128,6 +131,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
+    letter-spacing: 1px;
   }
   
   .footer-left,
@@ -140,4 +144,65 @@
     font-size: 14px;
     margin: 0;
   }
+
+
+
+  /* Media query for smaller screens (mobile) */
+/* @media screen and (max-width: 480px) {
+    .certificate-container {
+      width: 400px;
+      height: 700px; 
+      padding: 20px; 
+      background-size: cover;   
+    .certificate-info {
+      font-size: 10px;
+      flex-direction: column; 
+    }
   
+    .logo-image {
+      width: 100px;
+      height: auto;
+      margin-top: 10px;
+      margin-left: 110px;
+    }
+
+    .logo-text {
+        margin-top: 10px;
+    }
+  
+    .certificate-title {
+      font-size: 1.2rem;
+    }
+  
+    .certificate-subtitle {
+      font-size: 0.8rem;
+    }
+  
+    .certificate-presented,
+    .certificate-description,
+    .certificate-duration {
+      font-size: 0.7rem;
+    }
+  
+    .footer-left p,
+    .footer-right p {
+      font-size: 10px;
+    }
+  
+    .line {
+      width: 40%; 
+    }
+  
+    .certificate-footer {
+      flex-direction: column; 
+      margin-top: 20px;
+    }
+  }
+}
+   */
+   /* Hide the certificate on screens smaller than 768px */
+@media (max-width: 768px) {
+    .certificate-container {
+      display: none; /* Hide the certificate */
+    }
+  }

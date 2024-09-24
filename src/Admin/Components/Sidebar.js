@@ -491,6 +491,7 @@ import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import AccountBoxIcon from '@mui/icons-material/AccountBox'; 
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney'; 
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium'; 
 
 const Sidebar = ({ open, onDrawerToggle }) => {
   const theme = useTheme();
@@ -700,6 +701,13 @@ const Sidebar = ({ open, onDrawerToggle }) => {
               <AssignmentIcon sx={{ color: 'black', marginRight: 2 }} />
               <ListItemText primary="Document Verification" primaryTypographyProps={{ style: { color: 'black' } }} />
             </ListItem>
+
+            <ListItem button component="a" href="/admin-student-certificate">
+              {/* <AssignmentIcon sx={{ color: 'black', marginRight: 2 }} /> */}
+              <WorkspacePremiumIcon sx={{ color: 'black', marginRight: 2 }} />
+              <ListItemText primary="Certificate" primaryTypographyProps={{ style: { color: 'black' } }} />
+            </ListItem>
+            
           </List>
         </Collapse>
         
