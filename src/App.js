@@ -201,6 +201,7 @@ import Admin from '../src/Admin/login';
 import AdminHome from '../src/Admin/home';
 
 import AdminAboutUs from '../src/Admin/Components/admin-aboutus';
+import AdminStudentCertificate from '../src/Admin/Components/admin-student-certificate';
 import AdminMentor from '../src/Admin/Components/admin-mentor';
 import AdminTeam from '../src/Admin/Components/admin-team';
 import AdminPlacement from '../src/Admin/Components/admin-placement';
@@ -420,6 +421,7 @@ function App() {
         <Route path="/admin-contactus" element={<AdminContactus />} />
         <Route path="/admin-admission" element={<AdminAdmission />} />
         <Route path="/admin-enquiry" element={<AdminEnquiry/>} />
+        <Route path="/admin-student-certificate" element={<AdminStudentCertificate/>} />
 
       </Routes>
     </Router>
