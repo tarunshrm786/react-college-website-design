@@ -219,14 +219,14 @@ const Sidebar = ({ open, onDrawerToggle }) => {
               <AccountBoxIcon sx={{ color: 'black', marginRight: 2 }} />
               <ListItemText primary="Student Portal" primaryTypographyProps={{ style: { color: 'black' } }} />
             </ListItem>
-            {/* <ListItem button component="a" href="/admin-fees-structure">
+            <ListItem button component="a" href="/admin-fees-structure">
               <AttachMoneyIcon sx={{ color: 'black', marginRight: 2 }} />
               <ListItemText primary="Fees Structure" primaryTypographyProps={{ style: { color: 'black' } }} />
             </ListItem>
             <ListItem button component="a" href="/admin-document-verification">
               <AssignmentIcon sx={{ color: 'black', marginRight: 2 }} />
               <ListItemText primary="Document Verification" primaryTypographyProps={{ style: { color: 'black' } }} />
-            </ListItem> */}
+            </ListItem>
 
             <ListItem button component="a" href="/admin-student-certificate">
               {/* <AssignmentIcon sx={{ color: 'black', marginRight: 2 }} /> */}
