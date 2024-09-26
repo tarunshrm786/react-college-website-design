@@ -218,7 +218,12 @@ const Sidebar = ({ open, onDrawerToggle }) => {
 
             <ListItem button component="a" href="/admin-student-portal">
               <AccountBoxIcon sx={{ color: 'black', marginRight: 2 }} />
-              <ListItemText primary="Student Portal" primaryTypographyProps={{ style: { color: 'black' } }} />
+              <ListItemText primary="Create Student" primaryTypographyProps={{ style: { color: 'black' } }} />
+            </ListItem>
+
+            <ListItem button component="a" href="#admin-student-portal">
+              <AccountBoxIcon sx={{ color: 'black', marginRight: 2 }} />
+              <ListItemText primary="All Students" primaryTypographyProps={{ style: { color: 'black' } }} />
             </ListItem>
 
             <ListItem button component="a" href="/admin-fees-structure">
