@@ -2,9 +2,10 @@
 
 import axios from 'axios';
 
-// const BASE_URL = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api'; // Replace with your API base URL
+const BASE_URL = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/auth'; // Replace with your API base URL
 
-const BASE_URL = 'http://localhost:5000/api/auth';
+//const BASE_URL = 'http://localhost:5000/api/auth';
+
 // API Endpoints
 export const API_ENDPOINTS = {
   STUDENTS: `${BASE_URL}/`,
