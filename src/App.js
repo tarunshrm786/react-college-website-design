@@ -201,6 +201,7 @@ import Admin from '../src/Admin/login';
 import AdminHome from '../src/Admin/home';
 
 import AdminAboutUs from '../src/Admin/Components/admin-aboutus';
+import AdminStudentPortal from '../src/Admin/Components/admin-student-portal.js';
 import AdminDocumentVerification from '../src/Admin/Components/admin-document-verification';
 import AdminFeesStructure from '../src/Admin/Components/admin-fees-structure.js';
 import AdminStudentCertificate from '../src/Admin/Components/admin-student-certificate';
@@ -426,6 +427,7 @@ function App() {
         <Route path="/admin-student-certificate" element={<AdminStudentCertificate/>} />
         <Route path="/admin-fees-structure" element={<AdminFeesStructure />} />
         <Route path="/admin-document-verification" element={<AdminDocumentVerification />} />
+        <Route path="/admin-student-portal" element={<AdminStudentPortal />} />
 
       </Routes>
     </Router>
