@@ -1,4 +1,4 @@
-// import React, { useState } from 'react';
+// import React, { useState, useEffect } from 'react'; // Import useEffect
 // import {
 //   Container,
 //   TextField,
@@ -10,6 +10,7 @@
 // import Header from './header'; // Adjust the path as necessary
 // import Footer from './footer'; // Adjust the path as necessary
 // import Sidebar from './Sidebar'; // Adjust the path as necessary
+// import { fetchStudents } from '../../api/api'; // Adjust the path to your API file
 
 // const AdminStudentPortal = () => {
 //   const [studentId, setStudentId] = useState('');
@@ -28,6 +29,20 @@
 //     });
 //   };
 
+//   // Use useEffect to fetch students data on component mount
+//   useEffect(() => {
+//     const loadStudents = async () => {
+//       try {
+//         const students = await fetchStudents(); // Fetching students
+//         console.log('Fetched students:', students); // Log fetched data to console
+//       } catch (error) {
+//         console.error('Error fetching students:', error); // Handle error
+//       }
+//     };
+
+//     loadStudents(); // Call the fetch function
+//   }, []); // Empty dependency array to run only on mount
+
 //   return (
 //     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
 //       <Sidebar />
@@ -38,7 +53,7 @@
 //         <Header />
 //         <Paper elevation={3} style={{ padding: '20px', marginTop: '90px' }}>
 //           <Typography variant="h5" gutterBottom>
-//                 Student Portal
+//             Student Portal
 //           </Typography>
 //           <form onSubmit={handleSubmit}>
 //             <Grid container spacing={2}>
@@ -113,6 +128,13 @@ import {
   Typography,
   Paper,
   Grid,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  TableSortLabel,
 } from '@mui/material';
 import Header from './header'; // Adjust the path as necessary
 import Footer from './footer'; // Adjust the path as necessary
@@ -124,6 +146,7 @@ const AdminStudentPortal = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [students, setStudents] = useState([]); // State for students
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -140,8 +163,9 @@ const AdminStudentPortal = () => {
   useEffect(() => {
     const loadStudents = async () => {
       try {
-        const students = await fetchStudents(); // Fetching students
-        console.log('Fetched students:', students); // Log fetched data to console
+        const fetchedStudents = await fetchStudents(); // Fetching students
+        setStudents(fetchedStudents); // Set fetched students to state
+        console.log('Fetched students:', fetchedStudents); // Log fetched data to console
       } catch (error) {
         console.error('Error fetching students:', error); // Handle error
       }
@@ -219,6 +243,35 @@ const AdminStudentPortal = () => {
             </Grid>
           </form>
         </Paper>
+
+        {/* Responsive Table for displaying fetched students */}     
+<Paper elevation={3} style={{ marginTop: '20px', padding: '20px' }}>
+  <Typography variant="h6" gutterBottom>
+    Students List
+  </Typography>
+  <TableContainer>
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableCell><TableSortLabel>Student ID</TableSortLabel></TableCell>
+          <TableCell><TableSortLabel>Name</TableSortLabel></TableCell>
+          <TableCell><TableSortLabel>Email</TableSortLabel></TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {students.map((student) => (
+          <TableRow key={student._id}> {/* Use _id as the key */}
+            <TableCell>{student.studentId}</TableCell> {/* Correctly access studentId */}
+            <TableCell>{student.name}</TableCell>
+            <TableCell>{student.email}</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  </TableContainer>
+</Paper>
+
+
       </Container>
       <Footer style={{ marginTop: 'auto' }} /> {/* Footer fixed at the bottom */}
     </div>
