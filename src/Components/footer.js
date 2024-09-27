@@ -124,7 +124,7 @@ const Footer = () => {
         <li><Link to="/contact-us">Contact Us</Link></li>
         <li><Link to="/gallery">Gallery</Link></li>
         <li><Link to="/placement">Placement</Link></li>
-        <li><Link to="/studentProfile">Student Verification</Link></li>
+        <li><Link to="/login">Student Verification</Link></li>
         <li><Link to="/aboutus">About Us</Link></li>
         <li><Link to="/founding-members">Mentor</Link></li>
         <li><Link to="/staff">Our Team</Link></li>
