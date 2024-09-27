@@ -213,6 +213,7 @@ import AdminAdmission from '../src/Admin/Components/admin-admission';
 import AdminEnquiry from '../src/Admin/Components/admin-enquiry';
 
 import AdminGallery from '../src/Admin/Components/gallery';
+//import StudentPortal from '../src/Admin/Components/admin-student-portal';
 import Aboutus from './Components/aboutus'; 
 import FoundingMembers from './Components/founding-members'; 
 import Staff from './Components/staff'; 
@@ -235,6 +236,7 @@ import MscCourse from './Components/pgcourses/msc';
 
 import ContactUs from './Components/contact-us'; 
 import Placement from './Components/placement'; 
+import StudentProfile from './Components/studentProfile.js'; 
 import Collaboration from './Components/collaboration'; 
 import Affiliation from './Components/affiliation'; 
 import Admission from './Components/admission'; 
@@ -361,6 +363,14 @@ function App() {
             <Placement />
           </PublicLayout>
         } />
+
+<Route path="/studentProfile" element={
+          <PublicLayout>
+            <StudentProfile />
+          </PublicLayout>
+        } />
+
+
         <Route path="/admission" element={
           <PublicLayout>
             <Admission />

@@ -872,7 +872,7 @@ const LoginForm = () => {
                 // Redirect after 2 seconds
                 setTimeout(() => {
                   setOpenModal(false);
-                  navigate("/"); // Redirect to homepage
+                  navigate("/studentProfile"); // Redirect to homepage
                 }, 2000);
 
         // Redirect or handle successful login (e.g., save token, redirect to dashboard)
