@@ -11,7 +11,7 @@ export const API_ENDPOINTS = {
   STUDENTS: `${BASE_URL}/`,
   LOGIN: `${BASE_URL}/login`,
   REGISTER: `${BASE_URL}/register`,
-  SIGNUP: `${BASE_URL}/auth/signup`, // Added signup endpoint
+  SIGNUP: `${BASE_URL}/signup`, // Added signup endpoint
   // Add more endpoints as needed
 };
 
