@@ -170,7 +170,7 @@ const Mentor = () => {
     formData.append('image', selectedFile);
 
     try {
-      const response = await fetch('http://localhost:5000/api/mentors', {
+      const response = await fetch('https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/auth/mentors', {
         method: 'POST',
         body: formData,
       });

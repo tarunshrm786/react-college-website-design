@@ -48,10 +48,10 @@
 
 import axios from 'axios';
 
-//const BASE_URL = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/auth'; // Replace with your API base URL
- const BASE_URL = 'http://localhost:5000/api/auth'; // Uncomment for local development
+const BASE_URL = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/auth'; // Replace with your API base URL
+// const BASE_URL = 'http://localhost:5000/api/auth'; // Uncomment for local development
 
- const BASE_URL_M = 'http://localhost:5000/api';
+ const BASE_URL_M = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api';
 
 // API Endpoints
 export const API_ENDPOINTS = {
