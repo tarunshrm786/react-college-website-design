@@ -60,6 +60,7 @@ export const API_ENDPOINTS = {
   REGISTER: `${BASE_URL}/register`,
   SIGNUP: `${BASE_URL}/signup`,  // Signup endpoint
   MENTORS: `${BASE_URL_M}/mentors`, // Mentor endpoint for CRUD operations
+  GET_MENTORS: `${BASE_URL_M}/mentors`,
   // Add more endpoints as needed
 };
 
@@ -84,6 +85,36 @@ export const uploadMentor = async (mentorData) => {
     throw error; // Rethrow error to handle it in the component
   }
 };
+
+// Function to fetch all mentors
+export const fetchMentors = async () => {
+  try {
+    const response = await axios.get(API_ENDPOINTS.GET_MENTORS);
+    
+    // Process the mentor data to convert the buffer to a base64 string
+    const mentors = response.data.map(mentor => {
+      // Convert binary image data to base64 in the browser
+      const base64Image = `data:${mentor.image.contentType};base64,${arrayBufferToBase64(mentor.image.data.data)}`;
+      return { ...mentor, base64Image };
+    });
+
+    return mentors;
+  } catch (error) {
+    console.error('Error fetching mentors:', error);
+    throw error; // Rethrow error to handle it in the component
+  }
+};
+
+// Helper function to convert ArrayBuffer to base64 string
+const arrayBufferToBase64 = (buffer) => {
+  let binary = '';
+  const bytes = new Uint8Array(buffer);
+  bytes.forEach((byte) => {
+    binary += String.fromCharCode(byte);
+  });
+  return window.btoa(binary);
+};
+
 
 // Function to fetch all students
 export const fetchStudents = async () => {
