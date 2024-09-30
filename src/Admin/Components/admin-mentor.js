@@ -1,8 +1,21 @@
-// import React, { useState } from 'react';
+// import React, { useState, useEffect } from 'react';
 // import { Button, Box, Typography, Card, CardMedia, TextField, Grid, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 // import Header from './header';
 // import Footer from './footer';
 // import Sidebar from './Sidebar';
+// import axios from 'axios';
+
+// // Function to convert ArrayBuffer to Base64 string
+// const arrayBufferToBase64 = (buffer) => {
+//   let binary = '';
+//   const bytes = new Uint8Array(buffer);
+//   const len = bytes.byteLength;
+//   for (let i = 0; i < len; i++) {
+//     binary += String.fromCharCode(bytes[i]);
+//   }
+//   return window.btoa(binary);
+// };
+
 
 // const Mentor = () => {
 //   const [teamMembers, setTeamMembers] = useState([]);
@@ -10,7 +23,28 @@
 //   const [name, setName] = useState('');
 //   const [post, setPost] = useState('');
 //   const [city, setCity] = useState('');
-//   const [successModal, setSuccessModal] = useState(false);  // New state to control modal visibility
+//   const [successModal, setSuccessModal] = useState(false);
+//   const [deleteModal, setDeleteModal] = useState(false);
+//   const [deleteId, setDeleteId] = useState(null); // ID of the mentor to delete
+
+//   useEffect(() => {
+//     const fetchMentors = async () => {
+//       try {
+//         const response = await axios.get('https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/mentors');
+//         const data = response.data.map((mentor) => {
+//           // Convert binary image data to base64
+//           const base64Image = `data:${mentor.image.contentType};base64,${arrayBufferToBase64(mentor.image.data.data)}`;
+//           return { ...mentor, base64Image }; // Add the base64Image field to each mentor
+//         });
+//         setTeamMembers(data); // Update state with the processed data
+//       } catch (error) {
+//         console.error('Error fetching mentors:', error);
+//       }
+//     };
+
+//     fetchMentors();
+//   }, []);
+
 
 //   const handleFileChange = (event) => {
 //     const file = event.target.files[0];
@@ -39,6 +73,9 @@
 //     formData.append('city', city);
 //     formData.append('image', selectedFile);
 
+//     console.log('Sending data:', Array.from(formData.entries())); // Log FormData contents
+
+
 //     try {
 //       const response = await fetch('https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/mentors', {
 //         method: 'POST',
@@ -46,6 +83,9 @@
 //       });
 
 //       if (!response.ok) {
+//         const errorData = await response.text(); // Log the error response
+//         console.error('Error response from server:', errorData);
+
 //         throw new Error('Network response was not ok');
 //       }
 
@@ -60,15 +100,41 @@
 
 //       // Show success modal
 //       setSuccessModal(true);
-
 //     } catch (error) {
 //       console.error('Error uploading mentor:', error);
 //       alert('Failed to upload mentor data. Please try again.');
 //     }
 //   };
 
+//   const handleDeleteMember = async () => {
+//     try {
+//       const response = await fetch(`https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/mentors/${deleteId}`, {
+//         method: 'DELETE',
+//       });
+
+//       if (!response.ok) {
+//         throw new Error('Failed to delete mentor');
+//       }
+
+//       // Update the teamMembers state
+//       setTeamMembers((prevMembers) => prevMembers.filter((member) => member._id !== deleteId));
+
+//       // Close delete modal
+//       setDeleteModal(false);
+//     } catch (error) {
+//       console.error('Error deleting mentor:', error);
+//       alert('Failed to delete mentor. Please try again.');
+//     }
+//   };
+
+//   const handleOpenDeleteModal = (id) => {
+//     setDeleteId(id);
+//     setDeleteModal(true);
+//   };
+
 //   const handleCloseModal = () => {
-//     setSuccessModal(false);  // Close the modal
+//     setSuccessModal(false);
+//     setDeleteModal(false);
 //   };
 
 //   return (
@@ -142,19 +208,27 @@
 //           </Button>
 
 //           <Box sx={{ mt: 4 }}>
-//             {teamMembers.map((member, index) => (
-//               <Card key={index} sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
+//             {teamMembers.map((member) => (
+//               <Card key={member._id} sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
 //                 <CardMedia
 //                   component="img"
 //                   sx={{ width: 100, height: 100 }}
-//                   image={member.imageUrl}
+//                   //image={member.imageUrl} // Ensure your API returns image URL
+//                   image={member.base64Image}
 //                   alt={member.name}
 //                 />
-//                 <Box sx={{ ml: 2 }}>
+//                 <Box sx={{ ml: 2, flexGrow: 1 }}>
 //                   <Typography variant="h6">{member.name}</Typography>
 //                   <Typography variant="body1">{member.post}</Typography>
 //                   <Typography variant="body2">{member.city}</Typography>
 //                 </Box>
+//                 <Button
+//                   variant="contained"
+//                   color="error"
+//                   onClick={() => handleOpenDeleteModal(member._id)}
+//                 >
+//                   Delete
+//                 </Button>
 //               </Card>
 //             ))}
 //           </Box>
@@ -182,14 +256,39 @@
 //           </Button>
 //         </DialogActions>
 //       </Dialog>
+
+//       {/* Delete Confirmation Modal */}
+//       <Dialog
+//         open={deleteModal}
+//         onClose={handleCloseModal}
+//         aria-labelledby="alert-dialog-title"
+//         aria-describedby="alert-dialog-description"
+//       >
+//         <DialogTitle id="alert-dialog-title">
+//           {"Confirm Deletion"}
+//         </DialogTitle>
+//         <DialogContent>
+//           <Typography>Are you sure you want to delete this mentor?</Typography>
+//         </DialogContent>
+//         <DialogActions>
+//           <Button onClick={handleCloseModal} color="primary">
+//             Cancel
+//           </Button>
+//           <Button onClick={handleDeleteMember} color="error" autoFocus>
+//             Delete
+//           </Button>
+//         </DialogActions>
+//       </Dialog>
 //     </Box>
 //   );
 // };
 
 // export default Mentor;
 
+
 import React, { useState, useEffect } from 'react';
-import { Button, Box, Typography, Card, CardMedia, TextField, Grid, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import { Delete as DeleteIcon } from '@mui/icons-material'; 
+import { Button, Box, Typography, Card, CardMedia, TextField, Grid, Dialog, DialogActions, DialogContent, DialogTitle, Snackbar } from '@mui/material';
 import Header from './header';
 import Footer from './footer';
 import Sidebar from './Sidebar';
@@ -206,7 +305,6 @@ const arrayBufferToBase64 = (buffer) => {
   return window.btoa(binary);
 };
 
-
 const Mentor = () => {
   const [teamMembers, setTeamMembers] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -216,21 +314,9 @@ const Mentor = () => {
   const [successModal, setSuccessModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
   const [deleteId, setDeleteId] = useState(null); // ID of the mentor to delete
+  const [snackbarOpen, setSnackbarOpen] = useState(false); // Snackbar state
+  const [snackbarMessage, setSnackbarMessage] = useState(''); // Snackbar message
 
-  // Fetch mentors from the API when the component mounts
-  // useEffect(() => {
-  //   const fetchMentors = async () => {
-  //     try {
-  //       const response = await fetch('https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/mentors');
-  //       const data = await response.json();
-  //       setTeamMembers(data);
-  //     } catch (error) {
-  //       console.error('Error fetching mentors:', error);
-  //     }
-  //   };
-
-  //   fetchMentors();
-  // }, []);
   useEffect(() => {
     const fetchMentors = async () => {
       try {
@@ -248,7 +334,7 @@ const Mentor = () => {
 
     fetchMentors();
   }, []);
-
+ 
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -277,9 +363,6 @@ const Mentor = () => {
     formData.append('city', city);
     formData.append('image', selectedFile);
 
-    console.log('Sending data:', Array.from(formData.entries())); // Log FormData contents
-
-
     try {
       const response = await fetch('https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/mentors', {
         method: 'POST',
@@ -289,7 +372,6 @@ const Mentor = () => {
       if (!response.ok) {
         const errorData = await response.text(); // Log the error response
         console.error('Error response from server:', errorData);
-
         throw new Error('Network response was not ok');
       }
 
@@ -302,8 +384,9 @@ const Mentor = () => {
       setPost('');
       setCity('');
 
-      // Show success modal
-      setSuccessModal(true);
+      // Show success snackbar
+      setSnackbarMessage('Mentor added successfully!');
+      setSnackbarOpen(true);
     } catch (error) {
       console.error('Error uploading mentor:', error);
       alert('Failed to upload mentor data. Please try again.');
@@ -339,6 +422,10 @@ const Mentor = () => {
   const handleCloseModal = () => {
     setSuccessModal(false);
     setDeleteModal(false);
+  };
+
+  const handleCloseSnackbar = () => {
+    setSnackbarOpen(false);
   };
 
   return (
@@ -417,7 +504,6 @@ const Mentor = () => {
                 <CardMedia
                   component="img"
                   sx={{ width: 100, height: 100 }}
-                  //image={member.imageUrl} // Ensure your API returns image URL
                   image={member.base64Image}
                   alt={member.name}
                 />
@@ -427,11 +513,11 @@ const Mentor = () => {
                   <Typography variant="body2">{member.city}</Typography>
                 </Box>
                 <Button
-                  variant="contained"
-                  color="error"
+                  //variant="contained"
+                  sx={{ color: 'red' }}
                   onClick={() => handleOpenDeleteModal(member._id)}
                 >
-                  Delete
+                     <DeleteIcon />
                 </Button>
               </Card>
             ))}
@@ -440,6 +526,14 @@ const Mentor = () => {
       </Box>
 
       <Footer />
+
+      {/* Success Snackbar */}
+      <Snackbar
+        open={snackbarOpen}
+        onClose={handleCloseSnackbar}
+        message={snackbarMessage}
+        autoHideDuration={3000} // Snackbar will close after 3 seconds
+      />
 
       {/* Success Modal */}
       <Dialog
@@ -478,7 +572,7 @@ const Mentor = () => {
           <Button onClick={handleCloseModal} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleDeleteMember} color="error" autoFocus>
+          <Button onClick={handleDeleteMember} color="secondary">
             Delete
           </Button>
         </DialogActions>
