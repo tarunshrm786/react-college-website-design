@@ -320,7 +320,8 @@ const Mentor = () => {
   useEffect(() => {
     const fetchMentors = async () => {
       try {
-        const response = await axios.get('https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/mentors');
+        // const response = await axios.get('https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/mentors');
+        const response = await axios.get('http://localhost:5000/api/mentors');
         const data = response.data.map((mentor) => {
           // Convert binary image data to base64
           const base64Image = `data:${mentor.image.contentType};base64,${arrayBufferToBase64(mentor.image.data.data)}`;
