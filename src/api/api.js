@@ -260,6 +260,95 @@
 //   }
 // };
 
+// import axios from 'axios';
+
+// const BASE_URL = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/auth'; // Replace with your API base URL
+// const BASE_URL_M = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api'; // Replace with your API base URL
+
+// // API Endpoints
+// export const API_ENDPOINTS = {
+//   STUDENTS: `${BASE_URL}/`, // Endpoint for students
+//   LOGIN: `${BASE_URL}/login`, // Login endpoint
+//   REGISTER: `${BASE_URL}/register`, // Register endpoint
+//   SIGNUP: `${BASE_URL}/signup`, // Signup endpoint
+//   MENTORS: `${BASE_URL_M}/mentors`, // Mentor endpoint for CRUD operations
+//   GET_MENTORS: `${BASE_URL_M}/mentors`, // Get mentors endpoint
+// };
+
+// // Function to upload a mentor's data including an image
+// export const uploadMentor = async (mentorData) => {
+//   const formData = new FormData();
+
+//   // Append mentor data to the FormData object
+//   Object.keys(mentorData).forEach((key) => {
+//     formData.append(key, mentorData[key]);
+//   });
+
+//   try {
+//     const response = await axios.post(API_ENDPOINTS.MENTORS, formData, {
+//       headers: {
+//         'Content-Type': 'multipart/form-data', // Important for file upload
+//       },
+//     });
+//     return response.data;
+//   } catch (error) {
+//     console.error('Error uploading mentor:', error);
+//     throw error; // Rethrow error to handle it in the component
+//   }
+// };
+
+// // Function to fetch all mentors
+// export const fetchMentors = async () => {
+//   try {
+//     const response = await axios.get(API_ENDPOINTS.GET_MENTORS);
+//     const mentors = response.data;
+
+//     // Map mentors to include the correct image path
+//     const mentorsWithImages = mentors.map((mentor) => ({
+//       ...mentor,
+//       base64Image: mentor.image ? `${API_ENDPOINTS.GET_MENTORS}/${mentor.image}` : null, // Use the path directly
+//     }));
+
+//     return mentorsWithImages; // Return mentors with images
+//   } catch (error) {
+//     console.error('Error fetching mentors:', error);
+//     throw error; // Rethrow error to handle it in the component
+//   }
+// };
+
+// // Function to fetch all students
+// export const fetchStudents = async () => {
+//   try {
+//     const response = await axios.get(API_ENDPOINTS.STUDENTS);
+//     return response.data;
+//   } catch (error) {
+//     console.error('Error fetching students:', error);
+//     throw error; // Rethrow error to handle it in the component
+//   }
+// };
+
+// // Function to handle user signup
+// export const signup = async (userData) => {
+//   try {
+//     const response = await axios.post(API_ENDPOINTS.SIGNUP, userData);
+//     return response.data;
+//   } catch (error) {
+//     console.error('Signup error:', error);
+//     throw error; // Rethrow error to handle it in the component
+//   }
+// };
+
+// // Function to handle student login (using studentId and password)
+// export const login = async (loginData) => {
+//   try {
+//     const response = await axios.post(API_ENDPOINTS.LOGIN, loginData);
+//     return response.data;
+//   } catch (error) {
+//     console.error('Login error:', error);
+//     throw error; // Rethrow error to handle it in the component
+//   }
+// };
+
 import axios from 'axios';
 
 const BASE_URL = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/auth'; // Replace with your API base URL
@@ -297,24 +386,31 @@ export const uploadMentor = async (mentorData) => {
   }
 };
 
-// Function to fetch all mentors
 export const fetchMentors = async () => {
   try {
     const response = await axios.get(API_ENDPOINTS.GET_MENTORS);
     const mentors = response.data;
 
-    // Map mentors to include the correct image path
-    const mentorsWithImages = mentors.map((mentor) => ({
-      ...mentor,
-      base64Image: mentor.image ? `${API_ENDPOINTS.GET_MENTORS}/${mentor.image}` : null, // Use the path directly
-    }));
+    const mentorsWithImages = mentors.map((mentor) => {
+      // Check if image exists and format it properly
+      const base64Image = mentor.image 
+        ? `data:${mentor.image.contentType};base64,${mentor.image.data}` 
+        : null;
 
-    return mentorsWithImages; // Return mentors with images
+      return {
+        ...mentor,
+        base64Image, // Attach formatted image data
+      };
+    });
+
+    return mentorsWithImages; // Return mentors with the formatted images
   } catch (error) {
     console.error('Error fetching mentors:', error);
-    throw error; // Rethrow error to handle it in the component
+    throw error;
   }
 };
+
+
 
 // Function to fetch all students
 export const fetchStudents = async () => {
