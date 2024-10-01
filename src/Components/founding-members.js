@@ -1081,20 +1081,7 @@ const FoundingMembers = () => {
                       },
                     }}
                   >
-                    {/* Render the image using base64 format */}
-                    {/* <img
-                      src={`data:image/png;base64,${member.base64Image}`} // Use Base64 string directly
-                      alt={member.name}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        borderRadius: "50%",
-                        objectFit: "cover",
-                        objectPosition: "top center",
-                        position: "relative",
-                        zIndex: "0",
-                      }}
-                    /> */}
+                   
                     {/* Render the image using base64 format */}
 <img
   src={member.imageUrl || 'path/to/placeholder.jpg'} // Use imageUrl instead of base64Image
