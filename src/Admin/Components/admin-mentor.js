@@ -339,7 +339,7 @@ const Mentor = () => {
     const fetchMentors = async () => {
       try {
         // Fetch mentors data from the backend
-        const response = await axios.get('http://localhost:5000/api/mentors');
+        const response = await axios.get('https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/mentors');
   
         // Process mentor data and convert image buffer to base64
         const data = response.data.map((mentor) => {
