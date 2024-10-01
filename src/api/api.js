@@ -463,6 +463,8 @@ export const API_ENDPOINTS = {
   GET_MENTORS: `${BASE_URL_M}/mentors`, // Get mentors endpoint
   TEAMS: `${BASE_URL_M}/teams`, // Team endpoint for CRUD operations
   GET_TEAMS: `${BASE_URL_M}/teams`, // Get teams endpoint
+  ABOUT_US: `${BASE_URL_M}/aboutus`, // About Us endpoint for CRUD operations
+  GET_ABOUT_US: `${BASE_URL_M}/aboutus/aboutusbanner`, // Fetch About Us data
 };
 
 // Function to upload a mentor's data including an image
@@ -600,5 +602,67 @@ export const login = async (loginData) => {
   } catch (error) {
     console.error('Login error:', error);
     throw error; // Rethrow error to handle it in the component
+  }
+};
+
+
+// // Function to fetch the About Us data
+// export const fetchAboutUs = async () => {
+//   try {
+//     const response = await axios.get(API_ENDPOINTS.GET_ABOUT_US);
+//     return response.data;
+//   } catch (error) {
+//     console.error('Error fetching About Us data:', error);
+//     throw error;
+//   }
+// };
+// Function to fetch About Us banner data
+export const fetchAboutUs = async () => {
+  try {
+    const response = await fetch(API_ENDPOINTS.GET_ABOUT_US);
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch banner');
+    }
+
+    const data = await response.json(); // Convert response to JSON
+    console.log('Fetched banner data:', data); // Log the fetched data
+    return data; // Return the data object
+  } catch (error) {
+    console.error('Error fetching About Us data:', error);
+    throw error;
+  }
+};
+
+// Function to upload/update About Us data
+export const uploadAboutUs = async (aboutUsData) => {
+  const formData = new FormData();
+
+  // Append about us data to the FormData object
+  Object.keys(aboutUsData).forEach((key) => {
+    formData.append(key, aboutUsData[key]);
+  });
+
+  try {
+    const response = await axios.post(API_ENDPOINTS.ABOUT_US, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data', // Important for file upload
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error uploading About Us data:', error);
+    throw error;
+  }
+};
+
+// Function to delete About Us data
+export const deleteAboutUs = async (aboutUsId) => {
+  try {
+    const response = await axios.delete(`${API_ENDPOINTS.GET_ABOUT_US}/${aboutUsId}`);
+    return response.data; // Return the response from the server
+  } catch (error) {
+    console.error('Error deleting About Us data:', error);
+    throw error;
   }
 };
