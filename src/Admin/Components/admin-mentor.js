@@ -317,24 +317,7 @@ const Mentor = () => {
   const [snackbarOpen, setSnackbarOpen] = useState(false); // Snackbar state
   const [snackbarMessage, setSnackbarMessage] = useState(''); // Snackbar message
 
-  // useEffect(() => {
-  //   const fetchMentors = async () => {
-  //     try {
-  //       // const response = await axios.get('https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/mentors');
-  //       const response = await axios.get('http://localhost:5000/api/mentors');
-  //       const data = response.data.map((mentor) => {
-  //         // Convert binary image data to base64
-  //         const base64Image = `data:${mentor.image.contentType};base64,${arrayBufferToBase64(mentor.image.data.data)}`;
-  //         return { ...mentor, base64Image }; // Add the base64Image field to each mentor
-  //       });
-  //       setTeamMembers(data); // Update state with the processed data
-  //     } catch (error) {
-  //       console.error('Error fetching mentors:', error);
-  //     }
-  //   };
-
-  //   fetchMentors();
-  // }, []);
+ 
   useEffect(() => {
     const fetchMentors = async () => {
       try {
@@ -433,6 +416,11 @@ const Mentor = () => {
 
       // Update the teamMembers state
       setTeamMembers((prevMembers) => prevMembers.filter((member) => member._id !== deleteId));
+
+       // Show Snackbar notification for deletion
+    setSnackbarMessage('Mentor deleted successfully!');
+    setSnackbarOpen(true);
+
 
       // Close delete modal
       setDeleteModal(false);

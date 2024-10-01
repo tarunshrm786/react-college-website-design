@@ -696,6 +696,224 @@
 // };
 
 // export default Team;
+
+
+// import React, { useEffect, useState } from 'react';
+// import {
+//   Button,
+//   Box,
+//   Typography,
+//   Card,
+//   CardMedia,
+//   TextField,
+//   Grid,
+//   Dialog,
+//   DialogActions,
+//   DialogContent,
+//   DialogTitle,
+//   Snackbar,
+// } from '@mui/material';
+// import { Delete as DeleteIcon } from '@mui/icons-material';
+// import { fetchTeams } from '../../api/api'; // Adjust the import path as necessary
+// import Header from './header';
+// import Footer from './footer';
+// import Sidebar from './Sidebar';
+// import axios from 'axios';
+
+// const API_ENDPOINTS = {
+//   ADD_TEAM_MEMBER: 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/teams',
+//   DELETE_TEAM_MEMBER: (id) => `https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/teams/${id}`,
+// };
+
+// const Team = () => {
+//   const [teamMembers, setTeamMembers] = useState([]);
+//   const [selectedFile, setSelectedFile] = useState(null);
+//   const [name, setName] = useState('');
+//   const [post, setPost] = useState('');
+//   const [city, setCity] = useState('');
+//   const [openDeleteModal, setOpenDeleteModal] = useState(false);
+//   const [memberToDelete, setMemberToDelete] = useState(null);
+//   const [openSnackbar, setOpenSnackbar] = useState(false);
+//   const [snackbar, setSnackbarOpen] = useState(false);
+//   const [snackbarMessage, setSnackbarMessage] = useState('');
+
+//   // Fetch team members from the API using the fetchTeams function
+//   const fetchTeamMembers = async () => {
+//     try {
+//       const members = await fetchTeams();
+//       setTeamMembers(members);
+//     } catch (error) {
+//       console.error('Error fetching team members:', error);
+//     }
+//   };
+
+//   // Add a team member
+//   const handleAddMember = async () => {
+//     if (!selectedFile || !name || !post || !city) {
+//       alert('Please fill all fields and select an image.');
+//       return;
+//     }
+
+//     const formData = new FormData();
+//     formData.append('name', name);
+//     formData.append('post', post);
+//     formData.append('city', city);
+//     formData.append('image', selectedFile);
+
+//     try {
+//       await axios.post(API_ENDPOINTS.ADD_TEAM_MEMBER, formData);
+//       fetchTeamMembers(); // Refresh the list after adding
+//       resetForm();
+//       setOpenSnackbar(true); // Open snackbar on successful addition
+//     } catch (error) {
+//       console.error('Error adding team member:', error);
+//     }
+//   };
+
+//   // // Handle deletion of a team member
+//   // const handleDeleteMember = async () => {
+//   //   try {
+//   //     await axios.delete(API_ENDPOINTS.DELETE_TEAM_MEMBER(memberToDelete._id));
+//   //     setOpenDeleteModal(false);
+//   //     fetchTeamMembers(); // Refresh the list after deletion
+//   //   } catch (error) {
+//   //     console.error('Error deleting team member:', error);
+//   //   }
+//   // };
+
+//   const handleDeleteMember = async () => {
+//     try {
+//       await axios.delete(API_ENDPOINTS.DELETE_TEAM_MEMBER(memberToDelete._id));
+//       setOpenDeleteModal(false);
+//       fetchTeamMembers(); // Refresh the list after deletion
+      
+//       // Set Snackbar message and open it
+//       setSnackbarMessage('Team deleted successfully!');
+//       setSnackbarOpen(true);
+
+//     } catch (error) {
+//       console.error('Error deleting team member:', error);
+//       // Optionally, set an error message
+//       setSnackbarMessage('Failed to delete team member. Please try again.');
+//       setSnackbarOpen(true);
+//     }
+//   };
+
+  
+//   // Reset form fields
+//   const resetForm = () => {
+//     setSelectedFile(null);
+//     setName('');
+//     setPost('');
+//     setCity('');
+//   };
+
+//   // Open delete confirmation modal
+//   const handleOpenDeleteModal = (member) => {
+//     setMemberToDelete(member);
+//     setOpenDeleteModal(true);
+//   };
+
+//   // Close delete confirmation modal
+//   const handleCloseDeleteModal = () => {
+//     setOpenDeleteModal(false);
+//     setMemberToDelete(null);
+//   };
+
+//   // Fetch team members on component mount
+//   useEffect(() => {
+//     fetchTeamMembers();
+//   }, []);
+
+//   return (
+//     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+//       <Header />
+//       <Box sx={{ display: 'flex', flexGrow: 1 }}>
+//         <Sidebar />
+//         <Box sx={{ flexGrow: 1, p: 4, marginTop: '55px' }}>
+//           <Typography variant="h4" sx={{ mb: 2 }}>Team Management</Typography>
+//           <Box sx={{ mb: 4 }}>
+//             <input
+//               accept="image/*"
+//               style={{ display: 'none' }}
+//               id="team-member-upload"
+//               type="file"
+//               onChange={(e) => setSelectedFile(e.target.files[0])}
+//             />
+//             <label htmlFor="team-member-upload">
+//               <Button variant="contained" component="span" sx={{ bgcolor: 'black', color: 'white', mr: 2 }}>Choose Image</Button>
+//             </label>
+//             {selectedFile && <Typography variant="body2" sx={{ display: 'inline', mr: 2 }}>{selectedFile.name}</Typography>}
+//           </Box>
+//           <Grid container spacing={2} sx={{ mb: 4 }}>
+//             <Grid item xs={12} sm={6}>
+//               <TextField fullWidth label="Name" variant="outlined" value={name} onChange={(e) => setName(e.target.value)} />
+//             </Grid>
+//             <Grid item xs={12} sm={6}>
+//               <TextField fullWidth label="Post" variant="outlined" value={post} onChange={(e) => setPost(e.target.value)} />
+//             </Grid>
+//             <Grid item xs={12} sm={6}>
+//               <TextField fullWidth label="City" variant="outlined" value={city} onChange={(e) => setCity(e.target.value)} />
+//             </Grid>
+//           </Grid>
+//           <Button variant="contained" onClick={handleAddMember} sx={{ bgcolor: 'black', color: 'white' }}>Add Team Member</Button>
+
+//           <Box sx={{ mt: 4 }}>
+//             {teamMembers.map((member) => (
+//               <Card key={member._id} sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
+//                 <CardMedia
+//                   component="img"
+//                   sx={{ width: 100, height: 100 }}
+//                   image={member.imageUrl} // Use base64Image from the fetched data
+//                   alt={member.name}
+//                 />
+//                 <Box sx={{ ml: 2, flexGrow: 1 }}>
+//                   <Typography variant="h6">{member.name}</Typography>
+//                   <Typography variant="body1">{member.post}</Typography>
+//                   <Typography variant="body2">{member.city}</Typography>
+//                 </Box>
+//                 <Button
+//                   sx={{ color: 'red' }}
+//                   onClick={() => handleOpenDeleteModal(member)}
+//                 >
+//                   <DeleteIcon />
+//                 </Button>
+//               </Card>
+//             ))}
+//           </Box>
+
+//         </Box>
+//       </Box>
+//       <Footer />
+
+      
+
+//       {/* Delete Confirmation Modal */}
+//       <Dialog open={openDeleteModal} onClose={handleCloseDeleteModal}>
+//         <DialogTitle>Delete Team Member</DialogTitle>
+//         <DialogContent>
+//           <Typography>Are you sure you want to delete {memberToDelete?.name}?</Typography>
+//         </DialogContent>
+//         <DialogActions>
+//           <Button onClick={handleCloseDeleteModal} color="primary">Cancel</Button>
+//           <Button onClick={handleDeleteMember} color="error">Delete</Button>
+//         </DialogActions>
+//       </Dialog>
+
+//       {/* Success Snackbar */}
+//       <Snackbar
+//         open={openSnackbar}
+//         autoHideDuration={6000}
+//         onClose={() => setOpenSnackbar(false)}
+//         message="Team member added successfully!"
+//       />
+//     </Box>
+//   );
+// };
+
+// export default Team;
+
+
 import React, { useEffect, useState } from 'react';
 import {
   Button,
@@ -732,6 +950,7 @@ const Team = () => {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [memberToDelete, setMemberToDelete] = useState(null);
   const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
 
   // Fetch team members from the API using the fetchTeams function
   const fetchTeamMembers = async () => {
@@ -760,6 +979,7 @@ const Team = () => {
       await axios.post(API_ENDPOINTS.ADD_TEAM_MEMBER, formData);
       fetchTeamMembers(); // Refresh the list after adding
       resetForm();
+      setSnackbarMessage('Team member added successfully!');
       setOpenSnackbar(true); // Open snackbar on successful addition
     } catch (error) {
       console.error('Error adding team member:', error);
@@ -772,8 +992,12 @@ const Team = () => {
       await axios.delete(API_ENDPOINTS.DELETE_TEAM_MEMBER(memberToDelete._id));
       setOpenDeleteModal(false);
       fetchTeamMembers(); // Refresh the list after deletion
+      setSnackbarMessage('Team member deleted successfully!'); // Update snackbar message
+      setOpenSnackbar(true); // Open snackbar on successful deletion
     } catch (error) {
       console.error('Error deleting team member:', error);
+      setSnackbarMessage('Failed to delete team member. Please try again.'); // Update snackbar message
+      setOpenSnackbar(true); // Open snackbar on error
     }
   };
 
@@ -880,7 +1104,7 @@ const Team = () => {
         open={openSnackbar}
         autoHideDuration={6000}
         onClose={() => setOpenSnackbar(false)}
-        message="Team member added successfully!"
+        message={snackbarMessage} // Use the snackbarMessage state for content
       />
     </Box>
   );
