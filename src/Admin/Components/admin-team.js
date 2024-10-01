@@ -962,30 +962,71 @@ const Team = () => {
     }
   };
 
-  // Add a team member
+  // // Add a team member
+  // const handleAddMember = async () => {
+  //   if (!selectedFile || !name || !post || !city) {
+  //     alert('Please fill all fields and select an image.');
+  //     return;
+  //   }
+
+  //   const formData = new FormData();
+  //   formData.append('name', name);
+  //   formData.append('post', post);
+  //   formData.append('city', city);
+  //   formData.append('image', selectedFile);
+
+  //   try {
+  //     await axios.post(API_ENDPOINTS.ADD_TEAM_MEMBER, formData);
+  //     fetchTeamMembers(); // Refresh the list after adding
+  //     resetForm();
+  //     setSnackbarMessage('Team member added successfully!');
+  //     setOpenSnackbar(true); // Open snackbar on successful addition
+  //   } catch (error) {
+  //     console.error('Error adding team member:', error);
+  //   }
+  // };
   const handleAddMember = async () => {
     if (!selectedFile || !name || !post || !city) {
-      alert('Please fill all fields and select an image.');
+      setSnackbarMessage('Please fill all fields and select an image.'); // Update to use Snackbar
+      setOpenSnackbar(true);
       return;
     }
-
+  
+    // Check the file size (1 MB = 1 * 1024 * 1024 bytes)
+    if (selectedFile.size > 1 * 1024 * 1024) {
+      setSnackbarMessage('Image size must be less than 1 MB.'); // Warning for size
+      setOpenSnackbar(true);
+      return;
+    }
+  
+    // Check the file type
+    const validFormats = ['image/jpeg', 'image/png'];
+    if (!validFormats.includes(selectedFile.type)) {
+      setSnackbarMessage('Only JPG, JPEG, and PNG formats are allowed.'); // Warning for format
+      setOpenSnackbar(true);
+      return;
+    }
+  
     const formData = new FormData();
     formData.append('name', name);
     formData.append('post', post);
     formData.append('city', city);
     formData.append('image', selectedFile);
-
+  
     try {
       await axios.post(API_ENDPOINTS.ADD_TEAM_MEMBER, formData);
       fetchTeamMembers(); // Refresh the list after adding
       resetForm();
-      setSnackbarMessage('Team member added successfully!');
+      setSnackbarMessage('Team member added successfully!'); // Success message
       setOpenSnackbar(true); // Open snackbar on successful addition
     } catch (error) {
       console.error('Error adding team member:', error);
+      setSnackbarMessage('Failed to add team member. Please try again.'); // Error message
+      setOpenSnackbar(true); // Open snackbar on error
     }
   };
 
+  
   // Handle deletion of a team member
   const handleDeleteMember = async () => {
     try {
