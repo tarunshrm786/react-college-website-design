@@ -317,25 +317,52 @@ const Mentor = () => {
   const [snackbarOpen, setSnackbarOpen] = useState(false); // Snackbar state
   const [snackbarMessage, setSnackbarMessage] = useState(''); // Snackbar message
 
+  // useEffect(() => {
+  //   const fetchMentors = async () => {
+  //     try {
+  //       // const response = await axios.get('https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/mentors');
+  //       const response = await axios.get('http://localhost:5000/api/mentors');
+  //       const data = response.data.map((mentor) => {
+  //         // Convert binary image data to base64
+  //         const base64Image = `data:${mentor.image.contentType};base64,${arrayBufferToBase64(mentor.image.data.data)}`;
+  //         return { ...mentor, base64Image }; // Add the base64Image field to each mentor
+  //       });
+  //       setTeamMembers(data); // Update state with the processed data
+  //     } catch (error) {
+  //       console.error('Error fetching mentors:', error);
+  //     }
+  //   };
+
+  //   fetchMentors();
+  // }, []);
   useEffect(() => {
     const fetchMentors = async () => {
       try {
-        // const response = await axios.get('https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/mentors');
+        // Fetch mentors data from the backend
         const response = await axios.get('http://localhost:5000/api/mentors');
+  
+        // Process mentor data and convert image buffer to base64
         const data = response.data.map((mentor) => {
-          // Convert binary image data to base64
-          const base64Image = `data:${mentor.image.contentType};base64,${arrayBufferToBase64(mentor.image.data.data)}`;
-          return { ...mentor, base64Image }; // Add the base64Image field to each mentor
+          // Check if mentor has image data
+          if (mentor.image && mentor.image.data && mentor.image.data.data) {
+            // Convert binary image data to base64
+            const base64Image = `data:${mentor.image.contentType};base64,${arrayBufferToBase64(mentor.image.data.data)}`;
+            return { ...mentor, base64Image }; // Add the base64Image field to each mentor
+          } else {
+            // If no image, use a placeholder image or handle as needed
+            return { ...mentor, base64Image: '/path/to/placeholder-image.png' };
+          }
         });
+  
         setTeamMembers(data); // Update state with the processed data
       } catch (error) {
         console.error('Error fetching mentors:', error);
       }
     };
-
+  
     fetchMentors();
   }, []);
- 
+  
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -505,7 +532,7 @@ const Mentor = () => {
                 <CardMedia
                   component="img"
                   sx={{ width: 100, height: 100 }}
-                  image={member.base64Image}
+                  image={member.imageUrl}
                   alt={member.name}
                 />
                 <Box sx={{ ml: 2, flexGrow: 1 }}>
