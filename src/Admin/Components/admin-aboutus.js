@@ -523,11 +523,28 @@ const AboutUs = () => {
     }
   };
 
+  // const handleFileChange = (event) => {
+  //   const file = event.target.files[0];
+
+  //   if (file && file.size > 1024 * 1024) {
+  //     setSnackbarMessage('File size exceeds 1 MB. Please choose a smaller file.');
+  //     setOpenSnackbar(true); 
+  //     return;
+  //   }
+
+  //   setSelectedFile(file);
+  //   if (file) {
+  //     const imageUrl = URL.createObjectURL(file);
+  //     setBannerImage(imageUrl);
+  //   }
+  // };
+
   const handleFileChange = (event) => {
     const file = event.target.files[0];
 
-    if (file && file.size > 1024 * 1024) {
-      setSnackbarMessage('File size exceeds 1 MB. Please choose a smaller file.');
+    // Update the file size limit to 5 MB
+    if (file && file.size > 5 * 1024 * 1024) {
+      setSnackbarMessage('File size exceeds 5 MB. Please choose a smaller file.');
       setOpenSnackbar(true); 
       return;
     }
@@ -537,7 +554,8 @@ const AboutUs = () => {
       const imageUrl = URL.createObjectURL(file);
       setBannerImage(imageUrl);
     }
-  };
+};
+
 
   const handleUpload = async () => {
     if (!selectedFile) {
