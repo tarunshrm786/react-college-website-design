@@ -1,0 +1,9 @@
+.hover-row {
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .hover-row:hover {
+    background-color: grey; /* Change background color to black on hover */
+    color: white; /* Change text color to white on hover */
+  }
+  

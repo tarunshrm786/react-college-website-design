@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box, Typography, Table, TableBody, TableCell, TableHead, TableRow, IconButton, TableContainer,
-  Paper, TablePagination, InputBase
+  Paper, TablePagination, InputBase, Snackbar, Alert
 } from '@mui/material';
-import { SaveAlt as PdfIcon } from '@mui/icons-material';
+import { SaveAlt as PdfIcon, Delete as DeleteIcon } from '@mui/icons-material'; // Added Delete icon
 import { GrDocumentExcel as ExcelIcon } from 'react-icons/gr';
 import Header from './header';
 import Footer from './footer';
@@ -11,19 +11,34 @@ import Sidebar from './Sidebar';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
 import * as XLSX from 'xlsx';
+//import '../css/adminEnquiry.css'; // Import your custom CSS file 
 
-const initialEnquiryData = Array.from({ length: 50 }, (_, i) => ({
-  name: `User ${i + 1}`,
-  email: `user${i + 1}@example.com`,
-  contactNo: `123456789${i}`,
-  city: `City ${i % 5}`,
-}));
+const apiURL = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/enquiry'; // Replace with your actual endpoint
 
 const EnquiryForm = () => {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [page, setPage] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
-  const [enquiryData, setEnquiryData] = useState(initialEnquiryData);
+  const [enquiryData, setEnquiryData] = useState([]); // For displaying data
+  const [originalData, setOriginalData] = useState([]); // For keeping the original data
+  const [noDataFound, setNoDataFound] = useState(false); // For triggering the Snackbar
+  const [deleteSuccess, setDeleteSuccess] = useState(false); // Snackbar for deletion
+
+  useEffect(() => {
+    const fetchData = () => {
+      fetch(apiURL)
+        .then((response) => response.json())
+        .then((data) => {
+          setEnquiryData(data);
+          setOriginalData(data);
+        })
+        .catch((error) => {
+          console.error('Error fetching API data:', error);
+        });
+    };
+
+    fetchData();
+  }, []);
 
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
@@ -37,13 +52,38 @@ const EnquiryForm = () => {
   const handleSearch = (event) => {
     const query = event.target.value.toLowerCase();
     setSearchQuery(query);
-    const filteredData = initialEnquiryData.filter((user) =>
+
+    const filteredData = originalData.filter((user) =>
       user.name.toLowerCase().includes(query) ||
       user.email.toLowerCase().includes(query) ||
-      user.contactNo.includes(query) ||
+      user.contactus.toString().includes(query) ||
       user.city.toLowerCase().includes(query)
     );
+
     setEnquiryData(filteredData);
+
+    if (filteredData.length === 0) {
+      setNoDataFound(true);
+    } else {
+      setNoDataFound(false);
+    }
+  };
+
+  const deleteEnquiry = (id) => {
+    fetch(`${apiURL}/${id}`, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        if (response.ok) {
+          setEnquiryData(enquiryData.filter((user) => user._id !== id)); // Update data after deletion
+          setDeleteSuccess(true); // Show delete success Snackbar
+        } else {
+          throw new Error('Failed to delete record');
+        }
+      })
+      .catch((error) => {
+        console.error('Error deleting record:', error);
+      });
   };
 
   const downloadPDF = () => {
@@ -52,7 +92,7 @@ const EnquiryForm = () => {
     const tableRows = enquiryData.map(user => [
       user.name,
       user.email,
-      user.contactNo,
+      user.contactus,
       user.city,
     ]);
 
@@ -116,7 +156,6 @@ const EnquiryForm = () => {
             />
           </Box>
 
-          {/* Responsive Table */}
           <TableContainer
             component={Paper}
             sx={{
@@ -148,19 +187,39 @@ const EnquiryForm = () => {
                   <TableCell sx={{ border: '1px solid #ccc', backgroundColor: 'lightgrey' }}>Email</TableCell>
                   <TableCell sx={{ border: '1px solid #ccc', backgroundColor: 'lightgrey' }}>Contact No</TableCell>
                   <TableCell sx={{ border: '1px solid #ccc', backgroundColor: 'lightgrey' }}>City</TableCell>
+                  <TableCell sx={{ border: '1px solid #ccc', backgroundColor: 'lightgrey' }}>Actions</TableCell> {/* Add Actions column */}
                 </TableRow>
               </TableHead>
 
               <TableBody>
-                {enquiryData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((user, index) => (
-                  <TableRow key={index}>
-                    <TableCell sx={{ border: '1px solid #ccc' }}>{user.name}</TableCell>
-                    <TableCell sx={{ border: '1px solid #ccc' }}>{user.email}</TableCell>
-                    <TableCell sx={{ border: '1px solid #ccc' }}>{user.contactNo}</TableCell>
-                    <TableCell sx={{ border: '1px solid #ccc' }}>{user.city}</TableCell>
+                {enquiryData.length > 0 ? (
+                  enquiryData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((user, index) => (
+                    <TableRow key={index}>
+                      <TableCell sx={{ border: '1px solid #ccc' }}>{user.name}</TableCell>
+                      <TableCell sx={{ border: '1px solid #ccc' }}>{user.email}</TableCell>
+                      <TableCell sx={{ border: '1px solid #ccc' }}>{user.contactus}</TableCell>
+                      <TableCell sx={{ border: '1px solid #ccc' }}>{user.city}</TableCell>
+                      <TableCell sx={{ border: '1px solid #ccc' }}>
+                        <IconButton
+                          aria-label="delete"
+                          color="error"
+                          onClick={() => deleteEnquiry(user._id)} // Delete action
+                        >
+                          <DeleteIcon />
+                        </IconButton>
+                      </TableCell>
+                    </TableRow>
+                  ))
+                ) : (
+                  <TableRow>
+                    <TableCell colSpan={5} align="center" sx={{ border: '1px solid #ccc' }}>
+                      No data available.
+                    </TableCell>
                   </TableRow>
-                ))}
+                )}
               </TableBody>
+       
+
             </Table>
           </TableContainer>
 
@@ -177,6 +236,28 @@ const EnquiryForm = () => {
       </Box>
 
       <Footer sx={{ marginBottom: 0 }} />
+
+      {/* Snackbar for 'No data found' */}
+      <Snackbar
+        open={noDataFound}
+        autoHideDuration={3000}
+        onClose={() => setNoDataFound(false)}
+      >
+        <Alert onClose={() => setNoDataFound(false)} severity="warning" sx={{ width: '100%' }}>
+          No data found
+        </Alert>
+      </Snackbar>
+
+      {/* Snackbar for delete success */}
+      <Snackbar
+        open={deleteSuccess}
+        autoHideDuration={3000}
+        onClose={() => setDeleteSuccess(false)}
+      >
+        <Alert onClose={() => setDeleteSuccess(false)} severity="success" sx={{ width: '100%' }}>
+          Record deleted successfully!
+        </Alert>
+      </Snackbar>
     </Box>
   );
 };
