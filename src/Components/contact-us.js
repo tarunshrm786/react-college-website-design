@@ -461,16 +461,17 @@ const ContactUs = () => {
                         label="Choose your course"
                         required
                       >
-                        <MenuItem value="Course A">Course A</MenuItem>
-                        <MenuItem value="Course B">Course B</MenuItem>
-                        <MenuItem value="Course C">Course C</MenuItem>
+                        <MenuItem value="UG">UG</MenuItem>
+                        <MenuItem value="PG">PG</MenuItem>
+                        <MenuItem value="ProfessionalDiploma">Professional Diploma</MenuItem>
+                        <MenuItem value="AcademicDiploma">Academic Diploma</MenuItem>
                       </Select>
                       <Typography variant="caption" color="error">{errors.course}</Typography>
                     </FormControl>
                   </Grid>
 
                   {/* Budget */}
-                  <Grid item xs={12} md={6}>
+                  {/* <Grid item xs={12} md={6}>
                     <FormControl fullWidth error={!!errors.budget}>
                       <InputLabel id="budget-label">Choose your budget</InputLabel>
                       <Select
@@ -487,10 +488,10 @@ const ContactUs = () => {
                       </Select>
                       <Typography variant="caption" color="error">{errors.budget}</Typography>
                     </FormControl>
-                  </Grid>
+                  </Grid> */}
 
                   {/* Duration */}
-                  <Grid item xs={12} md={6}>
+                  {/* <Grid item xs={12} md={6}>
                     <FormControl fullWidth error={!!errors.duration}>
                       <InputLabel id="duration-label">Time duration for course</InputLabel>
                       <Select
@@ -508,7 +509,7 @@ const ContactUs = () => {
                       </Select>
                       <Typography variant="caption" color="error">{errors.duration}</Typography>
                     </FormControl>
-                  </Grid>
+                  </Grid> */}
 
                   {/* Submit button */}
                   <Grid item xs={12}>
