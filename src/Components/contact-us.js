@@ -326,7 +326,7 @@ const ContactUs = () => {
     setLoading(true); // Show loader
 
     // Example API URL (replace with your actual URL)
-    const apiUrl = 'http://localhost:5000/api/contactus';
+    const apiUrl = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/contactus';
 
     // POST request using Promises
     fetch(apiUrl, {

@@ -250,7 +250,7 @@ const AdminContactus = () => {
   useEffect(() => {
     const fetchData = () => {
       setLoading(true);
-      axios.get('http://localhost:5000/api/contactus')
+      axios.get('https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/contactus')
         .then((response) => {
           setUserData(response.data);
           setLoading(false);
@@ -292,7 +292,7 @@ const AdminContactus = () => {
 
   // Handle Delete API call
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/api/contactus/${id}`)
+    axios.delete(`https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/contactus/${id}`)
       .then((response) => {
         setUserData((prevData) => prevData.filter((user) => user._id !== id)); // Filter out deleted record
         setSnackbarOpen(true);
