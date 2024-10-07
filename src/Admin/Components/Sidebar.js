@@ -17,7 +17,8 @@ import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import AccountBoxIcon from '@mui/icons-material/AccountBox'; 
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney'; 
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium'; 
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import GroupIcon from '@mui/icons-material/Group'; // Collaborator icon
 
 const Sidebar = ({ open, onDrawerToggle }) => {
   const theme = useTheme();
@@ -25,6 +26,7 @@ const Sidebar = ({ open, onDrawerToggle }) => {
 
   // State for dropdowns
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [homeOpen, setHomeOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
   const [ugOpen, setUgOpen] = useState(false);
   const [pgOpen, setPgOpen] = useState(false);
@@ -33,6 +35,7 @@ const Sidebar = ({ open, onDrawerToggle }) => {
 
   // Handlers for toggling dropdowns
   const handleAboutToggle = () => setAboutOpen(!aboutOpen);
+  const handleHomeToggle = () => setHomeOpen(!homeOpen);
   const handleCoursesToggle = () => setCoursesOpen(!coursesOpen);
   const handleUgToggle = () => setUgOpen(!ugOpen);
   const handlePgToggle = () => setPgOpen(!pgOpen);
@@ -62,11 +65,37 @@ const Sidebar = ({ open, onDrawerToggle }) => {
         </IconButton>
       )}
       <Divider />
+
+      
       <List>
         <ListItem component="a" button sx={{ mt: { xs: 2, md: 8 } }} href="/admin-home">
-          <HomeIcon sx={{ color: 'black', marginRight: 2 }} />
-          <ListItemText primary="Home" primaryTypographyProps={{ style: { color: 'black' } }} />
+          {/* <HomeIcon sx={{ color: 'black', marginRight: 2 }} /> */}
+          <ListItemText primary="" primaryTypographyProps={{ style: { color: 'black' } }} />
         </ListItem>
+
+        <List>
+      <ListItem button onClick={handleHomeToggle}>
+        <HomeIcon sx={{ marginRight: 2 }} />
+        <ListItemText primary="Home" />
+        {homeOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+      </ListItem>
+      <Collapse in={homeOpen} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItem component="a" button sx={{ pl: 4 }} href="/admin-home">
+            <ImageIcon sx={{ marginRight: 2 }} />
+            <ListItemText primary="Home Banner" />
+          </ListItem>
+          <ListItem component="a" button sx={{ pl: 4 }} href="/admin-collaborators">
+            <GroupIcon sx={{ marginRight: 2 }} />
+            <ListItemText primary="Our Collaborators" />
+          </ListItem>
+          <ListItem component="a" button sx={{ pl: 4 }} href="/admin-affiliation">
+            <SchoolIcon sx={{ marginRight: 2 }} />
+            <ListItemText primary="Our Affiliation" />
+          </ListItem>
+        </List>
+      </Collapse>
+    </List>
 
         {/* About Section */}
         <ListItem button onClick={handleAboutToggle}>
