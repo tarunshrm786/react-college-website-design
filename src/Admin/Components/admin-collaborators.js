@@ -1066,7 +1066,7 @@ const Home = () => {
   const [collaborators, setCollaborators] = useState([]);  // State to hold collaborator data
   const [selectedFiles, setSelectedFiles] = useState([]);  // State to hold selected files
 
-  const API_URL = 'http://localhost:5000/api/collaborators';
+  const API_URL = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/collaborators';
 
   // Fetch collaborator data on component mount
   const fetchCollaborators = async () => {
@@ -1326,9 +1326,8 @@ const handleDeleteImage = async (collaboratorId, imageId) => {
               />
               <Button
                 variant="contained"
-                color="primary"
                 onClick={handleUpload}
-                sx={{ mt: 2 }}
+                sx={{ mt: 2, backgroundColor: 'black' }}
               >
                 Upload Logos
               </Button>
