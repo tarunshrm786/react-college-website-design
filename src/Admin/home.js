@@ -574,27 +574,6 @@ const Home = () => {
 
   const API_URL = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/homebanner';
 
-  // Fetch existing banner data on component mount
-  // useEffect(() => {
-  //   const fetchBanner = async () => {
-  //     try {
-  //       const response = await fetch(API_URL);
-  //       if (!response.ok) throw new Error('Failed to display data');
-  //       const data = await response.json();
-        
-  //       // Assume the response contains bannerImage in base64 format
-  //       if (data.bannerImage) {
-  //         setBannerImage(data.bannerImage); // Set the base64 string directly
-  //         setBannerText(data.bannerText); // Assuming the response contains the banner text
-  //       }
-  //     } catch (error) {
-  //       setSnackbar({ open: true, message: error.message, severity: 'error' });
-  //     }
-  //   };
-
-  //   fetchBanner();
-  // }, []);
-
   useEffect(() => {
     const fetchBanner = async () => {
       try {

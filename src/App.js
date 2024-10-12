@@ -465,6 +465,7 @@ import AdminContactus from './Admin/Components/admin-contactus';
 import AdminAdmission from './Admin/Components/admin-admission';
 import AdminEnquiry from './Admin/Components/admin-enquiry';
 import AdminGallery from './Admin/Components/gallery';
+import AdminCollaborators from './Admin/Components/admin-collaborators';
 
 // Import Public Components
 import Aboutus from './Components/aboutus'; 
@@ -707,6 +708,7 @@ function App() {
         <Route path="/admin-fees-structure" element={<AdminFeesStructure />} />
         <Route path="/admin-document-verification" element={<AdminDocumentVerification />} />
         <Route path="/admin-student-portal" element={<AdminStudentPortal />} />
+        <Route path="/admin-collaborators" element={<AdminCollaborators />} />
         
         {/* Catch-all route */}
         <Route path="*" element={<Navigate to="/" />} />
