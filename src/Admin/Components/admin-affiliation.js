@@ -14,37 +14,36 @@ import Header from '../../Admin/Components/header';
 import Sidebar from '../../Admin/Components/Sidebar';
 import Footer from '../../Admin/Components/footer';
 
-const Collaborator = () => {
+const Affiliation = () => {
   const [open, setOpen] = useState(false);
   const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: 'success' });
-  const [collaborators, setCollaborators] = useState([]);  // State to hold collaborator data
+  const [affiliations, setAffiliations] = useState([]);  // State to hold affiliation data
   const [selectedFiles, setSelectedFiles] = useState([]);  // State to hold selected files
 
-  const API_URL = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/collaborators';
+  const API_URL = 'https://nad-api-tarunshrm768gmailcoms-projects.vercel.app/api/affiliation'; // Updated API URL
 
-  // Fetch collaborator data on component mount
-  const fetchCollaborators = async () => {
+  // Fetch affiliation data on component mount
+  const fetchAffiliations = async () => {
     try {
       const response = await fetch(API_URL);
-      if (!response.ok) throw new Error('Failed to fetch collaborators');
+      if (!response.ok) throw new Error('Failed to fetch affiliations');
       const data = await response.json();
-      setCollaborators(data);  // Store fetched data in state
+      setAffiliations(data);  // Store fetched data in state
     } catch (error) {
       setSnackbar({ open: true, message: error.message, severity: 'error' });
     }
   };
 
   useEffect(() => {
-    fetchCollaborators(); // Call the function to fetch collaborators on mount
+    fetchAffiliations(); // Call the function to fetch affiliations on mount
   }, []);
 
-
-const handleDeleteImage = async (collaboratorId, imageId) => {
-  try {
-      console.log(`Collaborator ID: ${collaboratorId}, Image ID: ${imageId}`); // Log IDs
+  const handleDeleteImage = async (affiliationId, imageId) => {
+    try {
+      console.log(`Affiliation ID: ${affiliationId}, Image ID: ${imageId}`); // Log IDs
 
       // Delete the image from the database
-      const response = await fetch(`${API_URL}/collaborators/${collaboratorId}/images/${imageId}`, {
+      const response = await fetch(`${API_URL}/affiliations/${affiliationId}/images/${imageId}`, {
           method: 'DELETE',
       });
 
@@ -54,31 +53,30 @@ const handleDeleteImage = async (collaboratorId, imageId) => {
           throw new Error('Failed to delete image');
       }
 
-      // If the collaborator is deleted, we can remove it from the state
+      // If the affiliation is deleted, we can remove it from the state
       const responseData = await response.json();
-      if (responseData.message.includes('Collaborator and all images deleted successfully')) {
-          // Remove the collaborator from state if deleted
-          setCollaborators((prev) => prev.filter((collab) => collab._id !== collaboratorId));
+      if (responseData.message.includes('Affiliation and all images deleted successfully')) {
+          // Remove the affiliation from state if deleted
+          setAffiliations((prev) => prev.filter((aff) => aff._id !== affiliationId));
       } else {
           // Update state to remove the deleted image
-          const updatedCollaborators = collaborators.map((collaborator) =>
-              collaborator._id === collaboratorId
-                  ? { ...collaborator, images: collaborator.images.filter((img) => img.id !== imageId) }
-                  : collaborator
+          const updatedAffiliations = affiliations.map((affiliation) =>
+              affiliation._id === affiliationId
+                  ? { ...affiliation, images: affiliation.images.filter((img) => img.id !== imageId) }
+                  : affiliation
           );
 
-          // Update state with the new list of collaborators
-          setCollaborators(updatedCollaborators);
+          // Update state with the new list of affiliations
+          setAffiliations(updatedAffiliations);
       }
 
       // Show success message
       setSnackbar({ open: true, message: 'Image deleted successfully!', severity: 'success' });
-  } catch (error) {
+    } catch (error) {
       // Handle error and show snackbar message
       setSnackbar({ open: true, message: error.message, severity: 'error' });
-  }
-};
-
+    }
+  };
 
   // Snackbar close handler
   const handleSnackbarClose = () => {
@@ -133,8 +131,8 @@ const handleDeleteImage = async (collaboratorId, imageId) => {
         severity: 'success',
       });
 
-      // Optionally, fetch the updated collaborators to reflect new uploads
-      fetchCollaborators();
+      // Optionally, fetch the updated affiliations to reflect new uploads
+      fetchAffiliations();
     } catch (error) {
       setSnackbar({
         open: true,
@@ -153,22 +151,22 @@ const handleDeleteImage = async (collaboratorId, imageId) => {
         <Box component="main" sx={{ flexGrow: 1, padding: 3 }}>
           <Container>
             <Typography variant="h4" gutterBottom>
-              Our Collaborators
+              Our Affiliations
             </Typography>
 
-            {/* Display collaborators' images */}
+            {/* Display affiliations' images */}
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
-              {collaborators.map((collaborator) => (
+              {affiliations.map((affiliation) => (
                 <Box
-                  key={collaborator._id}
+                  key={affiliation._id}
                   sx={{ width: '150px', height: '150px', position: 'relative' }}
                 >
-                  {/* Map through images of each collaborator */}
-                  {collaborator.images.map((image) => (
+                  {/* Map through images of each affiliation */}
+                  {affiliation.images.map((image) => (
                     <Box key={image.id} sx={{ position: 'relative' }}>
                       <img
                         src={`data:${image.imageData}`}  // Display base64 image
-                        alt={`Collaborator ${collaborator._id}`}
+                        alt={`Affiliation ${affiliation._id}`}
                         style={{
                           width: '100%',
                           height: '100%',
@@ -181,7 +179,7 @@ const handleDeleteImage = async (collaboratorId, imageId) => {
                       <IconButton
                         aria-label="delete"
                         size="small"
-                        onClick={() => handleDeleteImage(collaborator._id, image.id)}
+                        onClick={() => handleDeleteImage(affiliation._id, image.id)}
                         sx={{
                           position: 'absolute',
                           top: 0,
@@ -264,4 +262,4 @@ const handleDeleteImage = async (collaboratorId, imageId) => {
   );
 };
 
-export default Collaborator;
+export default Affiliation;

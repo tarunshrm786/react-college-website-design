@@ -89,7 +89,11 @@ const Sidebar = ({ open, onDrawerToggle }) => {
             <GroupIcon sx={{ marginRight: 2 }} />
             <ListItemText primary="Our Collaborators" />
           </ListItem>
-          <ListItem component="a" button sx={{ pl: 4 }} href="/admin-affiliation">
+          <ListItem component="a" button sx={{ pl: 4 }} 
+            href="/admin-affiliation"
+          //  href="/#"
+
+          >
             <SchoolIcon sx={{ marginRight: 2 }} />
             <ListItemText primary="Our Affiliation" />
           </ListItem>
